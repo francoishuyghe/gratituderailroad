@@ -28,7 +28,7 @@ export default async (app) => {
      * Matched files trigger a page reload when modified
      * @see {@link https://bud.js.org/docs/bud.watch/}
      */
-    .watch(['resources/views', 'app'])
+    .watch('resources/views', 'resources/styles', 'app')
 
     /**
      * Proxy origin (`WP_HOME`)
@@ -47,6 +47,10 @@ export default async (app) => {
      * @see {@link https://bud.js.org/docs/bud.setPublicPath/}
      */
     .setPublicPath('/app/themes/gratitude2023/public/')
+
+    .provide({
+      jquery: ["jQuery", "$"]
+    })
 
     /**
      * Generate WordPress `theme.json`
@@ -81,8 +85,5 @@ export default async (app) => {
         customFontSize: false,
       },
     })
-    .useTailwindColors()
-    .useTailwindFontFamily()
-    .useTailwindFontSize()
     .enable();
 };

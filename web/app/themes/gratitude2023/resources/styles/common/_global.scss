@@ -1,0 +1,34 @@
+html, body{
+    min-height: 100%;
+    height: auto;
+    position: relative;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+
+    h1{
+        color: $black;
+    }
+
+    h2{
+        color: $orange;
+        font-weight: 400;
+        font-size: 3em;
+
+        b{
+            font-weight: 400;
+        }
+    }
+}
+
+#main{
+    min-height: 100vh;
+
+    @include media-breakpoint-up(md){
+        padding-top: 65px;
+    }
+}
+
+.wp-element-button{
+    background-color: $olive;
+    color: $baby;
+}

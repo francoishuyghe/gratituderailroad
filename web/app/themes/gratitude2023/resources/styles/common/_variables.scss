@@ -1,0 +1,39 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+$theme-colors: (
+  primary: #525ddc,
+);
+
+$black: #000000;
+$white: #ffffff;
+$grey: #7D8F9B;
+$olive: #6D783F;
+$baby: #F9F2EB;
+$orange: #FF5C00;
+$yellow: #F0FF48;
+$clay: #B85800;
+$ochre: #BA833A;
+$aqua: #BCDCD1;
+
+
+$grid-gutter: 25px;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+
+
+// Fonts
+// $lato:"Lato", sans-serif;
+// $gilam:"Gilam", sans-serif;
+
+// @font-face {
+//   font-family: 'Gilam';
+//   src: url('~@fonts/Gilam-Semibold.woff2') format('woff2'),
+//       url('~@fonts/Gilam-Semibold.woff') format('woff');
+//   font-weight: bold;
+//   font-style: normal; 
+//   font-display: swap;
+// }

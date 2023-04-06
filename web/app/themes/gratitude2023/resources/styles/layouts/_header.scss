@@ -1,0 +1,33 @@
+header.banner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: $baby;
+  padding: 20px;
+
+  a{
+    color: $black;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(md){
+    display: flex;
+
+    .brand{
+      flex: 1;
+    }
+  }
+}
+
+#menu-top-menu{
+  li{
+    padding: 0 20px;
+  }
+
+  .current_page_parent a,
+  .current_page_item a{
+    color: $orange;
+  }
+}

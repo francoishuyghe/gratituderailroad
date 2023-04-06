@@ -87,6 +87,12 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#responsive-embedded-content
      */
     add_theme_support('responsive-embeds');
+    
+    // Add styles to gutenberg
+    add_action('after_setup_theme', function () {
+        add_theme_support('editor-styles');
+        add_editor_style(asset('app.css'));
+    });
 
     /**
      * Enable HTML5 markup support.
