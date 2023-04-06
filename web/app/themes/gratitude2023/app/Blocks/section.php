@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class manifesto extends Block
+class section extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Manifesto';
+    public $name = 'Section';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Manifesto block.';
+    public $description = 'A simple Section block.';
 
     /**
      * The block category.
@@ -123,7 +123,7 @@ class manifesto extends Block
      * @var array
      */
     public $example = [
-        'manifesto' => 'Test'
+            'color' => '#FFFFFF'
     ];
 
     /**
@@ -134,7 +134,7 @@ class manifesto extends Block
     public function with()
     {
         return [
-            'manifesto' => get_field('manifesto'),
+            'color' => get_field('color'),
         ];
     }
 
@@ -145,12 +145,21 @@ class manifesto extends Block
      */
     public function fields()
     {
-        $manifesto = new FieldsBuilder('manifesto');
+        $section = new FieldsBuilder('section');
 
-        $manifesto
-            ->addTextarea('manifesto');
+        $section
+        ->addSelect('color', [
+            'label' => 'Background Color',
+            'instructions' => '',
+            'choices' => array(
+                '#FFFFFF'   => 'White',
+                '#F9F2EB'   => 'Baby Orange'
+            ),
+            'default_value' => ['baby'],
+            'return_format' => 'value',
+        ]);
 
-        return $manifesto->build();
+        return $section->build();
     }
 
     /**
