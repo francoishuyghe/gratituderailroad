@@ -107,13 +107,13 @@ class section extends Block
      */
     public $styles = [
         [
-            'name' => 'light',
-            'label' => 'Light',
+            'name' => 'white',
+            'label' => 'White',
             'isDefault' => true,
         ],
         [
-            'name' => 'dark',
-            'label' => 'Dark',
+            'name' => 'orange',
+            'label' => 'Orange',
         ]
     ];
 
@@ -123,7 +123,7 @@ class section extends Block
      * @var array
      */
     public $example = [
-            'color' => '#FFFFFF'
+            //'color' => '#FFFFFF'
     ];
 
     /**
@@ -134,7 +134,7 @@ class section extends Block
     public function with()
     {
         return [
-            'color' => get_field('color'),
+            'idName' => get_field('id_name'),
         ];
     }
 
@@ -148,16 +148,7 @@ class section extends Block
         $section = new FieldsBuilder('section');
 
         $section
-        ->addSelect('color', [
-            'label' => 'Background Color',
-            'instructions' => '',
-            'choices' => array(
-                '#FFFFFF'   => 'White',
-                '#F9F2EB'   => 'Baby Orange'
-            ),
-            'default_value' => ['baby'],
-            'return_format' => 'value',
-        ]);
+        ->addText('id_name');
 
         return $section->build();
     }

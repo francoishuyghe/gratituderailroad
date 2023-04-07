@@ -1,0 +1,11 @@
+.wp-block-section{
+    padding: 100px 0;
+
+    &.is-style-white{
+        background-color: $white;
+    }
+    
+    &.is-style-orange{
+        background-color: $orange;
+    }
+}

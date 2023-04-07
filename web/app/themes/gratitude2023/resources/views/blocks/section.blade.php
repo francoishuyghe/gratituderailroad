@@ -1,4 +1,4 @@
-<div class="{{ $block->classes }}" style="background-color: {{ $color }};">
+<div class="{{ $block->classes }} " id="{{ $idName }}">
   <div class="container">
     <InnerBlocks />
   </div>
