@@ -266,7 +266,7 @@ function portfolio_custom_init()
     'menu_position' => null,
     'menu_icon' => 'dashicons-store',
     'supports' => array('title','editor','thumbnail','custom-fields'),
-    'taxonomies' => array('portfolio-category')
+    'taxonomies' => array('portfolio-category', 'tags')
   ); 
   register_post_type('portfolio',$args);
 }
