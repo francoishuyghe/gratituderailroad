@@ -140,3 +140,133 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+add_action( 'init',  __NAMESPACE__ . '\\create_team_taxonomies' );
+function create_team_taxonomies() 
+{
+  // Add new taxonomy, make it hierarchical (like categories)
+  $labels = array(
+    'name' => _x( 'Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => __( 'Parent Category' ),
+    'parent_item_colon' => __( 'Parent Category:' ),
+    'edit_item' => __( 'Edit Category' ), 
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category Name' ),
+    'menu_name' => __( 'Categories' ),
+  );    
+
+  register_taxonomy('team-category','team', array(
+    'public'=>true,
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    ));
+}
+
+
+// CPT "Team" registration
+add_action('init',  __NAMESPACE__ . '\\Team_custom_init');
+function Team_custom_init() 
+{
+  $labels = array(
+    'name' => _x('Team Member', 'post type general name'),
+    'singular_name' => _x('Team Member', 'post type singular name'),
+    'add_new' => _x('Add New', 'Person'),
+    'add_new_item' => __('Add New Person'),
+    'edit_item' => __('Edit Person'),
+    'new_item' => __('New Person'),
+    'view_item' => __('View Person'),
+    'search_items' => __('Search Team Member'),
+    'not_found' =>  __('No Team Member found'),
+    'not_found_in_trash' => __('No Team Member found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Team'
+  );
+  
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'team' ),
+    'capability_type' => 'post',
+    'has_archive' => true, 
+    'hierarchical' => false,
+    'menu_position' => null,
+    'menu_icon' => 'dashicons-universal-access',
+    'supports' => array('title','editor','thumbnail','custom-fields'),
+    'taxonomies' => array('team-category')
+  ); 
+  register_post_type('team',$args);
+}
+
+add_action( 'init',  __NAMESPACE__ . '\\create_portfolio_taxonomies' );
+function create_portfolio_taxonomies() 
+{
+  // Add new taxonomy, make it hierarchical (like categories)
+  $labels = array(
+    'name' => _x( 'Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => __( 'Parent Category' ),
+    'parent_item_colon' => __( 'Parent Category:' ),
+    'edit_item' => __( 'Edit Category' ), 
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category Name' ),
+    'menu_name' => __( 'Categories' ),
+  );    
+
+  register_taxonomy('portfolio-category','portfolio', array(
+    'public'=>true,
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    ));
+}
+
+
+// CPT "Portfolio" registration
+add_action('init',  __NAMESPACE__ . '\\portfolio_custom_init');
+function portfolio_custom_init() 
+{
+  $labels = array(
+    'name' => _x('Company', 'post type general name'),
+    'singular_name' => _x('Company', 'post type singular name'),
+    'add_new' => _x('Add New', 'Company'),
+    'add_new_item' => __('Add New Company'),
+    'edit_item' => __('Edit Company'),
+    'new_item' => __('New Company'),
+    'view_item' => __('View Company'),
+    'search_items' => __('Search Company'),
+    'not_found' =>  __('No Company found'),
+    'not_found_in_trash' => __('No Company found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Portfolio'
+  );
+  
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'portfolio' ),
+    'capability_type' => 'post',
+    'has_archive' => true, 
+    'hierarchical' => false,
+    'menu_position' => null,
+    'menu_icon' => 'dashicons-store',
+    'supports' => array('title','editor','thumbnail','custom-fields'),
+    'taxonomies' => array('portfolio-category')
+  ); 
+  register_post_type('portfolio',$args);
+}
