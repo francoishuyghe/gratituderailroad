@@ -4,6 +4,7 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use WP_Query;
 
 class portfolio extends Block
 {
@@ -138,7 +139,7 @@ class portfolio extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
+            'portfolio' => $this->getPortfolio(),
         ];
     }
 
@@ -164,9 +165,15 @@ class portfolio extends Block
      *
      * @return array
      */
-    public function items()
+    // Grab all portfolio items
+    public function getPortfolio()
     {
-        return get_field('items') ?: $this->example['items'];
+        $args = array(
+            'post_type' => 'portfolio',
+            'showposts' => -1,
+	    );
+	    $the_query = new WP_Query( $args );
+	    return $the_query->posts;
     }
 
     /**

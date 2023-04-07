@@ -1,15 +1,18 @@
 <div class="{{ $block->classes }}">
-  @if ($items)
-    <ul>
-      @foreach ($items as $item)
-        <li>{{ $item['item'] }}</li>
-      @endforeach
-    </ul>
-  @else
-    <p>{{ $block->preview ? 'Add an item...' : 'No items found!' }}</p>
-  @endif
-
-  <div>
-    <InnerBlocks />
+  <div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      Filters
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+      @if(!empty($portfolio))
+        @foreach ($portfolio as $item)
+            @include('partials.portfolio-item')
+        @endforeach
+      @endif
+      </div>
+    </div>
+    </div>
   </div>
 </div>
