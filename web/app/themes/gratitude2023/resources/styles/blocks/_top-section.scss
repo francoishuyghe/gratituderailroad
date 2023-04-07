@@ -1,0 +1,24 @@
+.wp-block-top-section{
+    background-color: $baby;
+    
+    .image{
+        overflow: hidden;
+        min-height: 80vh;
+        
+        img{
+            height: 100%;
+        }
+    }
+
+    .text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+
+        h1{
+            font-size: 3em;
+            color: $orange;
+        }
+    }
+}

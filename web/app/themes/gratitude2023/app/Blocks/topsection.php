@@ -105,17 +105,17 @@ class topsection extends Block
      *
      * @var array
      */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
+    // public $styles = [
+    //     [
+    //         'name' => 'light',
+    //         'label' => 'Light',
+    //         'isDefault' => true,
+    //     ],
+    //     [
+    //         'name' => 'dark',
+    //         'label' => 'Dark',
+    //     ]
+    // ];
 
     /**
      * The block preview example data.
@@ -138,7 +138,11 @@ class topsection extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
+            'image' => get_field('image'),
+            'title' => get_field('title'),
+            'paragraph' => get_field('paragraph'),
+            'buttonText' => get_field('button-text'),
+            'link' => get_field('link'),
         ];
     }
 
@@ -152,9 +156,11 @@ class topsection extends Block
         $topSection = new FieldsBuilder('top_section');
 
         $topSection
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addImage('image')
+            ->addText('title')
+            ->addTextarea('paragraph')
+            ->addText('button-text')
+            ->addPageLink('link');
 
         return $topSection->build();
     }
