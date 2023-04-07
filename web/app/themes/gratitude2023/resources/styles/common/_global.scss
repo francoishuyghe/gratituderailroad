@@ -22,10 +22,6 @@ html, body{
 
 #main{
     min-height: 100vh;
-
-    @include media-breakpoint-up(md){
-        padding-top: 65px;
-    }
 }
 
 .wp-element-button{

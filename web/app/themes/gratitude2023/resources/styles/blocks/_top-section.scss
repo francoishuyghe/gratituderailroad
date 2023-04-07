@@ -14,7 +14,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-flow: column;
+
+        .inner{
+            padding: $grid-gutter;
+        }
 
         h1{
             font-size: 3em;
