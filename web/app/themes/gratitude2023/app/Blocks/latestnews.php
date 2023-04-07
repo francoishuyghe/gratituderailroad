@@ -4,22 +4,23 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use WP_Query;
 
-class team extends Block
+class latestnews extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Team';
+    public $name = 'Latest News';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Team block.';
+    public $description = 'Show the latest articles.';
 
     /**
      * The block category.
@@ -105,17 +106,17 @@ class team extends Block
      *
      * @var array
      */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
+    // public $styles = [
+    //     [
+    //         'name' => 'light',
+    //         'label' => 'Light',
+    //         'isDefault' => true,
+    //     ],
+    //     [
+    //         'name' => 'dark',
+    //         'label' => 'Dark',
+    //     ]
+    // ];
 
     /**
      * The block preview example data.
@@ -123,11 +124,8 @@ class team extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
+        'news' => [],
+        'title' => 'Title' 
     ];
 
     /**
@@ -138,7 +136,8 @@ class team extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
+            'news' => $this->getNews(),
+            'title' => get_field('title'),
         ];
     }
 
@@ -149,14 +148,12 @@ class team extends Block
      */
     public function fields()
     {
-        $team = new FieldsBuilder('team');
+        $news = new FieldsBuilder('news');
 
-        $team
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+        $news
+            ->addText('title');
 
-        return $team->build();
+        return $news->build();
     }
 
     /**
@@ -164,9 +161,14 @@ class team extends Block
      *
      * @return array
      */
-    public function items()
+    public function getNews()
     {
-        return get_field('items') ?: $this->example['items'];
+        $args = array(
+            'post_type' => 'post',
+            'showposts' => 3,
+	    );
+	    $the_query = new WP_Query( $args );
+	    return $the_query->posts;
     }
 
     /**
