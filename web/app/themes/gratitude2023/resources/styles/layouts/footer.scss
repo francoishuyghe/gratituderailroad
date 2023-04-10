@@ -2,4 +2,16 @@ footer.content-info{
     padding: calc($grid-gutter * 2) 0;
     background-color: $grey;
     color: $white;
+
+    .widget:nth-child(1){
+        @extend .col-md-2;
+    }
+    
+    .widget:nth-child(2){
+        @extend .col-md-6;
+    }
+    
+    .widget:nth-child(3){
+        @extend .col-md-4;
+    }
 }

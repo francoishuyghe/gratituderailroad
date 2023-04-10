@@ -115,6 +115,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+    add_theme_support( 'align-wide' );
+
 }, 20);
 
 /**
@@ -164,6 +166,7 @@ function create_team_taxonomies()
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
+    'show_admin_column' => true,
     ));
 }
 
@@ -229,6 +232,7 @@ function create_portfolio_taxonomies()
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
+    'show_admin_column' => true,
     ));
 }
 
