@@ -1,6 +1,8 @@
 <article @php(post_class())>
   <div class="thumbnail">
-    {!! the_post_thumbnail( 'medium' );  !!}
+    <a href="{{ get_permalink() }}">
+      {!! the_post_thumbnail( 'medium' );  !!}
+    </a>
   </div>
     <h4 class="entry-title">
       <a href="{{ get_permalink() }}">
