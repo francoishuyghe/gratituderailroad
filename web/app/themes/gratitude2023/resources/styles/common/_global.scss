@@ -1,30 +1,63 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
 html, body{
     min-height: 100%;
     height: auto;
     position: relative;
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
-
-    h1{
-        color: $black;
-    }
-
-    h2{
-        color: $orange;
-        font-weight: 400;
-        font-size: 3em;
-
-        b{
-            font-weight: 400;
-        }
-    }
 }
 
-p, h1, h2, h3, h4, h5,
+.wp-block-section > p, 
+.wp-block-section > h1, 
+.wp-block-section > h2, 
+.wp-block-section > h3, 
+.wp-block-section > h4, 
+.wp-block-section > h5,
 .wp-block{
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+h1{
+    color: $black;
+}
+
+h2{
+    color: $orange;
+    font-weight: 400;
+    font-size: 3em;
+
+    b{
+        font-weight: 400;
+    }
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+
+    &.readmore{
+        color: $olive;
+        
+        &.dot{
+            text-decoration: underline;
+            
+            &::after{
+                content: '';
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                border-radius: 1em;
+                margin-left: .5em;
+                background-color: $aqua;
+            }
+        }
+
+    }
 }
 
 #main{
@@ -52,11 +85,14 @@ p, h1, h2, h3, h4, h5,
 .wp-block-image{
     img{
         border-radius: 20px;
+        width: 100%;
+        max-width: 100%;
     }
 
     &.stacked{
         position: relative;
         margin-left: 40px;
+        transform: scale(1);
 
         &:after{
             content: '';
@@ -89,4 +125,18 @@ p, h1, h2, h3, h4, h5,
         padding: 30px;
         background-color: $grey;
     }
+}
+
+// Utilities
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.rounded{
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: $grey;
 }
