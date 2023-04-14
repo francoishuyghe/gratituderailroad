@@ -146,6 +146,44 @@ ol, ul{
     max-width: 600px;
 }
 
+h1{
+    color: $black;
+}
+
+h2{
+    color: $orange;
+    font-weight: 400;
+    font-size: 3em;
+
+    b{
+        font-weight: 400;
+    }
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+
+    &.readmore{
+        color: $olive;
+        
+        &.dot{
+            text-decoration: underline;
+            
+            &::after{
+                content: '';
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                border-radius: 1em;
+                margin-left: .5em;
+                background-color: $aqua;
+            }
+        }
+
+    }
+}
+
 #main{
     min-height: 100vh;
 }
