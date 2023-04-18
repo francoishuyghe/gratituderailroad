@@ -5,8 +5,6 @@
     <x-alert type="warning">
       {!! __('Sorry, no results were found.', 'sage') !!}
     </x-alert>
-
-    {!! get_search_form(false) !!}
   @endif
 
   @php 
@@ -52,8 +50,4 @@ $categories = get_categories( array(
 </section>
 
   {!! get_the_posts_navigation() !!}
-@endsection
-
-@section('sidebar')
-  @include('sections.sidebar')
 @endsection

@@ -2,6 +2,11 @@
 
 @section('content')
   <div class="container">
+    @php 
+    $page = get_page_by_path( 'team' );
+  echo apply_filters( 'the_content', get_post_field( 'post_content', $page ) );
+  @endphp
+
   <h1>Team</h1>
 
     <div class="row">
