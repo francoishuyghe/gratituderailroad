@@ -57,7 +57,7 @@
     .thumbnail{
         background-color: $grey;
         padding-top: 120%;
-        border-radius: 10px;
+        border-radius: $radius;
         margin-bottom: 10px;
        transition: .5s;
 

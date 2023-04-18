@@ -1,4 +1,7 @@
 <article @php(post_class())>
+  <div class="thumbnail">
+    {!! the_post_thumbnail( 'thumbnail', []);  !!}
+  </div>
   <header>
     <h4 class="entry-title">
       <a href="{{ get_permalink() }}">
@@ -6,8 +9,4 @@
       </a>
     </h4>
   </header>
-
-  <div class="entry-summary">
-    @php(the_excerpt())
-  </div>
 </article>

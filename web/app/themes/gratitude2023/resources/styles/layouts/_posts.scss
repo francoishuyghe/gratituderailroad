@@ -1,0 +1,17 @@
+//TEAM
+article.team{
+    .thumbnail{
+        position: relative;
+        height: 0;
+        padding-top: 120%;
+        border-radius: $radius;
+        background-color: $grey;
+        margin-bottom: $grid-gutter;
+
+        img{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

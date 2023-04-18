@@ -1,3 +1,11 @@
 .wp-block-latest-news{
     padding: $section-gutter 0;
+    padding: 100px 0;
+
+    .thumbnail{
+        background-color: $grey;
+        min-height: 200px;
+        border-radius: $radius;
+        margin-bottom: $grid-gutter;
+    }
 }
