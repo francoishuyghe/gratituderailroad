@@ -11,7 +11,14 @@
 
     <div class="row">
       <div class="col-md-2">
-        Filters
+        <ul>
+        @php $categories = get_terms('team-category'); @endphp
+        @foreach ($categories as $category)
+        <li>
+          <a data-cat={{ $category->slug }}>{{ $category->name }}</a>
+        </li>
+        @endforeach
+        </ul>
       </div>
       <div class="col-md-10">
         <div class="row">
