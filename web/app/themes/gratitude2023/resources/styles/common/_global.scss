@@ -128,6 +128,10 @@ a{
     &.with-border{
         padding: 30px;
         background-color: $grey;
+
+        &.olive{
+            background-color: $olive;
+        }
     }
 }
 
