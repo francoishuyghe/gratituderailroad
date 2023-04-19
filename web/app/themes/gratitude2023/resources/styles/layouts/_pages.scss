@@ -191,6 +191,22 @@
 
 
 ////////////////////////////
+// Home
+////////////////////////////
+#manifesto{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $grid-gutter;
+    
+    h1{
+    }
+}
+
+
+
+////////////////////////////
 // Portfolio Items
 ////////////////////////////
 
