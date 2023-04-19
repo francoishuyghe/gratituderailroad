@@ -44,25 +44,20 @@ a{
     &:hover{
         color: $orange;
     }
+}
 
-    &.readmore{
-        color: $olive;
+.readmore{
+    color: $olive;
+    text-decoration: underline;
+    
+    &.dot{
+        text-decoration: underline;
         
-        &.dot{
-            text-decoration: underline;
-            
-            &::after{
-                content: '';
-                display: inline-block;
-                width: 1em;
-                height: 1em;
-                border-radius: 1em;
-                margin-left: .5em;
-                background-color: $aqua;
-            }
+        &::after{
+            @include dot;
         }
-
     }
+
 }
 
 #main{

@@ -27,6 +27,16 @@ $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
 
 
+@mixin dot(){
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  margin-left: .5em;
+  background-color: $aqua;
+  vertical-align: text-top;
+}
 
 // Fonts
 // $lato:"Lato", sans-serif;

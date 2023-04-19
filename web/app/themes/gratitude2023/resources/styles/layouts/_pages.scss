@@ -156,6 +156,30 @@
 
 }
 
+#latestReport{
+    padding: $grid-gutter 0;
+
+    .wp-block-columns{
+        margin: 0;
+
+        .wp-block-column:last-child{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            padding-left: $grid-gutter;
+        }
+    }
+
+    a{
+        @extend .readmore;
+
+        &::after{
+            @include dot;
+        }
+    }
+
+}
+
 
 ////////////////////////////
 // About
