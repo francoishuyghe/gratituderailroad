@@ -106,16 +106,58 @@
 // Home
 ////////////////////////////
 #manifesto{
-    min-height: 100vh;
+    min-height: calc(100vh - $banner-height);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: $grid-gutter;
+
+    h3{
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: $section-gutter;
+    }
     
     h1{
+        font-size: 3rem;
+        font-family: 'Courier New', Courier, monospace;
+
+        a{
+            text-decoration: underline;
+            text-decoration-color: $olive;
+            text-decoration-thickness: 5px;
+
+            &:hover{
+                color: $olive;
+            }
+            
+            &:nth-child(1){
+                text-decoration-color: $grey;
+                
+                &:hover{
+                    color: $grey;
+                }
+            }
+            &:nth-child(2){
+                text-decoration-color: $clay;
+                &:hover{
+                    color: $clay;
+                }
+            }
+            &:nth-child(3){
+                text-decoration-color: $ochre;
+
+                &:hover{
+                    color: $ochre;
+                }
+            }
+        }
     }
 
 }
+
+
+////////////////////////////
 // About
 ////////////////////////////
 .page.about{
@@ -218,7 +260,7 @@
 
     #allTeam{
         section{
-            scroll-margin-top: $banner-margin;
+            scroll-margin-top: $banner-height;
         }
     }
 }
