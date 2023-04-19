@@ -141,6 +141,11 @@ add_action('widgets_init', function () {
         'name' => __('Footer', 'sage'),
         'id' => 'sidebar-footer',
     ] + $config);
+    
+    register_sidebar([
+        'name' => __('Secondary Footer', 'sage'),
+        'id' => 'sidebar-secondary-footer',
+    ] + $config);
 });
 
 add_action( 'init',  __NAMESPACE__ . '\\create_team_taxonomies' );
