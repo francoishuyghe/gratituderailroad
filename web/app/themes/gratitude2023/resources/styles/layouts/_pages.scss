@@ -114,6 +114,30 @@
     
     h1{
     }
+
+}
+// About
+////////////////////////////
+.page.about{
+    #numbersFeature{
+        p:first-child{
+            background-color: $baby;
+            width: 10rem;
+            aspect-ratio: 1;
+            border-radius: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+
+            strong{
+                display: block;
+                font-size: 3rem;
+            }
+        }
+    }
 }
 
 
