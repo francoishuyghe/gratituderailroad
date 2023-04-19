@@ -1,14 +1,16 @@
 <article @php(post_class())>
-  <div class="thumbnail rounded">
-    <a href="{{ get_permalink() }}">
-      {!! the_post_thumbnail( 'medium' );  !!}
-    </a>
-  </div>
   <a href="{{ get_permalink() }}">
-    <h4 class="entry-title">
+    <div class="thumbnail rounded">
+      {!! the_post_thumbnail( 'medium' );  !!}
+    </div>
+    <h5 class="entry-title">
         {!! $title !!}
-      </h4>
+      </h5>
   </a>
-  {{ the_excerpt() }}
-  <a href="{{ get_permalink() }}" class="readmore">Read more</a>
+
+  @php( $cats = get_the_category())
+  @foreach ($cats as $cat)
+      {{ $cat->name }}
+  @endforeach
+  
 </article>

@@ -2,7 +2,10 @@
 
 <div class="{{ $block->classes }}">
   <div class="container">
-    <h3>{{ $title }}</h3>
+    <header>
+      <h3>{{ $title }}</h3>
+      <a class="round-button orange" href="/insights">All News</a>
+    </header>
       <div class="row">
       @if(!empty($news))
         @foreach ($news as $post)

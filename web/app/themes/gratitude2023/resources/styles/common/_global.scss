@@ -60,6 +60,19 @@ a{
 
 }
 
+.round-button{
+    border: 2px solid $orange;
+    border-radius: 2em;
+    padding: .5em 1em;
+    color: $orange;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    a{
+        color: $orange;
+    }
+}
+
 #main{
     min-height: 100vh;
 }

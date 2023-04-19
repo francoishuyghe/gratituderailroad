@@ -1,16 +1,21 @@
 <article @php(post_class('h-entry'))>
-  <header>
+  <header id="articleHeader">
     <div class="container">
-      <a href="/insights">Back</a>
+      <a href="/insights" class="back">Back</a>
+      @php( $cats = get_the_category())
+          {{ $cats[0]->name }}
     <h1 class="p-name">
       {!! $title !!}
     </h1>
-
-    @include('partials.entry-meta')
+    <p>@php(the_excerpt())</p>
     </div>
   </header>
 
   <div class="container">
+    <div class="hero rounded">
+      {!! the_post_thumbnail( 'large' );  !!}
+    </div>
+
   <div class="e-content">
     @php(the_content())
   </div>
