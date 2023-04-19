@@ -20,6 +20,7 @@ $aqua: #BCDCD1;
 $grid-gutter: 3rem;
 $section-gutter: 6rem;
 $radius: 10px;
+$banner-margin: 7rem;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
@@ -29,13 +30,31 @@ $navbar-light-toggler-icon-bg: none;
 
 // Fonts
 // $lato:"Lato", sans-serif;
-// $gilam:"Gilam", sans-serif;
+$FormaleGrotesque:"FormaleGrotesque", sans-serif;
 
-// @font-face {
-//   font-family: 'Gilam';
-//   src: url('~@fonts/Gilam-Semibold.woff2') format('woff2'),
-//       url('~@fonts/Gilam-Semibold.woff') format('woff');
-//   font-weight: bold;
-//   font-style: normal; 
-//   font-display: swap;
-// }
+@font-face {
+  font-family: 'FormaleGrotesque';
+  src: url('~@fonts/FormaleGrotesque-N3.woff2') format('woff2'),
+      url('~@fonts/FormaleGrotesque-N3.woff') format('woff');
+  font-weight: 800;
+  font-style: normal; 
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FormaleGrotesque';
+  src: url('~@fonts/FormaleGrotesque-N2.woff2') format('woff2'),
+      url('~@fonts/FormaleGrotesque-N2.woff') format('woff');
+  font-weight: 600;
+  font-style: normal; 
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FormaleGrotesque';
+  src: url('~@fonts/FormaleGrotesque-N1.woff2') format('woff2'),
+      url('~@fonts/FormaleGrotesque-N1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal; 
+  font-display: swap;
+}

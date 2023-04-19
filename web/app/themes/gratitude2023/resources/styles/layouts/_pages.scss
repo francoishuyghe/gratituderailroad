@@ -68,6 +68,43 @@
 }
 
 ////////////////////////////
+// Team
+////////////////////////////
+.page.team{
+    #top{
+        text-align: center;
+        margin: calc($grid-gutter * 3) auto;
+        max-width: 800px;
+    }
+
+    #allTeam{
+        section{
+            scroll-margin-top: $banner-margin;
+        }
+    }
+}
+
+#filter{
+    padding-left: 0;
+    list-style: none;
+    position: sticky;
+    top: 100px;
+
+    li{
+        margin-bottom: .5em;
+    }
+
+    a{
+        color: $olive;
+        cursor: pointer;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+////////////////////////////
 // Insights
 ////////////////////////////
 .page.insight{

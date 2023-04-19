@@ -199,7 +199,7 @@ function Team_custom_init()
     'query_var' => true,
     'rewrite' => array( 'slug' => 'team' ),
     'capability_type' => 'post',
-    'has_archive' => true, 
+    'has_archive' => false,
     'hierarchical' => false,
     'menu_position' => null,
     'menu_icon' => 'dashicons-universal-access',
