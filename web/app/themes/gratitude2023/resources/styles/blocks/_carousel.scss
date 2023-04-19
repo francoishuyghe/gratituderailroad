@@ -1,0 +1,12 @@
+.wp-block-carousel{
+    margin: $grid-gutter 0;
+
+        .slide{
+            padding: $grid-gutter;
+
+            img{
+                max-width: 100%;
+                border-radius: 10px;
+            }
+        }
+}
