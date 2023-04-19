@@ -1,7 +1,15 @@
 footer.content-info{
-    padding: calc($grid-gutter * 2) 0;
-    background-color: $grey;
-    color: $white;
+    .primary{
+        padding: $grid-gutter;
+        background-color: $grey;
+        color: $white;
+    }
+
+    .secondary{
+        background: $orange;
+        color: $black;
+        padding: 1.5rem $grid-gutter;
+    }
 
     .widget:nth-child(1){
         @extend .col-md-2;
