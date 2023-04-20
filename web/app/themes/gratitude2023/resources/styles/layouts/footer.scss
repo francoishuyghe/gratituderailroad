@@ -25,14 +25,8 @@ footer.content-info{
             }
         }
     }
-
-    .secondary{
-        background: $orange;
-        color: $black;
-        padding: 1.5rem $grid-gutter;
-    }
-
-    .widget:nth-child(1){
+    
+    .widget_block{
         @extend .col-md-2;
     }
 
