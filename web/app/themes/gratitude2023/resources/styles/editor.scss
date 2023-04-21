@@ -1,1 +1,6 @@
-@import "./app.scss"
+@import "./app.scss";
+
+.wp-block-post-content{
+    font-family: $FormaleGrotesque;
+    font-size: 22px;
+}
