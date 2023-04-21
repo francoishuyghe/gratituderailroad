@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use WP_Query;
 
 class Post extends Composer
 {
@@ -26,6 +27,13 @@ class Post extends Composer
     {
         return [
             'title' => $this->title(),
+        ];
+    }
+
+    public function with()
+    {
+        return [
+            'relatedPosts' => $this->getRelatedPosts(),
         ];
     }
 
@@ -65,5 +73,28 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+
+    public function getRelatedPosts() {
+        $terms = get_the_terms( get_the_ID(), 'category' );
+        $term_list = wp_list_pluck( $terms, 'slug' );
+        $related_args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 3,
+            'post_status' => 'publish',
+            'post__not_in' => array( get_the_ID() ),
+            'orderby' => 'rand',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'category',
+                    'field' => 'slug',
+                    'terms' => $term_list
+                    )
+                    )
+                );
+                
+        $the_query = new WP_Query( $related_args );
+	    return $the_query->posts;
     }
 }

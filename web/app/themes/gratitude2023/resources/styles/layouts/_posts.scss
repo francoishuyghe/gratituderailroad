@@ -18,6 +18,10 @@ article.team{
     }
 }
 
+////////////////////////////
+/// Insights Posts
+////////////////////////////
+
 .single-post{
     #articleHeader{
         text-align: center;
@@ -25,6 +29,12 @@ article.team{
 
         .container{
             position: relative;
+
+            &> *{
+                max-width: 60rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         .back{
@@ -34,8 +44,24 @@ article.team{
             left: 0;
         }
 
-        h1{
+        .category{
+            @extend h1;
+        }
+
+        .p-name{
             @extend h2;
         }
+
+        .excerpt{
+            font-family: $Teodor;
+            font-size: 1.625rem;
+            margin-bottom: $grid-gutter;
+        }
     }
+}
+
+#relatedPosts{
+    background-color: $baby;
+    margin-top: $section-gutter;
+    padding: $grid-gutter 0;
 }
