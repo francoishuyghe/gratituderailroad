@@ -239,6 +239,58 @@ function create_portfolio_taxonomies()
     'show_ui' => true,
     'show_admin_column' => true,
     ));
+
+  // Add extra ACF Fields
+  $type_field = array(
+    'key' => 'type_select',
+    'label' => 'Type',
+    'name' => 'Type Select',
+    'type' => 'select',
+    'required' => 1,
+    'choices' => array(
+        'fund'   => 'Fund',
+        'company'   => 'Early-stage Company'
+    ),
+    'ui' => 1,
+    'ajax' => 1,
+  );
+  
+  $founder_field = array(
+    'key' => 'founder_select',
+    'label' => 'Founder',
+    'name' => 'Founder Select',
+    'type' => 'checkbox',
+    'required' => 0,
+    'choices' => array(
+        'bipoc'   => 'BIPOC Founder',
+        'female'   => 'Female Founder'
+    ),
+    'ui' => 1,
+    'ajax' => 1,
+  );
+
+  if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'company_info',
+        'title' => 'Company Info',
+        'position' => 'side',
+        'fields' => array (
+            $type_field,
+            $founder_field,
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ),
+            ),
+        ),
+    ));
+    
+    endif;
 }
 
 
