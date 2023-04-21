@@ -18,8 +18,8 @@ html, body{
 
 .wp-block-section,
 .e-content{
-    p, h1, h2, h3, h4, h5, h6,
-    ul, ol{
+    &>p, &>h1, &>h2, &>h3, &>h4, &>h5, &>h6,
+    &>ul, &>ol{
         max-width: 50rem;
         margin-left: auto;
         margin-right: auto;
@@ -44,7 +44,7 @@ h2{
     font-weight: 400;
     font-size: 4.25rem;
     line-height: 4.375rem;
-    margin-bottom: $grid-gutter;
+    margin-bottom: 2.8125rem;
 
     b{
         font-weight: 400;
@@ -94,6 +94,12 @@ a{
 
     a{
         color: $orange;
+    }
+}
+
+.menu, .nav{
+    li{
+        font-size: 1.0625rem;
     }
 }
 

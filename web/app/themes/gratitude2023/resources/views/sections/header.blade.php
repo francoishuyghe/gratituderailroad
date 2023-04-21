@@ -1,6 +1,6 @@
 <header class="banner">
   <a class="brand" href="{{ home_url('/') }}">
-    {!! $siteName !!}
+    <img src="@asset('../../images/gratitude_logo.svg')" alt="{!! $siteName !!}" />
   </a>
 
   @if (has_nav_menu('primary_navigation'))

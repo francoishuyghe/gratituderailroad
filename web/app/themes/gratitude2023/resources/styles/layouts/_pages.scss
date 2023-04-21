@@ -97,6 +97,13 @@
 ////////////////////////////
 // Home
 ////////////////////////////
+
+.home{
+header.banner{
+    background: $baby;
+}
+}
+
 #manifesto{
     min-height: calc(100vh - $banner-height);
     display: flex;
@@ -111,13 +118,16 @@
     }
     
     h1{
-        font-size: 3rem;
-        font-family: 'Courier New', Courier, monospace;
+        font-size: 4rem;
+        font-family: $Teodor;
+        max-width: 62rem;
+        margin: auto;
 
         a{
             text-decoration: underline;
             text-decoration-color: $olive;
             text-decoration-thickness: 5px;
+            transition: color ease-in-out .3s;
 
             &:hover{
                 color: $olive;
