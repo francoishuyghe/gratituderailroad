@@ -41,6 +41,7 @@ $navbar-light-toggler-icon-bg: none;
 // Fonts
 // $lato:"Lato", sans-serif;
 $FormaleGrotesque:"FormaleGrotesque", sans-serif;
+$Teodor:"Teodor", serif;
 
 @font-face {
   font-family: 'FormaleGrotesque';
@@ -66,5 +67,22 @@ $FormaleGrotesque:"FormaleGrotesque", sans-serif;
       url('~@fonts/FormaleGrotesque-N1.woff') format('woff');
   font-weight: normal;
   font-style: normal; 
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Teodor';
+  src: url('~@fonts/Teodor-Regular.woff2') format('woff2'),
+      url('~@fonts/Teodor-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal; 
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Teodor';
+  src: url('~@fonts/Teodor-RegularItalic.woff2') format('woff2'),
+      url('~@fonts/Teodor-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic; 
   font-display: swap;
 }
