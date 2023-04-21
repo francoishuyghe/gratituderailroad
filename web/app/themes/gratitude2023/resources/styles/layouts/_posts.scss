@@ -1,0 +1,21 @@
+.single-post{
+    #articleHeader{
+        text-align: center;
+        margin: $section-gutter auto;
+
+        .container{
+            position: relative;
+        }
+
+        .back{
+            @extend .round-button !optional;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        h1{
+            @extend h2;
+        }
+    }
+}

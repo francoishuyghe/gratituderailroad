@@ -1,17 +1,23 @@
 <article @php(post_class('h-entry'))>
-  <header>
+  <header id="articleHeader">
     <div class="container">
-      <a href="/insights">Back</a>
+      <a href="/insights" class="back">Back</a>
+      @php( $cats = get_the_category())
+          {{ $cats[0]->name }}
     <h1 class="p-name">
       {!! $title !!}
     </h1>
-
-    @include('partials.entry-meta')
+    <p>{{ get_the_excerpt() }}</p>
+    <h3>{{ the_field('custom_author') }}</h3>
     </div>
   </header>
 
   <div class="container">
   <div class="e-content">
+    <div class="hero rounded">
+      {!! the_post_thumbnail( 'large' );  !!}
+    </div>
+
     @php(the_content())
   </div>
 

@@ -21,10 +21,15 @@ html, body{
 }
 
 p, h1, h2, h3, h4, h5,
+ol, ul,
 .wp-block{
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+ol, ul{
+    max-width: 600px;
 }
 
 #main{
