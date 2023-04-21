@@ -37,6 +37,12 @@ article.team{
             margin-left: auto;
             margin-right: auto;
         }
+
+        .excerpt{
+            font-family: $Teodor;
+            font-size: 1.625rem;
+            margin-bottom: $grid-gutter;
+        }
     }
 
     .category{
