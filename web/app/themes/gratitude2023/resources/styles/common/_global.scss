@@ -142,6 +142,10 @@ a.back{
     }
 }
 
+ol, ul{
+    max-width: 600px;
+}
+
 #main{
     min-height: 100vh;
 }

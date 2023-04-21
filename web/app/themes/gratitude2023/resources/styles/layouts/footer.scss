@@ -60,7 +60,6 @@ footer.content-info{
         }
 
         .sub-menu{
-<<<<<<< HEAD
             padding-top: 1rem;
         }
 
@@ -70,14 +69,10 @@ footer.content-info{
             .sub-menu{
                 padding-top: $grid-gutter;
             }
-=======
-            padding-top: $grid-gutter;
->>>>>>> 72f65dd (basic footer layout)
         }
     }
 
     .secondary{
-<<<<<<< HEAD
         display: flex;
         flex-flow: column-reverse;
         background: $orange;
@@ -111,27 +106,6 @@ footer.content-info{
                 li{
                     margin: 0 $grid-gutter;
                 }
-=======
-        background: $orange;
-        color: $black;
-        padding: 1.5rem $grid-gutter;
-        display: grid;
-        grid-template-columns: 1fr repeat(3, auto) 1fr;
-        grid-column-gap: 0;
-        justify-items: center;
-
-        .copyright { 
-            margin-right: auto; 
-        }
-
-        .menu{
-            display: flex;
-            grid-column-start: 2;
-            margin-bottom: 0;
-
-            li{
-                margin: 0 $grid-gutter;
->>>>>>> 72f65dd (basic footer layout)
             }
         }
     }
