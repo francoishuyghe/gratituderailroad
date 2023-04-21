@@ -293,6 +293,42 @@ function create_portfolio_taxonomies()
     endif;
 }
 
+///////////////////////////
+// Add posts custom fields
+///////////////////////////
+add_action( 'init',  __NAMESPACE__ . '\\create_post_customfields' );
+function create_post_customfields() {
+  $author_field = array(
+  'key' => 'custom_author',
+  'label' => 'Author',
+  'name' => 'Author',
+  'type' => 'text',
+  'required' => 1,
+);
+
+if( function_exists('acf_add_local_field_group') ):
+
+  acf_add_local_field_group(array(
+      'key' => 'extras',
+      'title' => 'Extras',
+      'position' => 'side',
+      'fields' => array (
+          $author_field,
+      ),
+      'location' => array (
+          array (
+              array (
+                  'param' => 'post_type',
+                  'operator' => '==',
+                  'value' => 'post',
+              ),
+          ),
+      ),
+  ));
+  
+  endif;
+}
+
 
 // CPT "Portfolio" registration
 add_action('init',  __NAMESPACE__ . '\\portfolio_custom_init');
