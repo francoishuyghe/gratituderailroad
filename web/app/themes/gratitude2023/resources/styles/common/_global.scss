@@ -108,7 +108,8 @@ a{
 }
 
 .wp-block-columns{
-    margin: 100px 0;
+    margin: $section-gutter 0;
+    gap: 5rem;
 }
 
 .wp-element-button{
