@@ -1,15 +1,16 @@
 <div class="{{ $block->classes }}">
-  @if ($items)
-    <ul>
-      @foreach ($items as $item)
-        <li>{{ $item['item'] }}</li>
+  <div class="container">
+  @if ($values)
+    <div class="row">
+      @foreach ($values as $value)
+      <div class="col-md-4">
+        <h3>{{ $value['name'] }}</h3>
+        <p>{{ $value['description'] }}</p>
+      </div>
       @endforeach
-    </ul>
+    </div>
   @else
     <p>{{ $block->preview ? 'Add an item...' : 'No items found!' }}</p>
   @endif
-
-  <div>
-    <InnerBlocks />
   </div>
 </div>
