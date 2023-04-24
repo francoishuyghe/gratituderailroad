@@ -1,9 +1,9 @@
 <div class="{{ $block->classes }}">
   <div class="container">
   @if ($values)
-    <div class="row">
+    <div class="row justify-content-md-center">
       @foreach ($values as $value)
-      <div class="col-md-4">
+      <div class="value col-md-4">
         @php $image = $value['image'] @endphp
         @if( !empty( $image ) )
           <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
