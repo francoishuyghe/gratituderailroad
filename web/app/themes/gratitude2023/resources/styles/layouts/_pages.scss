@@ -1,6 +1,6 @@
 .page-header{
     text-align: center;
-    margin-top: $section-gutter;
+    margin: $section-gutter 0;
 }
 
 /////////////////////////////
@@ -71,6 +71,17 @@
             strong{
                 display: block;
                 font-size: 3rem;
+            }
+        }
+    }
+
+    #jobs{
+        background: $baby;
+        padding: $section-gutter 0;
+
+        .jobs{
+            p{
+                margin-bottom: 1rem;
             }
         }
     }

@@ -75,6 +75,10 @@ a{
     }
 }
 
+a.more{
+    color: $olive;
+}
+
 .readmore{
     color: $olive;
     text-decoration: underline;
@@ -132,8 +136,12 @@ a{
 }
 
 .wp-block-image{
-    margin: $grid-gutter auto;
+    margin: $grid-gutter 0;
     max-width: 50rem;
+    
+    &.aligncenter{
+        margin: $grid-gutter auto;
+    }
 
     img{
         border-radius: 20px;
