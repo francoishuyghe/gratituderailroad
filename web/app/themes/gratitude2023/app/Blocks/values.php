@@ -151,7 +151,9 @@ class values extends Block
         $values = new FieldsBuilder('values');
 
         $values
-            ->addRepeater('values')
+            ->addRepeater('values',  [
+                'layout' => 'block'
+            ])
                 ->addText('name')
                 ->addText('description')
                 ->addImage('image')

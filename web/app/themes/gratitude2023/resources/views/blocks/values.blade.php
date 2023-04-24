@@ -4,6 +4,10 @@
     <div class="row">
       @foreach ($values as $value)
       <div class="col-md-4">
+        @php $image = $value['image'] @endphp
+        @if( !empty( $image ) )
+          <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+        @endif
         <h3>{{ $value['name'] }}</h3>
         <p>{{ $value['description'] }}</p>
       </div>
