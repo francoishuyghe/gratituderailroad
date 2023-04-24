@@ -19,7 +19,7 @@ class values extends Block
      *
      * @var string
      */
-    public $description = 'A simple Values block.';
+    public $description = 'A list of values.';
 
     /**
      * The block category.
@@ -105,17 +105,7 @@ class values extends Block
      *
      * @var array
      */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
+    
 
     /**
      * The block preview example data.
@@ -123,10 +113,19 @@ class values extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
+        'values' => [
+            [
+                'name' => 'Value one', 
+                'description' => 'Example description'
+            ],
+            ['name' => 'Value two', 
+            'description' => 'Example description'],
+            ['name' => 'Value three', 
+            'description' => 'Example description'],
+            ['name' => 'Value four', 
+            'description' => 'Example description'],
+            ['name' => 'Value five', 
+            'description' => 'Example description'],
         ],
     ];
 
@@ -138,7 +137,7 @@ class values extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
+            'values' => $this->values(),
         ];
     }
 
@@ -152,21 +151,23 @@ class values extends Block
         $values = new FieldsBuilder('values');
 
         $values
-            ->addRepeater('items')
-                ->addText('item')
+            ->addRepeater('values')
+                ->addText('name')
+                ->addText('description')
+                ->addImage('image')
             ->endRepeater();
 
         return $values->build();
     }
 
     /**
-     * Return the items field.
+     * Return the values field.
      *
      * @return array
      */
-    public function items()
+    public function values()
     {
-        return get_field('items') ?: $this->example['items'];
+        return get_field('values') ?: $this->example['values'];
     }
 
     /**
