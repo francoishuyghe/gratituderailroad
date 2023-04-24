@@ -118,19 +118,6 @@ class topsection extends Block
     // ];
 
     /**
-     * The block preview example data.
-     *
-     * @var array
-     */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
-
-    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
