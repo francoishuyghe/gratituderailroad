@@ -201,7 +201,7 @@ function jobs_custom_init()
     'show_ui' => true, 
     'show_in_menu' => true, 
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'job' ),
+    'rewrite' => array( 'slug' => 'jobs' ),
     'capability_type' => 'post',
     'has_archive' => false,
     'hierarchical' => false,

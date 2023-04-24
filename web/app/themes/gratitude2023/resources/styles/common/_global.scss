@@ -106,6 +106,13 @@ a.more{
     }
 }
 
+a.back{
+    @extend .round-button !optional;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .menu, .nav{
     li{
         font-size: 1.0625rem;

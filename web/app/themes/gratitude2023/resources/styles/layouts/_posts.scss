@@ -23,40 +23,34 @@ article.team{
 ////////////////////////////
 
 .single-post{
-    #articleHeader{
-        text-align: center;
-        margin: $section-gutter auto;
+}
 
-        .container{
-            position: relative;
+#articleHeader{
+    text-align: center;
+    margin: $section-gutter auto;
 
-            &> *{
-                max-width: 60rem;
-                margin-left: auto;
-                margin-right: auto;
-            }
+    .container{
+        position: relative;
+
+        &> *{
+            max-width: 60rem;
+            margin-left: auto;
+            margin-right: auto;
         }
+    }
 
-        .back{
-            @extend .round-button !optional;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+    .category{
+        @extend h1;
+    }
 
-        .category{
-            @extend h1;
-        }
+    .p-name{
+        @extend h2;
+    }
 
-        .p-name{
-            @extend h2;
-        }
-
-        .excerpt{
-            font-family: $Teodor;
-            font-size: 1.625rem;
-            margin-bottom: $grid-gutter;
-        }
+    .excerpt{
+        font-family: $Teodor;
+        font-size: 1.625rem;
+        margin-bottom: $grid-gutter;
     }
 }
 
