@@ -285,6 +285,17 @@ header.banner{
             }
         }
     }
+
+    #jobs{
+        background: $baby;
+        padding: $section-gutter 0;
+
+        .jobs{
+            p{
+                margin-bottom: 1rem;
+            }
+        }
+    }
 }
 
 
