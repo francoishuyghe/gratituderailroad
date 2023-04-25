@@ -3,10 +3,12 @@
     
     .image{
         overflow: hidden;
-        min-height: 80vh;
+        min-height: 60vh;
         
         img{
             height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
@@ -14,14 +16,33 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
 
         .inner{
             padding: $grid-gutter;
         }
 
         h1{
-            font-size: 3em;
+            font-size: 2.25em;
             color: $orange;
+        }
+
+        p{
+            font-family: $Teodor;
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        .text{
+            text-align: left;
+
+            h1{
+                font-size: 3em;
+            }
+        }
+
+        .image{
+            min-height: 80vh;
         }
     }
 }

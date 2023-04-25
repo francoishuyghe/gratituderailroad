@@ -46,18 +46,24 @@ footer.content-info{
         background: $orange;
         color: $black;
         padding: 1.5rem $grid-gutter;
-        display: grid;
-        grid-template-columns: 1fr repeat(3, auto) 1fr;
-        grid-column-gap: 0;
-        justify-items: center;
+        
+        @include media-breakpoint-up(md){
+            display: grid;
+            grid-template-columns: 1fr repeat(3, auto) 1fr;
+            grid-column-gap: 0;
+            justify-items: center;
+
+            .menu{
+                display: flex;
+                grid-column-start: 2;
+            }
+        }
 
         .copyright { 
             margin-right: auto; 
         }
 
         .menu{
-            display: flex;
-            grid-column-start: 2;
             margin-bottom: 0;
 
             li{

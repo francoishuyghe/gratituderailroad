@@ -8,6 +8,14 @@ html, body{
     position: relative;
     scroll-behavior: smooth;
     font-family: $FormaleGrotesque;
+
+    .--fixed{
+        overflow: hidden;
+    }
+}
+
+.container{
+    --bs-gutter-x: 3.125rem;
 }
 
 .wp-block{
@@ -42,24 +50,39 @@ h1{
 h2{
     color: $orange;
     font-weight: 400;
-    font-size: 4.25rem;
-    line-height: 4.375rem;
-    margin-bottom: 2.8125rem;
-
+    font-size: 2.25rem;
+    line-height: 2.375rem;
+    margin-bottom: 1rem;
+    
     b{
         font-weight: 400;
     }
 }
 
 h3{
-    font-size: 1.875rem;
+    font-size: 1.625rem;
     font-weight: 700;
 }
 
 p, .p {
-    font-size: 1.375rem;
-    line-height: 1.6875rem;
     margin-bottom: 1.5em;
+}
+
+@include media-breakpoint-up(md){
+    h2{
+        font-size: 4.25rem;
+        line-height: 4.375rem;
+        margin-bottom: 2.8125rem;
+    }
+    
+    h3{
+        font-size: 1.875rem;
+    }
+
+    p, .p {
+        font-size: 1.375rem;
+        line-height: 1.6875rem;
+    }
 }
 
 ul, ol{
@@ -124,8 +147,29 @@ a.back{
 }
 
 .wp-block-columns{
-    margin: $section-gutter 0;
-    gap: 5rem;
+    margin-bottom: $grid-gutter;
+    gap: 2rem;
+
+    &.invert{
+        flex-direction: column-reverse;
+    }
+
+    .wp-block-column{
+        margin-bottom: 0;
+    }
+    
+    @include media-breakpoint-up(md){
+        gap: 5rem;
+        margin: $section-gutter 0;
+
+        .wp-block-column{
+            margin-bottom: 0;
+        }
+    }
+
+    .wp-block-image{
+        margin: 0;
+    }
 }
 
 .wp-element-button{
@@ -158,7 +202,8 @@ a.back{
 
     &.stacked{
         position: relative;
-        margin-left: 40px;
+        margin-left: 2rem;
+        margin-bottom: 2rem;
         transform: scale(1);
 
         &:after{
@@ -168,8 +213,8 @@ a.back{
             background-color: $yellow;
             width: 100%;
             height: 100%;
-            top: 20px;
-            left: -20px;
+            top: 1rem;
+            left: -1rem;
             border-radius: 20px;
             z-index: -1;
         }
@@ -181,8 +226,8 @@ a.back{
             background-color: $baby;
             width: 100%;
             height: 100%;
-            top: 40px;
-            left: -40px;
+            top: 2rem;
+            left: -2rem;
             border-radius: 20px;
             z-index: -2;
         }
@@ -220,3 +265,14 @@ a.back{
     overflow: hidden;
     background-color: $grey;
 }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }

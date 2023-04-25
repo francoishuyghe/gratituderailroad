@@ -8,6 +8,7 @@ $theme-colors: (
 $black: #000000;
 $white: #ffffff;
 $grey: #7D8F9B;
+$lightgrey: #D6D6D6;
 $olive: #6D783F;
 $baby: #F9F2EB;
 $orange: #FF5C00;
@@ -18,9 +19,14 @@ $aqua: #BCDCD1;
 
 
 $grid-gutter: 3rem;
-$section-gutter: 6rem;
+$section-gutter: $grid-gutter;
 $radius: 10px;
-$banner-height: 90px;
+$banner-height: 80px;
+
+@include media-breakpoint-up(md){
+  $section-gutter: calc(2 * $grid-gutter);
+  $banner-height: 90px;
+}
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;

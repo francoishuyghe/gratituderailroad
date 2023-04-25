@@ -58,6 +58,8 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'footer_navigation' => __('Footer Navigation', 'sage'),
+        'subfooter_navigation' => __('Sub-Footer Navigation', 'sage'),
     ]);
 
     /**
@@ -434,4 +436,58 @@ function portfolio_custom_init()
     'taxonomies' => array('portfolio-category', 'tags')
   ); 
   register_post_type('portfolio',$args);
+}
+
+add_action( 'init',  __NAMESPACE__ . '\\create_options_customfields' );
+function create_options_customfields() {
+  // Register ACF options pages
+  if( function_exists('acf_add_options_page') ) {
+      
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    )); 
+  }
+
+  $twitter_link = array(
+    'key' => 'twitter_link',
+    'label' => 'Twitter Link',
+    'name' => 'Twitter Link',
+    'type' => 'url',
+    'required' => 0,
+  );
+  
+  $linkedin_link = array(
+    'key' => 'linkedin_link',
+    'label' => 'Linkedin Link',
+    'name' => 'Linkedin Link',
+    'type' => 'url',
+    'required' => 0,
+  );
+
+  if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'social',
+        'title' => 'Social Links',
+        'position' => 'side',
+        'fields' => array (
+            $linkedin_link,
+            $twitter_link,
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ),
+            ),
+        ),
+    ));
+    
+    endif;
 }
