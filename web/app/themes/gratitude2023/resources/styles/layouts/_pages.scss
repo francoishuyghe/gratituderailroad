@@ -325,6 +325,16 @@ header.banner{
         }
     }
 
+    @include media-breakpoint-up(md){
+        .wp-block-columns{
+            .wp-block-column:last-child{
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                padding-left: $grid-gutter;
+            }
+        }
+    }
 }
 
 

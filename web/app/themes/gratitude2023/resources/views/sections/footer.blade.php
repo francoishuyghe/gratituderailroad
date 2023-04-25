@@ -30,7 +30,9 @@
       {{ the_time('Y') }} {!! $siteName !!}. All rights reserved.
     </div>
     <div class="menu">
-      @php(dynamic_sidebar('sidebar-secondary-footer'))
+      <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
+      </nav>
     </div>
   </div>
 
