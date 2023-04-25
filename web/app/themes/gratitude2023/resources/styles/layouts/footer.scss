@@ -1,8 +1,29 @@
 footer.content-info{
     .primary{
-        padding: $grid-gutter;
+        padding: $grid-gutter 1rem;
         background-color: $grey;
         color: $white;
+
+        h5{
+            font-size: 1.375rem;
+            text-transform: lowercase;
+            font-weight: 800;
+            margin-bottom: $grid-gutter;
+        }
+
+        img{
+            display: none;
+
+        }
+
+        @include media-breakpoint-up(md){
+            padding: $grid-gutter;
+
+            img{
+                display: block;
+                max-width: 8.5rem;
+            }
+        }
     }
     
     .widget_block{
@@ -25,10 +46,11 @@ footer.content-info{
         max-width: 40rem;
     
         &>li>a {
-            font-weight: 600;
+            font-weight: 400;
         }
-
+        
         a{
+            font-weight: 200;
             color: inherit;
             text-decoration: none;
 
@@ -38,36 +60,52 @@ footer.content-info{
         }
 
         .sub-menu{
-            padding-top: $grid-gutter;
+            padding-top: 1rem;
+        }
+
+        
+        @include media-breakpoint-up(md){
+            
+            .sub-menu{
+                padding-top: $grid-gutter;
+            }
         }
     }
 
     .secondary{
+        display: flex;
+        flex-flow: column-reverse;
         background: $orange;
         color: $black;
-        padding: 1.5rem $grid-gutter;
-        
-        @include media-breakpoint-up(md){
-            display: grid;
-            grid-template-columns: 1fr repeat(3, auto) 1fr;
-            grid-column-gap: 0;
-            justify-items: center;
-
-            .menu{
-                display: flex;
-                grid-column-start: 2;
-            }
-        }
-
-        .copyright { 
-            margin-right: auto; 
-        }
+        padding: 1rem;
 
         .menu{
             margin-bottom: 0;
 
             li{
-                margin: 0 $grid-gutter;
+                margin-right: 1rem;
+            }
+        }
+        
+        @include media-breakpoint-up(md){
+            padding: 1.5rem $grid-gutter;
+            display: grid;
+            grid-template-columns: 1fr repeat(3, auto) 1fr;
+            grid-column-gap: 0;
+            justify-items: center;
+
+            .copyright { 
+                margin-right: auto; 
+            }
+    
+
+            .menu{
+                display: flex;
+                grid-column-start: 2;
+
+                li{
+                    margin: 0 $grid-gutter;
+                }
             }
         }
     }

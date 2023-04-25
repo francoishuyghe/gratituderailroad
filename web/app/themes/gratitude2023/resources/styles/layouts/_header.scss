@@ -47,6 +47,10 @@ header.banner{
     height: 4px;
     margin-bottom: 5.6px;
   }
+
+  @include media-breakpoint-up(md){
+    display: none;
+  }
 }
 
 nav.nav-primary{
@@ -60,6 +64,14 @@ nav.nav-primary{
   z-index: 9;
   background: $baby;
   padding: 3rem 0 0;
+
+  @include media-breakpoint-up(md){
+    position: relative;
+    left: auto;
+    background: transparent;
+    width: auto;
+    padding: 0;
+  }
 
   &.--open{
     left: 0;
@@ -81,10 +93,11 @@ nav.nav-primary{
       flex-flow: row;
       align-items: center;
       text-transform: uppercase;
-      color: $orange;
+      color: $black;
       
       li{
         padding: 0 1rem;
+        font-size: 1.0625rem;
 
         &:last-child{
           //@extend .round-button;
