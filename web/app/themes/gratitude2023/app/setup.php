@@ -58,6 +58,8 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'footer_navigation' => __('Footer Navigation', 'sage'),
+        'subfooter_navigation' => __('Sub-Footer Navigation', 'sage'),
     ]);
 
     /**
@@ -175,6 +177,72 @@ function create_team_taxonomies()
     ));
 }
 
+// CPT "Jobs" registration
+add_action('init',  __NAMESPACE__ . '\\jobs_custom_init');
+function jobs_custom_init() 
+{
+  $labels = array(
+    'name' => _x('Job', 'post type general name'),
+    'singular_name' => _x('Job', 'post type singular name'),
+    'add_new' => _x('Add New', 'Job'),
+    'add_new_item' => __('Add New Job'),
+    'edit_item' => __('Edit job'),
+    'new_item' => __('New Job'),
+    'view_item' => __('View Job'),
+    'search_items' => __('Search Job'),
+    'not_found' =>  __('No Job found'),
+    'not_found_in_trash' => __('No Jpb found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Jobs'
+  );
+  
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'jobs' ),
+    'capability_type' => 'post',
+    'has_archive' => false,
+    'hierarchical' => false,
+    'menu_position' => null,
+    'show_in_rest' => true,
+    'menu_icon' => 'dashicons-universal-access',
+    'supports' => array('title','editor','custom-fields'),
+    'taxonomies' => array('job-category')
+  ); 
+  register_post_type('jobs',$args);
+}
+
+add_action( 'init',  __NAMESPACE__ . '\\create_jobs_taxonomies' );
+function create_jobs_taxonomies() 
+{
+  // Add new taxonomy, make it hierarchical (like categories)
+  $labels = array(
+    'name' => _x( 'Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => __( 'Parent Category' ),
+    'parent_item_colon' => __( 'Parent Category:' ),
+    'edit_item' => __( 'Edit Category' ), 
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category Name' ),
+    'menu_name' => __( 'Categories' ),
+  );    
+
+  register_taxonomy('job-category','jobs', array(
+    'public'=>true,
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    ));
+}
+
 
 // CPT "Team" registration
 add_action('init',  __NAMESPACE__ . '\\Team_custom_init');
@@ -204,9 +272,10 @@ function Team_custom_init()
     'query_var' => true,
     'rewrite' => array( 'slug' => 'team' ),
     'capability_type' => 'post',
-    'has_archive' => true, 
+    'has_archive' => false,
     'hierarchical' => false,
     'menu_position' => null,
+    'show_in_rest' => true, // Activate Guthenberg
     'menu_icon' => 'dashicons-universal-access',
     'supports' => array('title','editor','thumbnail','custom-fields'),
     'taxonomies' => array('team-category')
@@ -240,7 +309,7 @@ function create_portfolio_taxonomies()
     'show_admin_column' => true,
     ));
 
-    // Add extra ACF Fields
+  // Add extra ACF Fields
   $type_field = array(
     'key' => 'type_select',
     'label' => 'Type',
@@ -361,9 +430,64 @@ function portfolio_custom_init()
     'has_archive' => true, 
     'hierarchical' => false,
     'menu_position' => null,
+    'show_in_rest' => true,
     'menu_icon' => 'dashicons-store',
     'supports' => array('title','editor','thumbnail','custom-fields'),
     'taxonomies' => array('portfolio-category', 'tags')
   ); 
   register_post_type('portfolio',$args);
+}
+
+add_action( 'init',  __NAMESPACE__ . '\\create_options_customfields' );
+function create_options_customfields() {
+  // Register ACF options pages
+  if( function_exists('acf_add_options_page') ) {
+      
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    )); 
+  }
+
+  $twitter_link = array(
+    'key' => 'twitter_link',
+    'label' => 'Twitter Link',
+    'name' => 'Twitter Link',
+    'type' => 'url',
+    'required' => 0,
+  );
+  
+  $linkedin_link = array(
+    'key' => 'linkedin_link',
+    'label' => 'Linkedin Link',
+    'name' => 'Linkedin Link',
+    'type' => 'url',
+    'required' => 0,
+  );
+
+  if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'social',
+        'title' => 'Social Links',
+        'position' => 'side',
+        'fields' => array (
+            $linkedin_link,
+            $twitter_link,
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ),
+            ),
+        ),
+    ));
+    
+    endif;
 }
