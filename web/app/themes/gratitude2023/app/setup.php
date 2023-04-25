@@ -473,7 +473,7 @@ function create_options_customfields() {
     acf_add_local_field_group(array(
         'key' => 'social',
         'title' => 'Social Links',
-        'position' => 'side',
+        'position' => 'normal',
         'fields' => array (
             $linkedin_link,
             $twitter_link,
@@ -481,9 +481,9 @@ function create_options_customfields() {
         'location' => array (
             array (
                 array (
-                    'param' => 'post_type',
+                    'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'portfolio',
+                    'value' => 'theme-general-settings',
                 ),
             ),
         ),
