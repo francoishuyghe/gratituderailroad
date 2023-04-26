@@ -21,8 +21,6 @@
     </div>
   </header>
 
-<<<<<<< HEAD
-=======
   <div class="e-content">
     <div class="container">
       <div class="hero rounded">
@@ -45,45 +43,6 @@
         @endforeach
       </div>
     </div>
-
-<<<<<<< HEAD
->>>>>>> 9d9e610 (Single Posts styling)
-  <div class="e-content">
-    <div class="container">
-      <div class="hero rounded">
-        {!! the_post_thumbnail( 'large' );  !!}
-      </div>
-      @php(the_content())
-    </div>
-  </div>
-  
-  <section id="relatedPosts">
-    <div class="container">
-      <h3>Related Posts</h3>
-      <div class="row">
-        @foreach ($relatedPosts as $post)
-        <div class="col-md-4">
-          @php( setup_postdata( $post ) )
-          @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-          @php( wp_reset_postdata() )
-        </div>
-        @endforeach
-      </div>
-    </div>
-
-<<<<<<< HEAD
   </section>
-=======
-    @php(the_content())
-  </div>
-
-  <footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-  </footer>
-  </div>
-=======
-  </section>
->>>>>>> d5921b1 (Single Posts styling)
->>>>>>> 9d9e610 (Single Posts styling)
 
 </article>

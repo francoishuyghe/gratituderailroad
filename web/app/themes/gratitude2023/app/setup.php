@@ -174,6 +174,8 @@ function create_team_taxonomies()
     'labels' => $labels,
     'show_ui' => true,
     'show_admin_column' => true,
+    "show_in_menu" => true,
+  "show_in_nav_menus" => true,
     ));
 }
 
@@ -336,6 +338,7 @@ function create_portfolio_taxonomies()
     ),
     'ui' => 1,
     'ajax' => 1,
+    'return_format' => 'array',
   );
 
   if( function_exists('acf_add_local_field_group') ):
@@ -372,7 +375,6 @@ function create_post_customfields() {
   'label' => 'Author',
   'name' => 'Author',
   'type' => 'text',
-  'required' => 1,
 );
 
 if( function_exists('acf_add_local_field_group') ):
@@ -427,13 +429,13 @@ function portfolio_custom_init()
     'query_var' => true,
     'rewrite' => array( 'slug' => 'portfolio' ),
     'capability_type' => 'post',
-    'has_archive' => true, 
+    'has_archive' => false, 
     'hierarchical' => false,
     'menu_position' => null,
     'show_in_rest' => true,
     'menu_icon' => 'dashicons-store',
-    'supports' => array('title','editor','thumbnail','custom-fields'),
-    'taxonomies' => array('portfolio-category', 'tags')
+    'supports' => array('title','editor','thumbnail', 'excerpt','custom-fields'),
+    'taxonomies' => array('portfolio-category')
   ); 
   register_post_type('portfolio',$args);
 }

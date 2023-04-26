@@ -66,6 +66,7 @@ nav.nav-primary{
   padding: 3rem 0 0;
 
   @include media-breakpoint-up(md){
+    overflow: initial;
     position: relative;
     left: auto;
     background: transparent;

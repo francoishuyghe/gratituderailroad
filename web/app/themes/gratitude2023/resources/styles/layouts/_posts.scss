@@ -65,3 +65,49 @@ article.team{
     margin-top: $section-gutter;
     padding: $grid-gutter 0;
 }
+
+
+/////////////////////////
+/// Single Portfolio
+/////////////////////////
+.single-portfolio{
+    header{
+        margin-bottom: $section-gutter;
+
+        .thumbnail{
+            background-color: $grey;
+            border-radius: 2rem;
+            height: 100%;
+            width: 90%;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .tags,
+        .cats,
+        .excerpt{
+            margin-bottom: 1rem;
+        }
+
+        .cats{
+            span{
+                color: $olive;
+                padding-right: 1rem;
+                font-size: 1.0625;
+                font-weight: 800;
+            }
+        }
+
+        .excerpt{
+            font-size: 1.375rem;
+        }
+    }
+
+    .e-content{
+        position: relative;
+    }
+}

@@ -123,9 +123,9 @@
 ////////////////////////////
 
 .home{
-header.banner{
-    background: $baby;
-}
+    header.banner{
+        background: $baby;
+    }
 }
 
 #manifesto{
@@ -236,7 +236,7 @@ header.banner{
     }
 }
 
-.type-post{
+.post-card.type-post{
     .thumbnail{
         position: relative;
         height: 0;
@@ -342,7 +342,7 @@ header.banner{
 // Portfolio Items
 ////////////////////////////
 
-.portfolio-item{
+.post-card.type-portfolio{
     margin-bottom: $grid-gutter;
 
     a{

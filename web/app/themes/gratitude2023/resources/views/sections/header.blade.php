@@ -14,10 +14,11 @@
     <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
       <div class="social">
-        Social Icons
+        <a>Twitter</a>
+        <a>Linkedin</a>
       </div>
       <div class="legal">
-        Legal Menu
+        {!! wp_nav_menu(['theme_location' => 'subfooter_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
       </div>
       <div class="copyright">
         {{ the_time('Y') }} {!! $siteName !!}. All rights reserved.

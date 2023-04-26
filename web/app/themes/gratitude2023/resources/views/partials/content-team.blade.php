@@ -1,4 +1,4 @@
-<article @php(post_class())>
+<article @php(post_class('post-card'))>
   <div class="thumbnail">
     {!! the_post_thumbnail( 'thumbnail', []);  !!}
   </div>

@@ -19,12 +19,11 @@ $aqua: #BCDCD1;
 
 
 $grid-gutter: 3rem;
-$section-gutter: $grid-gutter;
+$section-gutter: calc( 2 * $grid-gutter);
 $radius: 10px;
 $banner-height: 80px;
 
 @include media-breakpoint-up(md){
-  $section-gutter: 6rem;
   $banner-height: 90px;
 }
 
