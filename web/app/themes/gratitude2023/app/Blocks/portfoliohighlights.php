@@ -102,33 +102,15 @@ class portfoliohighlights extends Block
     ];
 
     /**
-     * The block styles.
-     *
-     * @var array
-     */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
-
-    /**
      * The block preview example data.
      *
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
+        'items' => [],
+        'title' => 'Portfolio',
+        'tagline' => 'Our amazing companies',
+        'paragraph' => 'A paragraph'
     ];
 
     /**
@@ -140,6 +122,9 @@ class portfoliohighlights extends Block
     {
         return [
             'items' => $this->getHighlights(),
+            'title' => get_field('title'),
+            'tagline' => get_field('tagline'),
+            'paragraph' => get_field('paragraph'),
         ];
     }
 
@@ -159,7 +144,10 @@ class portfoliohighlights extends Block
                 'post_type' => ['portfolio'],
                 'multiple' => 1,
                 'ui' => 1,
-            ]);
+            ])
+            ->addText('title')
+            ->addTextarea('tagline')
+            ->addTextarea('paragraph');
 
         return $portfolioHighlights->build();
     }
