@@ -292,3 +292,23 @@ header.banner{
 .page.insight{
     
 }
+
+
+////////////////////////////
+// About
+////////////////////////////
+.page.investments{
+    #focus{}
+
+    #theory{
+        h2.has-text-align-center{
+            color: $black;
+            font-family: $Teodor;
+            margin-bottom: $section-gutter;
+            
+            @include media-breakpoint-up(md){
+                margin-bottom: $section-gutter;
+            }
+        }
+    }
+}

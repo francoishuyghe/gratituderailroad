@@ -3,7 +3,11 @@
     margin-bottom: $grid-gutter;
 
     .text{
-        padding: 0 $grid-gutter $grid-gutter;
+        //padding: 0 $grid-gutter $grid-gutter;
+
+        p{
+            margin-bottom: 0;
+        }
     }
 
     @include media-breakpoint-up(md){
@@ -17,7 +21,7 @@
 
         .text{
             align-items: flex-start;
-            padding: $grid-gutter;
+            padding: $grid-gutter 0;
         }
     }
 }

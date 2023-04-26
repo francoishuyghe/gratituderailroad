@@ -1,5 +1,6 @@
+@if($feature)
 <div class="{{ $block->classes }}">
-  @if($feature)
+    <div class="container">
     <div class="row">
       <div class="col-md-6 thumbnail flex-center">
         <div class="wp-block-image stacked">
@@ -7,14 +8,15 @@
         </div>
       </div>
       <div class="col-md-6 text flex-center">
+        <h2>
         <a href="{{ the_permalink($feature->ID) }}">
-          <h2>{{ $feature->post_title}}</h2>
+          {{ $feature->post_title}}
         </a>
-        <p>{{ the_excerpt($feature->ID) }}</p>
+      </h2>
+        {{ the_excerpt($feature->ID) }}
         <a class="readmore dot" href="{{ the_permalink($feature->ID) }}">Read More</a>
       </div>
     </div>
-  @else
-    No post selected
-  @endif
+  </div>
 </div>
+@endif
