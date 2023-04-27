@@ -339,6 +339,24 @@
 
 
 ////////////////////////////
+// Portfolio Page
+////////////////////////////
+
+#portfolioIntro{
+    padding-bottom: 0;
+
+    p{
+        width: 50rem;
+        margin: auto;
+    }
+}
+
+
+
+
+
+
+////////////////////////////
 // Portfolio Items
 ////////////////////////////
 #portfolioFilters{
@@ -351,7 +369,7 @@
         outline: 0;
         background: transparent;
         padding: 0;
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
         color: $olive;
         
         &:hover,
