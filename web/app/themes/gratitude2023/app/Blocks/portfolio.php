@@ -102,36 +102,6 @@ class portfolio extends Block
     ];
 
     /**
-     * The block styles.
-     *
-     * @var array
-     */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
-
-    /**
-     * The block preview example data.
-     *
-     * @var array
-     */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
-
-    /**
      * Data to be passed to the block before rendering.
      *
      * @return array
@@ -140,6 +110,7 @@ class portfolio extends Block
     {
         return [
             'portfolio' => $this->getPortfolio(),
+            'categories' => $this->getCategories(),
         ];
     }
 
@@ -174,6 +145,12 @@ class portfolio extends Block
 	    );
 	    $the_query = new WP_Query( $args );
 	    return $the_query->posts;
+    }
+    
+    public function getCategories()
+    {
+        $cats = get_terms('portfolio-category');
+	    return $cats;
     }
 
     /**

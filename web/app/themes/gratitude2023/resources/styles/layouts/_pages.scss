@@ -341,6 +341,25 @@
 ////////////////////////////
 // Portfolio Items
 ////////////////////////////
+#portfolioFilters{
+    h5{
+        margin-top: 1rem;
+    }
+
+    button{
+        border: 0;
+        outline: 0;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 1rem;
+        color: $olive;
+        
+        &:hover,
+        &.active{
+            color: $orange;
+        }
+    }
+}
 
 .post-card.type-portfolio{
     margin-bottom: $grid-gutter;
@@ -355,15 +374,31 @@
         font-weight: 600;
     }
 
+    .cats{
+        color: $olive;
+
+        span{
+            display: inline-block;
+            margin-right: .5rem;
+        }
+    }
+
     .thumbnail{
+        position: relative;
         background-color: $grey;
-        padding-top: 120%;
+        padding-top: 140%;
         border-radius: $radius;
         margin-bottom: 10px;
-       transition: .5s;
+        transition: .5s;
 
         &:hover{
             opacity: .5;
+        }
+
+        .tag{
+            position: absolute;
+            top: .5rem;
+            left: .5rem;
         }
     }
 }

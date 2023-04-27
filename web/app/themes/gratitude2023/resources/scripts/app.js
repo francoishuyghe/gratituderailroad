@@ -38,6 +38,14 @@ domReady(async () => {
       document.body.classList.toggle('--fixed');
     }
   })
+
+
+  // Filtering Portfolio
+  let portfolioFilters = document.getElementById('portfolioFilters');
+  if(portfolioFilters){
+    import('./modules/filters.js');
+  }
+
 });
 
 /**
