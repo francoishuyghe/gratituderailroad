@@ -5,6 +5,7 @@
  */
 
 namespace App;
+use WP_Query;
 
 use function Roots\bundle;
 
@@ -14,9 +15,27 @@ use function Roots\bundle;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    bundle('app')->enqueue();
+
+  $is_dev_request = getenv('WP_ENV') == 'development';
+  $rest_url = $is_dev_request ? 'http://localhost:3002/wp/wp-admin/admin-ajax.php' : admin_url('admin-ajax.php');
+
+  $ajax_params = array(
+      'ajax_url' => $rest_url,
+      'ajax_nonce' => wp_create_nonce('my_nonce'),
+  );
+
+  bundle('app')->enqueue()->localize('ajax_object', $ajax_params);;
 }, 100);
 
+add_action('admin_enqueue_scripts', function () {
+  $ajax_params = array(
+      'ajax_url' => admin_url('admin-ajax.php'),
+      'ajax_nonce' => wp_create_nonce('my_nonce'),
+  );
+
+  wp_enqueue_script('sage/admin.js', asset('scripts/admin.js'), ['jquery'], null, true);
+  wp_localize_script('sage/admin.js', 'ajax_object', $ajax_params);
+});
 /**
  * Register the theme assets with the block editor.
  *
@@ -493,3 +512,28 @@ function create_options_customfields() {
     
     endif;
 }
+
+
+// AJAX LOAD MORE
+function posts_load_more() {
+  $ajaxposts = new WP_Query([
+    'post_type' => 'post',
+    'posts_per_page' => 6,
+    'orderby' => 'date',
+    'order' => 'DESC',
+  ]);
+
+  $response = '';
+
+  if($ajaxposts->have_posts()) {
+    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+      $response .= view('partials.content')->render();
+    endwhile;
+  } else {
+    wp_send_json_error('No Posts');
+  }
+
+  wp_send_json_success( $response );
+}
+add_action('wp_ajax_posts_load_more', __NAMESPACE__ . '\\posts_load_more');
+add_action('wp_ajax_nopriv_posts_load_more', __NAMESPACE__ . '\\posts_load_more');

@@ -3,9 +3,9 @@
     <div class="thumbnail rounded">
       {!! the_post_thumbnail( 'medium' );  !!}
     </div>
-    <h5 class="entry-title">
+    <h4 class="entry-title">
         {!! $title !!}
-      </h5>
+      </h4>
   </a>
 
   @php( $cats = get_the_category())

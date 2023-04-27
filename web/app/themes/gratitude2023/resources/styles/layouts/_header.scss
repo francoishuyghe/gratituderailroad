@@ -10,10 +10,15 @@ header.banner{
   
   &.scrolled{
     background-color: $baby;
+
+    img{
+      height: 2.5rem;
+    }
   }
   
   img{
     height: 3rem;
+    transition: height ease-in .3s;
   }
   
   @include media-breakpoint-up(md){

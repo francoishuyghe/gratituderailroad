@@ -6,6 +6,8 @@ import 'bootstrap';
  */
 domReady(async () => {
 
+  let test = $;
+
   //Handle changing banner color when scrolled
   changeTopBannerColor();
   window.onscroll = function(e) {
@@ -44,6 +46,11 @@ domReady(async () => {
   let portfolioFilters = document.getElementById('portfolioFilters');
   if(portfolioFilters){
     import('./modules/filters.js');
+  }
+  
+  let blog = document.querySelector('.blog');
+  if(blog){
+    import('./modules/posts-ajax.js');
   }
 
 });

@@ -461,8 +461,25 @@
 ////////////////////////////
 // Insights
 ////////////////////////////
-.page.insight{
-    
+.blog{
+ #filters{
+    ul{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        li{
+            padding: 0 1rem .5rem;
+        }
+    }
+ }
+
+    #allPosts{
+        .post-card{
+            @extend .col-md-4;
+        }
+    }
 }
 
 

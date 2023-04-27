@@ -39,12 +39,13 @@ $categories = get_categories( array(
 
 <section id="allPosts">
   <div class="container">
+    <button id="loadMore">Load More</button> 
   <div class="row">
-  @while(have_posts()) @php(the_post())
+  {{-- @while(have_posts()) @php(the_post())
     <div class="col-md-4">
       @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
     </div>
-  @endwhile
+  @endwhile --}}
     </div>
   </div>
 </section>
