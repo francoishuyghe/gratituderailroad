@@ -3,5 +3,6 @@
 /public
 .env
 .budfiles
+/.yarn
 npm-debug.log
 yarn-error.log
