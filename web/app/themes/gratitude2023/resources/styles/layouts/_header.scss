@@ -69,6 +69,10 @@ nav.nav-primary{
   z-index: 9;
   background: $baby;
   padding: 3rem 0 0;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
 
   @include media-breakpoint-up(md){
     overflow: initial;
@@ -76,6 +80,7 @@ nav.nav-primary{
     left: auto;
     background: transparent;
     width: auto;
+    height: auto;
     padding: 0;
   }
 
@@ -83,16 +88,22 @@ nav.nav-primary{
     left: 0;
   }
   
-  ul{
+  .menu-top-menu-container{
+    flex: 1;
+  }
+
+  #menu-top-menu{
     display: flex;
+    justify-content: space-around;
     flex-flow: column;
+    height: 100%;
     color: $orange;
     font-weight: 500;
-    padding: 0 2rem;
+    padding: 0 2rem 1rem;
     
     li{
-      padding: .6rem 0;
       font-size: 2.9rem;
+      font-weight: 600;
     }
     
     @include media-breakpoint-up(md){
@@ -100,14 +111,22 @@ nav.nav-primary{
       align-items: center;
       text-transform: uppercase;
       color: $black;
+      padding: 0;
       
       li{
         padding: 0 1rem;
         font-size: 1.0625rem;
 
         &:last-child{
-          //@extend .round-button;
-          padding: .25em 20px;
+          a{
+            display: block;
+            border: 2px solid $orange;
+            border-radius: 2em;
+            color: $orange;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.25rem 1.25rem;
+          }
         }
         }
       
@@ -123,23 +142,26 @@ nav.nav-primary{
   .login-link{
     display: block;
     background: $aqua;
-    padding: 2rem;
+    padding: 1rem 2rem;
     font-size: 2.9rem;
+    font-weight: 600;
     color: $orange;
     display: flex;
     justify-content: space-between;
 
     .arrow{
       height: 8rem;
+      position: absolute;
       transform-origin: center;
       rotate: -90deg;
       transform: translate(50%, -40%);
-      transition: transform .3s;
+      right: 1rem;
+      transition: margin .3s;
     }
 
     &:hover{
       .arrow{
-        transform: translate(50%, -30%);
+        right: .5rem;
       }
     }
   }
@@ -150,6 +172,11 @@ nav.nav-primary{
     color: $lightgrey;
     font-size: .8rem;
     padding: 0 2rem;
+  }
+  
+  .legal li{
+    font-size: .8rem;
+    padding-right: 1rem;
   }
 
   .copyright{

@@ -62,14 +62,6 @@ footer.content-info{
         .sub-menu{
             padding-top: 1rem;
         }
-
-        
-        @include media-breakpoint-up(md){
-            
-            .sub-menu{
-                padding-top: $grid-gutter;
-            }
-        }
     }
 
     .secondary{

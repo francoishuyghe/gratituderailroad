@@ -12,7 +12,7 @@
       {!! $title !!}
     </h1>
 
-    <div class="excerpt">{{ get_the_excerpt() }}</div>
+    <div class="excerpt">{!! get_the_excerpt() !!}</div>
 
     @php( $author = get_field('custom_author') )
     @if( $author )

@@ -93,7 +93,7 @@
 }
 
 #manifesto{
-    min-height: calc(100vh - $banner-height);
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,12 +145,15 @@
     }
     
     @include media-breakpoint-up(md){
+        min-height: calc(100vh - $banner-height);
+
         h1{
             font-size: 4rem;
         }
 
         h3{
-            margin-bottom: $section-gutter;
+            font-size: 1.4375rem;
+            margin-bottom: $grid-gutter;
         }
     }
 }
