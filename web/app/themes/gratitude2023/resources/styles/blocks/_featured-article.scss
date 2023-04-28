@@ -3,7 +3,7 @@
     margin-bottom: $grid-gutter;
 
     .text{
-        //padding: 0 $grid-gutter $grid-gutter;
+        margin-bottom: $grid-gutter;
 
         p{
             margin-bottom: 0;
@@ -15,13 +15,22 @@
             height: 30rem;
     
             .wp-block-image{
-                width: 70%;
+                width: 85%;
             }
+        }
+
+        .text, 
+        .image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .text{
             align-items: flex-start;
+            flex-flow: column;
             padding: $grid-gutter 0;
+            margin-bottom: 0;
         }
     }
 }

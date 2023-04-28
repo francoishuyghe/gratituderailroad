@@ -1,11 +1,15 @@
 .wp-block-section{
-    padding: $section-gutter 0;
-
+    padding: $grid-gutter 0;
+    
     &.is-style-white{
         background-color: $white;
     }
     
     &.is-style-orange{
         background-color: $baby;
+    }
+    
+    @include media-breakpoint-up(md){
+        padding: $section-gutter 0;
     }
 }

@@ -25,9 +25,9 @@ $categories = get_categories( array(
 <ul>
 @foreach( $categories as $category )
 @php $category_link = sprintf( 
-		'<a href="%1$s" alt="%2$s">%3$s</a>',
-		esc_url( get_category_link( $category->term_id ) ),
+		'<button class="filter-toggle" alt="%1$s" data-cat="%2$s">%3$s</button>',
 		esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+		esc_html( $category->slug ),
 		esc_html( $category->name )
 	);
 @endphp
@@ -37,16 +37,12 @@ $categories = get_categories( array(
 
 </section>
 
-<section id="allPosts">
+<section id="allPosts" class="loading">
   <div class="container">
+    <div class="row">
+      {{-- Posts go here --}}
+    </div>
     <button id="loadMore">Load More</button> 
-  <div class="row">
-  {{-- @while(have_posts()) @php(the_post())
-    <div class="col-md-4">
-      @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-    </div>
-  @endwhile --}}
-    </div>
   </div>
 </section>
 

@@ -8,9 +8,11 @@
       </h4>
   </a>
 
-  @php( $cats = get_the_category())
+  <div class="cats">
+    @php( $cats = get_the_category())
   @foreach ($cats as $cat)
-      {{ $cat->name }}
+      <span class="cat">{{ $cat->name }}</span>
   @endforeach
+</div>
   
 </article>

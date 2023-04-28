@@ -298,6 +298,14 @@ a{
             border-radius: 20px;
             z-index: -2;
         }
+
+        &.single-stack{
+            margin-left: 1rem;
+
+            &:before{
+                display: none;
+            }
+        }
     }
 
     &.with-border{

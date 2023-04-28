@@ -2,12 +2,12 @@
 <div class="{{ $block->classes }}">
     <div class="container">
     <div class="row">
-      <div class="col-md-6 thumbnail flex-center">
-        <div class="wp-block-image stacked">
+      <div class="col-md-6 thumbnail">
+        <div class="wp-block-image stacked single-stack">
           {!! get_the_post_thumbnail( $feature->ID, 'medium', []);  !!}
         </div>
       </div>
-      <div class="col-md-6 text flex-center">
+      <div class="col-md-6 text">
         <h2>
         <a href="{{ the_permalink($feature->ID) }}">
           {{ $feature->post_title}}

@@ -516,21 +516,27 @@ function create_options_customfields() {
 
 // AJAX LOAD MORE
 function posts_load_more() {
+  $cats = $_POST['cats'];
+  $paged = $_POST['paged'];
+  $postNum = $_POST['postNum'];
+
   $ajaxposts = new WP_Query([
     'post_type' => 'post',
-    'posts_per_page' => 6,
+    'posts_per_page' => $postNum,
+    'paged' => $paged,
     'orderby' => 'date',
     'order' => 'DESC',
+    'category_name' => $cats
   ]);
 
-  $response = '';
+  $response = [];
 
   if($ajaxposts->have_posts()) {
     while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-      $response .= view('partials.content')->render();
+      array_push($response,  view('partials.content')->render());
     endwhile;
   } else {
-    wp_send_json_error('No Posts');
+    wp_send_json_success( false );
   }
 
   wp_send_json_success( $response );
