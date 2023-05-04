@@ -76,6 +76,11 @@ footer.content-info{
 
             li{
                 margin-right: 1rem;
+
+                a:hover{
+                    color: inherit;
+                    text-decoration: underline;
+                }
             }
         }
         

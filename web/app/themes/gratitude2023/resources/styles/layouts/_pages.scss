@@ -221,6 +221,29 @@
 }
 
 ////////////////////////////
+// Community
+////////////////////////////
+
+#pillars{
+    padding-top: 0;
+
+    h1, p{
+        max-width: 50rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wp-block-columns{
+        margin-top: $section-gutter;
+
+        .wp-block-image{
+            margin-bottom: 1rem;
+        }
+    }
+
+}
+
+////////////////////////////
 // About
 ////////////////////////////
 .page.about{
