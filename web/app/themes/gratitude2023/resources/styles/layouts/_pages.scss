@@ -15,21 +15,34 @@
         height: 0;
         padding-top: 60%;
         margin-bottom: 1rem;
-
+        background-color: $baby;
+        transition: background-color ease-in-out .5s;
+        
         img{
             position: absolute;
+            isolation: isolate;
             top: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform ease-in-out .5s;
+            // filter: grayscale(53%) sepia(33%) brightness(119%) contrast(83%);
+            filter: grayscale(20%) sepia(5%);
+            mix-blend-mode: multiply;
+            transition: ease-in-out .5s;
+            
         }
     }
-
+    
     a{
         &:hover{
+            .thumbnail{
+                background-color: $white;
+            }
+            
             img{
-                transform: scale(1.25);
+                filter: grayscale(0%) sepia(0%);
+                transform: scale(1.15);
+                // filter: grayscale(0%) sepia(0%) brightness(100%) contrast(100%);
             }
         }
     }
@@ -170,6 +183,38 @@
     }
 }
 
+#areas{
+    scroll-margin-top: $grid-gutter;
+
+    .wp-block-columns{
+        margin-bottom: $section-gutter;
+
+        &:nth-child(2){
+            flex-flow: column-reverse;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    
+    @include media-breakpoint-up(md){
+        .container{
+            max-width: 960px;
+        }
+
+        scroll-margin-top: $section-gutter;
+
+        .wp-block-columns{
+            margin-bottom: calc($section-gutter * 2);
+
+            &:nth-child(2){
+                flex-flow: row;
+            }
+        }
+    }
+}
+
 #latestReport{
     padding: $grid-gutter 0;
 
@@ -194,36 +239,6 @@
                 padding-left: $grid-gutter;
             }
         }
-    }
-}
-
-.post-card.type-post{
-    .thumbnail{
-        position: relative;
-        height: 0;
-        padding-top: 60%;
-        margin-bottom: 1rem;
-
-        img{
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform ease-in-out .5s;
-        }
-    }
-
-    a{
-        &:hover{
-            img{
-                transform: scale(1.25);
-            }
-        }
-    }
-
-    .cat{
-        color: $olive;
     }
 }
 

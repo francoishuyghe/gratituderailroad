@@ -142,6 +142,7 @@ class portfolio extends Block
         $args = array(
             'post_type' => 'portfolio',
             'showposts' => -1,
+            'post_status' => ['publish'],
 	    );
 	    $the_query = new WP_Query( $args );
 	    return $the_query->posts;

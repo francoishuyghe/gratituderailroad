@@ -1,7 +1,7 @@
 <article @php(post_class('post-card'))>
   <a href="{{ get_permalink() }}">
     <div class="thumbnail rounded">
-      {!! the_post_thumbnail( 'medium' );  !!}
+      {!! the_post_thumbnail() !!}
     </div>
     <h4 class="entry-title">
         {!! $title !!}

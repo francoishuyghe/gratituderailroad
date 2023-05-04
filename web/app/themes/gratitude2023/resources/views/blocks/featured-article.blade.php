@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-6 thumbnail">
         <div class="wp-block-image stacked single-stack">
-          {!! get_the_post_thumbnail( $feature->ID, 'medium', []);  !!}
+          {!! get_the_post_thumbnail( $feature->ID, 'large' ) !!}
         </div>
       </div>
       <div class="col-md-6 text">

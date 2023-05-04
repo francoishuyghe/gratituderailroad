@@ -523,6 +523,7 @@ function posts_load_more() {
   $ajaxposts = new WP_Query([
     'post_type' => 'post',
     'posts_per_page' => $postNum,
+    'post_status' => ['publish'],
     'paged' => $paged,
     'orderby' => 'date',
     'order' => 'DESC',

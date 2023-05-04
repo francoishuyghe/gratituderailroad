@@ -7,5 +7,9 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: $grid-gutter;
+
+        .round-button{
+            align-self: center;
+        }
     }
 }
