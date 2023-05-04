@@ -465,6 +465,8 @@
  }
 
     #allPosts{
+        margin-bottom: $section-gutter;
+        
         .post-card{
             @extend .col-md-4;
         }
