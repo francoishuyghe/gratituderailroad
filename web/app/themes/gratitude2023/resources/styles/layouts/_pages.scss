@@ -46,6 +46,7 @@
     #numbersFeature{
         .wp-block-columns.is-not-stacked-on-mobile{
             flex-wrap: wrap!important; 
+            justify-content: center;
         }
         .wp-block-column{
             flex-basis: 45%!important;
@@ -66,6 +67,12 @@
             strong{
                 display: block;
                 font-size: 3rem;
+            }
+        }
+
+        @include media-breakpoint-up(md){
+            .wp-block-column{
+                flex-basis: 15%!important;
             }
         }
     }
@@ -241,42 +248,6 @@
         }
     }
 
-}
-
-////////////////////////////
-// About
-////////////////////////////
-.page.about{
-    #numbersFeature{
-        p:first-child{
-            background-color: $baby;
-            width: 10rem;
-            aspect-ratio: 1;
-            border-radius: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-
-            strong{
-                display: block;
-                font-size: 3rem;
-            }
-        }
-    }
-
-    #jobs{
-        background: $baby;
-        padding: $section-gutter 0;
-
-        .jobs{
-            p{
-                margin-bottom: 1rem;
-            }
-        }
-    }
 }
 
 

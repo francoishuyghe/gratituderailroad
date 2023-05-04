@@ -45,6 +45,7 @@ html, body{
 h1{
     color: $black;
     font-size: 2.8125rem;
+    margin-bottom: 1rem;
 }
 
 h2{
@@ -62,6 +63,7 @@ h2{
 h3{
     font-size: 1.625rem;
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 h4{
@@ -158,25 +160,6 @@ span.tag{
     li{
         font-size: 1.0625rem;
     }
-}
-
-h1{
-    color: $black;
-    margin-bottom: 1rem;
-}
-
-h2{
-    color: $orange;
-    font-weight: 400;
-    font-size: 3em;
-
-    b{
-        font-weight: 400;
-    }
-}
-
-h3{
-    margin-bottom: 1rem;
 }
 
 a{
@@ -317,7 +300,9 @@ a{
     }
 }
 
-.hero{
+.hero,
+.hero.aligncenter{
+    display: block;
     margin: $section-gutter 0 0;
     max-width: none;
     height: 50vh;
