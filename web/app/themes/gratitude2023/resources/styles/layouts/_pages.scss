@@ -98,6 +98,11 @@
     align-items: center;
     justify-content: center;
     margin-bottom: $grid-gutter;
+    padding-top: 0;
+
+    .container{
+        padding-bottom: $section-gutter;
+    }
 
     h3{
         font-size: 1.0625rem;
