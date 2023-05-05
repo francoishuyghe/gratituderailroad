@@ -183,7 +183,8 @@
     }
 }
 
-#areas{
+#areas,
+#theory{
     scroll-margin-top: $grid-gutter;
 
     .wp-block-columns{
@@ -199,9 +200,6 @@
     }
     
     @include media-breakpoint-up(md){
-        .container{
-            max-width: 960px;
-        }
 
         scroll-margin-top: $section-gutter;
 
@@ -211,6 +209,12 @@
             &:nth-child(2){
                 flex-flow: row;
             }
+        }
+    }
+
+    @include media-breakpoint-down(lg){
+        .container{
+            max-width: 960px;
         }
     }
 }

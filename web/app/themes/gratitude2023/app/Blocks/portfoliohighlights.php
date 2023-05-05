@@ -108,9 +108,9 @@ class portfoliohighlights extends Block
      */
     public $example = [
         'items' => [],
-        'title' => 'Portfolio',
+        // 'title' => 'Portfolio',
         'tagline' => 'Our amazing companies',
-        'paragraph' => 'A paragraph'
+        'paragraph' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ];
 
     /**
@@ -122,9 +122,9 @@ class portfoliohighlights extends Block
     {
         return [
             'items' => $this->getHighlights(),
-            'title' => get_field('title'),
-            'tagline' => get_field('tagline'),
-            'paragraph' => get_field('paragraph'),
+            // 'title' => get_field('title')?: $this->example['title'],
+            'tagline' => get_field('tagline') ?: $this->example['tagline'],
+            'paragraph' => get_field('paragraph') ?: $this->example['paragraph'],
         ];
     }
 
@@ -145,7 +145,7 @@ class portfoliohighlights extends Block
                 'multiple' => 1,
                 'ui' => 1,
             ])
-            ->addText('title')
+            // ->addText('title')
             ->addTextarea('tagline')
             ->addTextarea('paragraph');
 

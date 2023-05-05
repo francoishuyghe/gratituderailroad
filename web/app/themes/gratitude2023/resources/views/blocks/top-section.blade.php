@@ -9,7 +9,9 @@
       <div class="inner">
         <h1>{{ $title }}</h1>
         <p>{{ $paragraph }}</p>
-        <a class="button" href="{{ $link }}">{{ $buttonText }}</a>
+        @if($buttonText)
+          <a class="button" href="{{ $link }}">{{ $buttonText }}</a>
+        @endif
       </div>
     </div>
   </div>

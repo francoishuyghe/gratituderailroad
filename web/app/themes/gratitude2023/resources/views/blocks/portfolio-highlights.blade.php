@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 text">
-        <h3>{{ $title }}</h3>
+        {{-- <h3>{{ $title }}</h3> --}}
         <h2>{{ $tagline }}</h2>
         @if($paragraph)
           <p>{{ $paragraph }}</p>
