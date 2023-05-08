@@ -46,7 +46,7 @@ h1{
 
 h2{
     color: $orange;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 2.25rem;
     line-height: 2.375rem;
     margin-bottom: 1rem;
@@ -129,6 +129,7 @@ a.more{
     color: $orange;
     font-weight: 600;
     text-transform: uppercase;
+    white-space: nowrap;
 
     a{
         color: $orange;
@@ -223,6 +224,7 @@ a{
     text-transform: uppercase;
     font-weight: 800;
     padding: 0.667rem 1.333rem;
+    white-space: nowrap;
 
     &:hover{
         a{

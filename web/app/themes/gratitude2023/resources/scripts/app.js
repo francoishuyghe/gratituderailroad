@@ -53,6 +53,11 @@ domReady(async () => {
     import('./modules/posts-ajax.js');
   }
 
+  let swiper = document.querySelector('.swiper-container');
+  if(swiper){
+    import('./modules/swiper.js');
+  }
+
 });
 
 /**

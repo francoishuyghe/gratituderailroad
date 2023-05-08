@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "caniuse-lite": "^1.0.30001481",
-    "isotope-layout": "^3.0.6"
+    "isotope-layout": "^3.0.6",
+    "swiper": "^9.2.4"
   }
 }

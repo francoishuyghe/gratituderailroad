@@ -1,12 +1,18 @@
 .wp-block-portfolio-highlights{
     background: $baby;
-    padding: $section-gutter;
+    padding: $section-gutter 0;
 
     h2{
         margin-bottom: 1rem;
     }
 
     .link{
-        text-align: right;
+        margin-bottom: $grid-gutter;
+    }
+
+    @include media-breakpoint-up(lg){
+        .link{
+            text-align: right;
+        }
     }
 }
