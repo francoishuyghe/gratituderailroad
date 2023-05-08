@@ -108,7 +108,6 @@ class portfoliohighlights extends Block
      */
     public $example = [
         'items' => [],
-        // 'title' => 'Portfolio',
         'tagline' => 'Our amazing companies',
         'paragraph' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ];

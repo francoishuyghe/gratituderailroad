@@ -90,7 +90,7 @@ class numbers extends Block
      * @var array
      */
     public $supports = [
-        'align' => true,
+        'align' => false,
         'align_text' => false,
         'align_content' => false,
         'full_height' => false,
