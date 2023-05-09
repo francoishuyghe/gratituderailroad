@@ -1,11 +1,11 @@
 {{--
-  Template Name: Full width page Template
+  Template Name: No Header
 --}}
 
 @extends('layouts.app')
 
 @section('content')
   @while(have_posts()) @php(the_post())
-    @include('partials.content-page-fullwidth')
+    @include('partials.content-page')
   @endwhile
 @endsection

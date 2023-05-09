@@ -318,10 +318,14 @@ a{
     display: block;
     margin: $section-gutter 0 0;
     max-width: none;
-    height: 50vh;
+    height: 30vh;
     overflow: hidden;
     background: transparent;
     border-radius: 2em;
+    
+    @include media-breakpoint-up(md){
+        height: 50vh;
+    }
 
     
     img{

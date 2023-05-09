@@ -553,3 +553,37 @@
         }
     }
 }
+
+
+////////////////////////////
+// Investments
+////////////////////////////
+#focusTop{
+    h3{
+        @extend h1;
+        margin-top: $grid-gutter;
+    }
+
+    p{
+        max-width: 50rem;
+        margin: auto;
+    }
+}
+
+#focusBody{
+    padding-top: $grid-gutter;
+
+    .container{
+        max-width: 50rem;
+    }
+
+    strong{
+        color: $orange;
+    }
+
+    &.funds{
+        strong{
+            color: $ochre;
+        }   
+    }
+}
