@@ -1,0 +1,42 @@
+.wp-block-cta{
+    .row{
+        background-color: $baby;
+        padding: 2rem;
+        align-items: center;
+    }
+
+    .image{
+        margin-bottom: $grid-gutter;
+
+        .image-wrap{
+            padding: 2rem;
+            background-color: $orange;
+    
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 2rem;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        .row{
+            padding: $grid-gutter;
+        }
+
+        .image{
+            .image-wrap{
+                padding: $grid-gutter;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg){
+        .image{
+            padding-right: $grid-gutter;
+            margin-bottom: 0;
+        }
+
+    }
+}
