@@ -38,6 +38,49 @@ footer.content-info{
         list-style: none;
         padding-left: 0;
     }
+    
+    
+    #socialLinks{
+        font-size: 2.5rem;
+        margin-top: 1rem;
+
+        a{
+            margin-right: 1rem;
+            color: $white;
+        }
+    }
+
+    //Columns
+    .col-left{
+        flex: 1 0 100%;
+    }
+
+    .col-right{
+        flex: 1 0 100%;
+        padding-top: 1rem;
+
+    }
+
+    @include media-breakpoint-up(md){
+        .col-left{
+            flex: 0 1 15rem;
+        }
+
+        .col-right{
+            flex: 0 0 15rem;
+        }
+
+        .col-center{
+            padding: 0 2rem;
+        }
+    }
+    
+    @include media-breakpoint-up(xl){
+        .col-left, 
+        .col-right{
+            flex: 0 0 20rem;
+        }
+    }
 
     #menu-footer-menu{
         display: flex;

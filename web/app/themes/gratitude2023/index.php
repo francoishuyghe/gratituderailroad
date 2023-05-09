@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <script src="https://kit.fontawesome.com/eca66d5daf.js" crossorigin="anonymous"></script>
   </head>
 
   <body <?php body_class(); ?>>

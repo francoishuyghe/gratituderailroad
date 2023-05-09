@@ -1,17 +1,18 @@
 <footer class="content-info">
   <div class="primary">
     <div class="row">
-      <div class="col-md-2 col-left">
+      <div class="col col-left">
         <h5>{!! $siteName !!}</h5>
         <img src="@asset('images/gratitude-logo-g-black.svg')" />
       </div>
-      <div class="col-md-8 col-center">
+      <div class="col col-center">
         <nav class="nav-footer" aria-label="{{ wp_get_nav_menu_name('footer_navigation') }}">
           {!! wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
         </nav>
       </div>
-      <div class="col-md-2 col-right">
+      <div class="col col-right">
         Newsletter 
+        @include('partials.social-links')
       </div>
     </div>
   </div>

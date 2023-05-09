@@ -3,7 +3,7 @@
     
     .image{
         overflow: hidden;
-        min-height: 60vh;
+        max-height: 50vh;
         
         img{
             height: 100%;
@@ -41,6 +41,7 @@
 
         .image{
             min-height: 60vh;
+            max-height: 100vh;
         }
     }
 }

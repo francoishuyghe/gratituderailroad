@@ -24,6 +24,7 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
+            'social' => $this->social(),
         ];
     }
 
@@ -35,5 +36,13 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+
+    public function social()
+    {
+        return array(
+            'linkedin_link' => get_field('linkedin_link', 'options'),
+            'twitter_link' => get_field('twitter_link', 'options'),
+        );
     }
 }
