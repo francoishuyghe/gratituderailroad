@@ -1,0 +1,35 @@
+.wp-block-testimonials{
+    .quote-wrap{
+        max-width: 60rem;
+        margin: auto;
+    }
+
+    .quote{
+        font-size: 2.8125rem;
+        line-height: 3rem;
+        font-weight: 400;
+        font-style: italic;
+
+        &:before{
+            content: '"';
+        }
+        
+        &:after{
+            content: '"';
+        }
+    }
+
+    .details{
+        h6{
+            font-weight: 600;
+            margin: 1rem 0 0;
+        }
+
+        .name{
+            color: $olive;
+        }
+        .title{
+            color: $grey;
+        }
+    }
+}
