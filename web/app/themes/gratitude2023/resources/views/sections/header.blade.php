@@ -3,20 +3,16 @@
     <img src="@asset('../../images/gratitude_logo.svg')" alt="{!! $siteName !!}" />
   </a>
 
-  <button type="button" id="navbarToggle" class="collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
+  <button class="hamburger hamburger--arrow" id="navbarToggle" type="button" aria-expanded="false" aria-controls="navbar">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
   </button>
 
   @if (has_nav_menu('primary_navigation'))
     <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-      <div class="social">
-        <a>Twitter</a>
-        <a>Linkedin</a>
-      </div>
+      @include('partials.social-links')
       <div class="legal">
         {!! wp_nav_menu(['theme_location' => 'subfooter_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
       </div>

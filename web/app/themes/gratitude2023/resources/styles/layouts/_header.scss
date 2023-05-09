@@ -85,7 +85,7 @@ nav.nav-primary{
     padding: 0;
   }
 
-  &.--open{
+  &.is-open{
     left: 0;
   }
   
@@ -168,9 +168,18 @@ nav.nav-primary{
     }
   }
 
+  #socialLinks{
+    font-size: 3rem;
+    padding: 0 2rem;
+    
+    a{
+        margin-right: 1rem;
+        color: $grey;
+    }
+  }
+
   .copyright, 
-  .legal, 
-  .social{
+  .legal{
     color: $lightgrey;
     font-size: .8rem;
     padding: 0 2rem;
@@ -189,7 +198,7 @@ nav.nav-primary{
     .login-link,
     .legal,
     .copyright,
-    .social{
+    #socialLinks{
       display: none;
     }
   }
