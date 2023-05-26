@@ -375,6 +375,46 @@
         border-radius: $radius;
         margin-bottom: 10px;
         transition: .5s;
+        overflow: hidden;
+
+        &:after{
+            content: '';
+            position: absolute;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #6d783f;
+            z-index: 2;
+            mix-blend-mode: screen;
+        }
+        
+        &:before{
+            content: '';
+            position: absolute;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #bcdcd1;
+            z-index: 2;
+            mix-blend-mode: multiply;
+        }
+
+        img{
+            position: absolute;
+            top: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+            //Filters
+            filter: saturate(0) brightness(1.3);
+        }
 
         &:hover{
             opacity: .5;
@@ -384,6 +424,7 @@
             position: absolute;
             top: .5rem;
             left: .5rem;
+            z-index: 5;
         }
     }
 }
