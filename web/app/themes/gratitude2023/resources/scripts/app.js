@@ -6,8 +6,6 @@ import 'bootstrap';
  */
 domReady(async () => {
 
-  let test = $;
-
   //Handle changing banner color when scrolled
   changeTopBannerColor();
   window.onscroll = function(e) {

@@ -10,7 +10,7 @@ use WP_Query;
 use function Roots\bundle;
 
 /**
- * Register the theme assets.
+ * Register the theme as  sets.
  *
  * @return void
  */
@@ -168,6 +168,12 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-secondary-footer',
     ] + $config);
 });
+
+//Image Sizes
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'logo', 200, 200 );
+
+
 
 add_action( 'init',  __NAMESPACE__ . '\\create_team_taxonomies' );
 function create_team_taxonomies() 
@@ -360,6 +366,20 @@ function create_portfolio_taxonomies()
     'return_format' => 'array',
   );
 
+  $website_field = array(
+    'key' => 'website',
+    'label' => 'Website',
+    'name' => 'Website',
+    'type' => 'url',
+  );
+  
+  $logo_field = array(
+    'key' => 'logo',
+    'label' => 'Logo',
+    'name' => 'Logo',
+    'type' => 'image',
+  );
+
   if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -369,6 +389,8 @@ function create_portfolio_taxonomies()
         'fields' => array (
             $type_field,
             $founder_field,
+            $website_field,
+            $logo_field
         ),
         'location' => array (
             array (
@@ -463,14 +485,20 @@ add_action( 'init',  __NAMESPACE__ . '\\create_options_customfields' );
 function create_options_customfields() {
   // Register ACF options pages
   if( function_exists('acf_add_options_page') ) {
-      
-    acf_add_options_page(array(
+  
+    $parent = acf_add_options_page(array(
         'page_title'    => 'Theme General Settings',
         'menu_title'    => 'Theme Settings',
         'menu_slug'     => 'theme-general-settings',
         'capability'    => 'edit_posts',
         'redirect'      => false
     )); 
+
+    $portfolio = acf_add_options_page(array(
+      'page_title'  => __('Portfolio Settings'),
+      'menu_title'  => __('Portfolio'),
+      'parent_slug' => $parent['menu_slug'],
+    ));
   }
 
   $twitter_link = array(
@@ -505,6 +533,69 @@ function create_options_customfields() {
                     'param' => 'options_page',
                     'operator' => '==',
                     'value' => 'theme-general-settings',
+                ),
+            ),
+        ),
+    ));
+    
+    endif;
+  
+  // Portfolio Options
+  $learnmore_title = array(
+    'key' => 'learnmore_title',
+    'label' => 'Title',
+    'name' => 'Learn More Title',
+    'type' => 'text',
+    'required' => 1,
+  );
+  $learnmore_text = array(
+    'key' => 'learnmore_text',
+    'label' => 'Text',
+    'name' => 'Learn More Text',
+    'type' => 'textarea',
+    'required' => 1,
+  );
+  $learnmore_button = array(
+    'key' => 'learnmore_button',
+    'label' => 'Button Text',
+    'name' => 'Learn More Button',
+    'type' => 'text',
+    'required' => 1,
+  );
+  $learnmore_link = array(
+    'key' => 'learnmore_link',
+    'label' => 'Link',
+    'name' => 'Learn More Link',
+    'type' => 'url',
+    'required' => 1,
+  );
+  $learnmore_image = array(
+    'key' => 'learnmore_image',
+    'label' => 'Image',
+    'name' => 'Learn More Image',
+    'type' => 'image',
+    'required' => 1,
+  );
+
+  if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'portfolio',
+        'title' => 'Portfolio Learn More Block',
+        'position' => 'normal',
+        'fields' => array (
+          $learnmore_title,
+          $learnmore_text,
+          $learnmore_button,
+          $learnmore_link,
+          $learnmore_image,
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => $portfolio['menu_slug'],
                 ),
             ),
         ),

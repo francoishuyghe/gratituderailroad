@@ -316,7 +316,7 @@ a{
 .hero,
 .hero.aligncenter{
     display: block;
-    margin: $section-gutter 0 0;
+    margin: 2rem 0 0;
     max-width: none;
     height: 30vh;
     overflow: hidden;
@@ -324,6 +324,7 @@ a{
     border-radius: 2em;
     
     @include media-breakpoint-up(md){
+        margin: $section-gutter 0 0;
         height: 50vh;
     }
 
@@ -358,4 +359,10 @@ a{
     overflow: hidden;
     clip: rect(0,0,0,0);
     border: 0;
+  }
+
+
+  //Swiper
+  .swiper-container{
+    overflow: hidden;
   }

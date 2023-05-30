@@ -1,6 +1,6 @@
 <article @php(post_class('h-entry'))>
-  <div class="container">
-  <header>
+  <div class="container-fluid">
+  <section class="header">
     <div class="row">
       <div class="col-md-6">
         <div class="thumbnail">
@@ -12,34 +12,46 @@
           <span class="tag">{{ $type }}</span>
         </div>
         <div class="cats">
-          @if($founders)
-            @foreach($founders as $founder)
-              <span class="{{ $founder["value"] }}">{{ $founder["label"] }}</span>
-            @endforeach
-          @endif
+          @foreach($founders as $founder)
+            <span class="founder">{{ $founder["label"] }}</span>
+          @endforeach
 
-          @php( $cats =  get_terms( 'portfolio-category'))
           @foreach($cats as $cat)
-            <span>{{ $cat->name }}</span>
+            <span class="cat">{{ $cat->name }}</span>
           @endforeach
         </div>
-        <h1 class="p-name">
-          {!! $title !!}
-        </h1>
+          <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
+          <h1 class="p-name">
+            {!! $title !!}
+          </h1>
         <div class="excerpt">{{ get_the_excerpt() }}</div>
         <div class="links">
-          <a href="{{ $website }}" class="button">Website</a>
           @if($website)
           <a href="{{ $website }}" class="button">Website</a>
           @endif
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <div class="e-content">
+  <section class="e-content">
     <a class="back" href="/portfolio">Back</a>
     @php(the_content())
-  </div>
+  </section>
+
+  <section class="more">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="wp-block-image stacked">
+          <img src="{{ $learnmore_image['sizes']['medium'] }}" alt="{{ $learnmore_image['alt'] }}" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>{{ $learnmore_title }}</h3>
+        <p>{{ $learnmore_text }}</p>
+        <a class="button" href="{{ $learnmore_link }}">{{ $learnmore_button }}</a>
+      </div>
+    </div>
+  </section>
   </div>
 </article>

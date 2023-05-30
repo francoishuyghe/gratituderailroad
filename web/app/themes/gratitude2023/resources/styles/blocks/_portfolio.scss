@@ -1,10 +1,44 @@
 .wp-block-portfolio{
-    padding: 100px 0;
+    padding: 0 0 $section-gutter;
+
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #portfolioFilters{
+        select{
+            width: 100%;
+            font-size: 1.1125rem;
+            margin-bottom: 2rem;
+            padding: 0.75rem 0.5rem;
+        }
+
+        .desktop{
+            display: none;
+        }
+
+        @include media-breakpoint-up(md){
+            .desktop{
+                display: block;
+            }
+
+            select{
+                display: none;
+            }
+        }
+    }
 
     .grid-sizer,
     .post-card{
-        width: calc(33% - 20px);
-        margin-bottom: calc( 2 * $grid-gutter);
-        padding: 0 1rem;
+        width: calc(50% - 20px);
+        margin-bottom: 2rem;
+        padding: 0 .5rem;
+        
+        @include media-breakpoint-up(md){
+            margin-bottom: calc( 2 * $grid-gutter);
+            width: calc(33% - 20px);
+            padding: 0 1rem;
+        }
     }
 }

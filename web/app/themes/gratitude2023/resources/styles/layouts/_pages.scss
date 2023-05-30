@@ -3,6 +3,15 @@
     margin: $section-gutter 0;
 }
 
+.home,
+.investments,
+.portfolio,
+.community{
+    .page-header{
+        display: none;
+    }
+}
+
 /////////////////////////////
 /// INSIGHTS
 /////////////////////////////
@@ -49,6 +58,38 @@
 
     @include media-breakpoint-up(md){
         margin-bottom: 0;
+    }
+}
+
+////////////////////////////
+// Community
+////////////////////////////
+
+.community{
+    h2{
+        font-size: 2.5rem;
+    }
+
+    h1{
+        font-size: 1.625rem;
+    }
+
+    .wp-block-columns{
+        text-align: center;
+    }
+    
+    @include media-breakpoint-up(md){
+        h2{
+            font-size: 4.25rem;
+        }
+    
+        h1{
+            font-size: 2.8125rem;
+        }
+    
+        .wp-block-columns{
+            text-align: left;
+        }
     }
 }
 
@@ -316,9 +357,11 @@
 #portfolioIntro{
     padding-bottom: 0;
 
-    p{
-        width: 50rem;
-        margin: auto;
+    @include media-breakpoint-up(md){
+        p{
+            width: 50rem;
+            margin: auto;
+        }
     }
 }
 
