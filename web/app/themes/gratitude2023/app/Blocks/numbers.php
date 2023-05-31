@@ -139,7 +139,7 @@ class numbers extends Block
                 'min' => 4,
                 'max' => 4,
             ])
-                ->addTextarea('text')
+            ->addWysiwyg('text')
             ->endRepeater();
 
         return $numbers->build();
