@@ -6,7 +6,7 @@
     <div class="col-md-2">
       <div id="portfolioFilters">
         <select>
-          <option default value="">Impact Areas</option>
+          <option default value="">{!! __('IMPACT AREAS', 'sage') !!}</option>
           <optgroup label="Categories">
             @foreach ($categories as $cat)
             <option value=".portfolio-category-{{ $cat->slug }}">{{ $cat->name }}</option>
@@ -14,27 +14,27 @@
           </optgroup>
           
           <optgroup label="Founders">
-            <option value=".bipoc">BIPOC Founder</option>
-            <option value=".female">Female Founder</option>
+            <option value=".bipoc">{!! __('BIPOC Founder', 'sage') !!}</option>
+            <option value=".female">{!! __('Female Founder', 'sage') !!}</option>
           </optgroup>
           
           <optgroup label="Types">
-            <option value=".fund">Fund</option>
-            <option value=".company">Early-stage Company</option>
+            <option value=".fund">{!! __('Fund', 'sage') !!}</option>
+            <option value=".company">{!! __('Early-stage Company', 'sage') !!}</option>
           </optgroup>
         </select>
         <div class="desktop">
-          <h4>Impact Areas</h4>
-          <h5>Categories</h5>
+          <h4>{!! __('Impact Areas', 'sage') !!}</h4>
+          <h5>{!! __('Categories', 'sage') !!}</h5>
             @foreach ($categories as $cat)
               <button data-filter=".portfolio-category-{{ $cat->slug }}">{{ $cat->name }}</button>
             @endforeach
-          <h5>Founders</h5>
-          <button data-filter=".bipoc">BIPOC Founder</button>
-          <button data-filter=".female">Female Founder</button>
-          <h5>Types</h5>
-            <button data-filter=".fund">Fund</button>
-            <button data-filter=".company">Early-stage Company</button>
+          <h5>{!! __('Founders', 'sage') !!}</h5>
+          <button data-filter=".bipoc">{!! __('BIPOC Founder', 'sage') !!}</button>
+          <button data-filter=".female">{!! __('Female Founder', 'sage') !!}</button>
+          <h5>{!! __('Types', 'sage') !!}</h5>
+            <button data-filter=".fund">{!! __('Fund', 'sage') !!}</button>
+            <button data-filter=".company">{!! __('Early-stage Company', 'sage') !!}</button>
       </div>
     </div>
     </div>

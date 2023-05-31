@@ -6,9 +6,8 @@ let iso = new Isotope( grid, {
     itemSelector: '.post-card',
     layoutMode: 'fitRows',
     percentPosition: true,
-    masonry: {
-        columnWidth: '.grid-sizer',
-        gutter: 30
+    fitRows: {
+        gutter: 20
     }
 });
 
