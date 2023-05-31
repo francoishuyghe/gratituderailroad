@@ -6,6 +6,8 @@ import 'bootstrap';
  */
 domReady(async () => {
 
+  let test = $; // this somehow breaks jQuery if removed
+
   //Handle changing banner color when scrolled
   changeTopBannerColor();
   window.onscroll = function(e) {

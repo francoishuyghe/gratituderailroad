@@ -97,6 +97,18 @@
 // About
 ////////////////////////////
 .page.about{
+    #top{
+        padding-bottom: 0;
+
+        .wp-block-column{
+            max-width: 50rem;
+        }
+    }
+
+    #heroImage{
+        padding-top: 0;
+    }
+
     #numbersFeature{
         .wp-block-columns.is-not-stacked-on-mobile{
             flex-wrap: wrap!important; 
