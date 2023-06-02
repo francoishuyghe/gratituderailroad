@@ -1,7 +1,7 @@
 @php global $post; @endphp
 
 <div class="{{ $block->classes }}">
-  <div class="container swiper-container" data-slides="4">
+  <div class="container">
     <div class="row">
       <div class="col-lg-8 text">
         {{-- <h3>{{ $title }}</h3> --}}
@@ -15,6 +15,7 @@
       </div>
     </div>
   @if ($items)
+    <div class="swiper-container" data-slides="4">
     <div class="swiper-wrapper">
       @foreach ($items as $post)
         @php setup_postdata($post) @endphp
@@ -23,6 +24,7 @@
         </div>
         @php wp_reset_postdata() @endphp
       @endforeach
+    </div>
     </div>
   @else
     <p>{{ $block->preview ? 'Add an item...' : 'No items found!' }}</p>

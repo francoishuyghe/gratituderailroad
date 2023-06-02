@@ -6,7 +6,9 @@
 .home,
 .investments,
 .portfolio,
-.community{
+.community,
+.investment-focus-companies,
+.investment-focus-funds{
     .page-header{
         display: none;
     }
@@ -95,6 +97,13 @@
 // About
 ////////////////////////////
 .page.about{
+
+    p{
+        max-width: 50rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     #top{
         padding-bottom: 0;
 
@@ -107,6 +116,7 @@
         padding-top: 0;
     }
 
+    
     #numbersFeature{
         .wp-block-columns.is-not-stacked-on-mobile{
             flex-wrap: wrap!important; 
@@ -115,7 +125,7 @@
         .wp-block-column{
             flex-basis: 45%!important;
         }
-
+        
         p:first-child{
             background-color: $baby;
             max-width: 10rem;
@@ -127,13 +137,13 @@
             align-items: center;
             margin: 0 auto 1rem;
             font-size: 2rem;
-
+            
             strong{
                 display: block;
                 font-size: 3rem;
             }
         }
-
+        
         @include media-breakpoint-up(md){
             .wp-block-column{
                 flex-basis: 15%!important;
@@ -141,10 +151,25 @@
         }
     }
 
+    #mission{
+        .wp-block-columns{
+            margin-bottom: 0;
+        }
+
+        .with-border{
+            padding: 3rem;
+            margin-left: auto;
+            
+            @include media-breakpoint-up(lg){
+                max-width: 25rem;
+            }
+        }
+    }
+    
     #jobs{
         background: $baby;
         padding: $section-gutter 0;
-
+        
         .jobs{
             p{
                 margin-bottom: 1rem;
@@ -421,8 +446,8 @@
     }
 
     h3{
-        font-size: 1.2em;
-        font-weight: 600;
+        font-size: 1.5em;
+        font-weight: 800;
     }
 
     .cats{
@@ -647,12 +672,6 @@
 ////////////////////////////
 .page.investments{
     @include media-breakpoint-up(lg){
-        .main{
-            margin-top: -$banner-height; 
-        }
-        .banner:not(.scrolled){
-            background-color: transparent;
-        }
 
         .wp-block-top-section{
             .image{
@@ -665,6 +684,7 @@
         h2.has-text-align-center{
             color: $black;
             font-family: $Teodor;
+            font-weight: 400;
             margin-bottom: $section-gutter;
             
             @include media-breakpoint-up(md){

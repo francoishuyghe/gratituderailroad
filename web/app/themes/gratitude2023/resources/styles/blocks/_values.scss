@@ -1,34 +1,44 @@
 .wp-block-values{
     margin: $grid-gutter 0;
+
+    .row{
+        flex-wrap: wrap-reverse;
+    }
     
     .value{
         padding: $grid-gutter;
         text-align: center;
 
         h3{
-            text-decoration: underline;
-            text-decoration-thickness: 5px;
-            text-decoration-color: $yellow;
+            display: inline-block;
+            margin: 0 auto 1rem;
+
+            &::after{
+                content: '';
+                display: block;
+                height: 5px;
+                background-color: $yellow;
+            }
         }
 
         p{
             font-size: 1.0625rem;
         }
 
-        &:nth-child(1) h3{
-            text-decoration-color: $aqua;
+        &:nth-child(1) h3::after{
+            background-color: $aqua;
         }
-        &:nth-child(2) h3{
-            text-decoration-color: $clay;
+        &:nth-child(2) h3::after{
+            background-color: $clay;
         }
-        &:nth-child(3) h3{
-            text-decoration-color: $orange;
+        &:nth-child(3) h3::after{
+            background-color: $orange;
         }
-        &:nth-child(4) h3{
-            text-decoration-color: $yellow;
+        &:nth-child(4) h3::after{
+            background-color: $yellow;
         }
-        &:nth-child(5) h3{
-            text-decoration-color: $olive;
+        &:nth-child(5) h3::after{
+            background-color: $olive;
         }
     }
 }

@@ -20,7 +20,9 @@
             <span class="cat">{{ $cat->name }}</span>
           @endforeach
         </div>
-          <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
+          @if($logo)
+            <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
+          @endif
           <h1 class="p-name">
             {!! $title !!}
           </h1>
