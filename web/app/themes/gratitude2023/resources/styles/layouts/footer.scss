@@ -5,10 +5,10 @@ footer.content-info{
         color: $white;
 
         h5{
-            font-size: 1.375rem;
-            text-transform: lowercase;
+            font-size: 1rem;
+            text-transform: uppercase;
             font-weight: 800;
-            margin-bottom: $grid-gutter;
+            margin-bottom: 1rem;
         }
 
         img{
@@ -21,7 +21,7 @@ footer.content-info{
 
             img{
                 display: block;
-                max-width: 8.5rem;
+                max-width: 7rem;
             }
         }
     }
@@ -38,10 +38,15 @@ footer.content-info{
         list-style: none;
         padding-left: 0;
     }
+
+    .newsletter{
+        border: 2px solid $aqua;
+        padding: .5rem;
+    }
     
     
     #socialLinks{
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-top: 1rem;
 
         a{
@@ -57,7 +62,6 @@ footer.content-info{
 
     .col-right{
         flex: 1 0 100%;
-        padding-top: 1rem;
 
     }
 
@@ -85,7 +89,7 @@ footer.content-info{
     #menu-footer-menu{
         display: flex;
         justify-content: space-between;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
         max-width: 40rem;
     
         &>li>a {
@@ -104,6 +108,10 @@ footer.content-info{
 
         .sub-menu{
             padding-top: 1rem;
+        }
+
+        @include media-breakpoint-up(xl){
+            margin-bottom: 0;
         }
     }
 
@@ -129,22 +137,15 @@ footer.content-info{
         
         @include media-breakpoint-up(md){
             padding: 1.5rem $grid-gutter;
-            display: grid;
-            grid-template-columns: 1fr repeat(3, auto) 1fr;
-            grid-column-gap: 0;
-            justify-items: center;
+            flex-flow: row;
 
             .copyright { 
-                margin-right: auto; 
+                flex: 1;
             }
-    
 
             .menu{
-                display: flex;
-                grid-column-start: 2;
-
                 li{
-                    margin: 0 $grid-gutter;
+                    margin-left: 2rem;
                 }
             }
         }

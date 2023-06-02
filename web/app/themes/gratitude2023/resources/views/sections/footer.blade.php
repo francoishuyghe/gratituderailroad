@@ -11,14 +11,16 @@
         </nav>
       </div>
       <div class="col col-right">
+        <div class="newsletter">
         Newsletter 
+        </div>
         @include('partials.social-links')
       </div>
     </div>
   </div>
   <div class="secondary">
     <div class="copyright">
-      {{ the_time('Y') }} {!! $siteName !!}. All rights reserved.
+      ©{{ the_time('Y') }} {!! $siteName !!}. All rights reserved.
     </div>
     <div class="menu">
       <nav class="nav-subfooter" aria-label="{{ wp_get_nav_menu_name('subfooter_navigation') }}">
