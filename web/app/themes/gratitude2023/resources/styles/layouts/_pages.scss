@@ -1,6 +1,10 @@
 .page-header{
     text-align: center;
-    margin: $section-gutter 0;
+    margin: $grid-gutter 0 0;
+    
+    @include media-breakpoint-up(md){
+        margin-top: $section-gutter;
+    }
 }
 
 .home,

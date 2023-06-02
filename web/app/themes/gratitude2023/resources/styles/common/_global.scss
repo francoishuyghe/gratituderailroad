@@ -20,6 +20,10 @@ html, body{
     margin-right: auto;
 }
 
+.e-content{
+    padding: 2rem;
+}
+
 .wp-block-section,
 .e-content{
     &>p, &>h1, &>h2, &>h3, &>h4, &>h5, &>h6,
@@ -339,7 +343,7 @@ a{
 .hero,
 .hero.aligncenter{
     display: block;
-    margin: 2rem 0 0;
+    margin: 2rem 0;
     max-width: none;
     height: 30vh;
     overflow: hidden;
@@ -347,8 +351,9 @@ a{
     border-radius: 2em;
     
     @include media-breakpoint-up(md){
-        margin: $section-gutter 0 0;
-        height: 50vh;
+        margin: 0 auto $grid-gutter;
+        padding: 0 3rem;
+        height: 35vh;
     }
 
     
