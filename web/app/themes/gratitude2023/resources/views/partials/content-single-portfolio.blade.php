@@ -1,13 +1,13 @@
 <article @php(post_class('h-entry'))>
-  <div class="container-fluid">
   <section class="header">
+    <div class="container-md">
     <div class="row">
       <div class="col-md-6">
         <div class="thumbnail">
           {!! the_post_thumbnail( 'large' );  !!}
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 info">
         <div class="tags">
           <span class="tag">{{ $type }}</span>
         </div>
@@ -32,26 +32,41 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <section class="e-content">
-    <a class="back" href="/portfolio">Back</a>
-    @php(the_content())
+    <div class="container">
+      <div class="row">
+      <div class="col-md-2 hidden-sm">
+          <a class="back round-button orange" href="/portfolio">Back</a>
+        </span>
+      </div>
+      <div class="col-md-8">
+        @php(the_content())
+      </div>
+    </div>
+  </div>
   </section>
 
-  <section class="more">
+  <section id="more">
+    <div class="container">
     <div class="row">
       <div class="col-md-6">
         <div class="wp-block-image stacked">
-          <img src="{{ $learnmore_image['sizes']['medium'] }}" alt="{{ $learnmore_image['alt'] }}" />
+          @if($learnmore_image)
+          <img src="{{ $learnmore_image['sizes']['large'] }}" alt="{{ $learnmore_image['alt'] }}" />
+          @endif
         </div>
       </div>
       <div class="col-md-6">
         <h3>{{ $learnmore_title }}</h3>
         <p>{{ $learnmore_text }}</p>
+        @if($learnmore_link)
         <a class="button" href="{{ $learnmore_link }}">{{ $learnmore_button }}</a>
+        @endif
       </div>
     </div>
-  </section>
   </div>
+  </section>
 </article>

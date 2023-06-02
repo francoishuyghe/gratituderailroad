@@ -136,13 +136,12 @@ a.more{
     }
 }
 
-a.back{
-    @extend .round-button !optional;
-    position: absolute;
-    top: 0;
-    left: 0;
+button{
+    background: transparent;
+    padding: 0;
 }
 
+button.tag,
 span.tag{
     display: inline-block;
     background: $ochre;
@@ -154,8 +153,6 @@ span.tag{
     border-radius: 11rem;
 
     @include media-breakpoint-up(md){
-        padding: .2rem .75rem .1rem;
-        font-size: 1rem;
     }
 }
 

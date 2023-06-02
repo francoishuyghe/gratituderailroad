@@ -76,17 +76,22 @@ article.team{
             height: 50vh;
             max-height: 20rem;
             width: 100vw;
-            margin-left: -.75rem;
+            transform: translateX(-1.55rem);
 
             img{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-            }
+            }            
+
         }
 
         h1{
             font-size: 1.625rem;
+        }
+
+        .info{
+            margin-bottom: $grid-gutter;
         }
 
         .tags,
@@ -109,8 +114,33 @@ article.team{
         }
     }
 
-    section.more{
-        margin-bottom: $section-gutter;
+    a.back{
+        //@extend .round-button !optional;
+        display: none;
+
+        @include media-breakpoint-up(md){
+            display: inline-block;
+        }
+    }
+
+    section#more{
+        margin: $section-gutter 0;
+
+        .row{
+            align-items: center;
+        }
+
+        .wp-block-image{
+            margin-bottom: 4rem;
+            
+            @include media-breakpoint-up(md){
+                margin-right: 2rem;
+            }
+            
+            @include media-breakpoint-up(lg){
+                margin-right: 4rem;
+            }
+        }
     }
 
     @include media-breakpoint-up(md){
@@ -127,12 +157,13 @@ article.team{
                 width: 90%;
                 border-radius: 2rem;
                 margin-bottom: 0;
-                margin-left: 0;
+                transform: none;
             }
         }
 
         .e-content{
             position: relative;
+            min-height: 20rem;
         }
     }
 }

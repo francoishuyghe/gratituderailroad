@@ -33,8 +33,8 @@
           <button data-filter=".bipoc">{!! __('BIPOC Founder', 'sage') !!}</button>
           <button data-filter=".female">{!! __('Female Founder', 'sage') !!}</button>
           <h5>{!! __('Types', 'sage') !!}</h5>
-            <button data-filter=".fund">{!! __('Fund', 'sage') !!}</button>
-            <button data-filter=".company">{!! __('Early-stage Company', 'sage') !!}</button>
+            <button class="tag fund" data-filter=".fund">{!! __('Fund', 'sage') !!}</button>
+            <button class="tag company" data-filter=".company">{!! __('Early-stage Company', 'sage') !!}</button>
       </div>
     </div>
     </div>

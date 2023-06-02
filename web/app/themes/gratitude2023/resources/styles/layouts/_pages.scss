@@ -390,20 +390,26 @@
 ////////////////////////////
 #portfolioFilters{
     h5{
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 
     button{
         border: 0;
         outline: 0;
-        background: transparent;
-        padding: 0;
         margin-bottom: .5rem;
         color: $olive;
         
         &:hover,
         &.active{
             color: $orange;
+        }
+
+        &.tag{
+            color: $white;
+
+            &.fund{
+                background: $olive;
+            }
         }
     }
 }
@@ -451,6 +457,7 @@
             background-color: #6d783f;
             z-index: 2;
             mix-blend-mode: screen;
+            transition: .5s;
         }
         
         &:before{
@@ -465,7 +472,8 @@
             background-color: #bcdcd1;
             z-index: 2;
             mix-blend-mode: multiply;
-        }
+            transition: .5s;
+        }        
 
         img{
             position: absolute;
@@ -473,20 +481,42 @@
             object-fit: cover;
             width: 100%;
             height: 100%;
+            transition: .5s;
 
             //Filters
             filter: saturate(0) brightness(1.3);
         }
-
-        &:hover{
-            opacity: .5;
-        }
-
+        
         .tag{
             position: absolute;
             top: .5rem;
             left: .5rem;
             z-index: 5;
+        }
+    }
+    
+    &:hover{
+        .thumbnail{
+            img{
+                filter: saturate(1) brightness(1);
+            }
+
+            &:after,
+            &:before{
+                opacity: .2;
+            }   
+        } 
+    }
+
+    &.company{
+        .thumbnail{
+            &:after{
+                background-color: $ochre;
+            }
+            
+            &:before{
+                background-color: #bcdcd1;
+            }
         }
     }
 }

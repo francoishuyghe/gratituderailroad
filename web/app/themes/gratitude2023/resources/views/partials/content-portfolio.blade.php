@@ -14,8 +14,14 @@
 <article @php(post_class($classes))>
   <a href="{{ the_permalink() }}">
     <div class="thumbnail">
-      <span class="tag">{{ $type }}</span>
-        {!! the_post_thumbnail( 'medium' );  !!}
+      <span class="tag">
+        @if($type == 'company') 
+          {!! __('Early-stage Company', 'sage') !!} 
+        @else 
+          {!! __('Fund', 'sage') !!} 
+        @endif
+      </span>
+        {!! the_post_thumbnail( 'large' );  !!}
     </div>
   </a>
   <a href="{{ the_permalink() }}">
