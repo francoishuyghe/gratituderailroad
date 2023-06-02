@@ -6,7 +6,11 @@
     header{
         display: flex;
         justify-content: space-between;
-        margin-bottom: $grid-gutter;
+
+        h3{
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
 
         .round-button{
             align-self: center;

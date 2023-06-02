@@ -24,6 +24,14 @@ html, body{
     padding: 2rem;
 }
 
+.hamburger{
+    .hamburger-inner:before,
+    .hamburger-inner:after,
+    .hamburger-inner{
+        background-color: $orange;
+    }
+}
+
 .wp-block-section,
 .e-content{
     &>p, &>h1, &>h2, &>h3, &>h4, &>h5, &>h6,
@@ -75,7 +83,6 @@ h2{
     font-size: 2.25rem;
     line-height: 2.375rem;
     margin-bottom: 1rem;
-    text-transform: capitalize;
     
     b{
         font-weight: 400;
@@ -254,9 +261,8 @@ a{
     white-space: nowrap;
 
     &:hover{
-        a{
-            color: $orange;
-        }
+        color: $white;
+        background-color: $orange;
     }
 }
 

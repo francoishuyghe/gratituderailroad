@@ -18,6 +18,15 @@
     }
 }
 
+.home,
+.community,
+.about,
+.investments{
+    .e-content{
+        padding: 0;
+    }
+}
+
 /////////////////////////////
 /// INSIGHTS
 /////////////////////////////
@@ -70,8 +79,20 @@
 ////////////////////////////
 
 .community{
-    h2{
-        font-size: 2.5rem;
+    #top{
+        h2{
+            //font-size: 2.5rem;
+        }
+
+        p{
+            max-width: 50rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .wp-block-button{
+            margin-bottom: $grid-gutter;
+        }
     }
 
     h1{
@@ -80,6 +101,41 @@
 
     #pillars{
         text-align: center;
+        padding-top: 0;
+
+            h1, p{
+                max-width: 50rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .wp-block-columns{
+                margin-top: $section-gutter;
+            }
+
+        .wp-block-image{
+            margin: 0 auto 1rem;
+            max-width: 20rem;
+        }
+    }
+
+    #gathering{
+        .wp-block-columns{
+            flex-flow: column-reverse;
+            
+            @include media-breakpoint-up(md){
+                flex-flow: row;
+            }
+        }
+
+        .wp-block-image{
+            margin-left: auto;
+            max-width: 25rem;
+            
+            @include media-breakpoint-up(md){
+                max-width: 25rem;
+            }
+        }
     }
     
     @include media-breakpoint-up(md){
@@ -197,10 +253,14 @@
     header.banner{
         background: $baby;
     }
+
+    #areas{
+        max-width: 60rem;
+    }
 }
 
 #manifesto{
-    min-height: calc(100vh - 80px);
+    min-height: calc(60vh);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,15 +278,20 @@
     }
     
     h1{
-        font-size: 2.375rem;
+        font-size: 1.6rem;
         font-family: $Teodor;
         max-width: 62rem;
         margin: auto;
+
+        @include media-breakpoint-up(md){
+            font-size: 2.375rem;
+        }
         
         a{
             text-decoration: underline;
             text-decoration-color: $olive;
             text-decoration-thickness: 5px;
+            text-underline-offset: 5px;
             transition: color ease-in-out .3s;
             
             &:hover{
@@ -256,7 +321,7 @@
         }
     }
     
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(lg){
         min-height: calc(100vh - $banner-height);
 
         h1{
@@ -277,8 +342,27 @@
     .wp-block-columns{
         margin-bottom: $section-gutter;
 
+        .wp-block-image{
+            margin-right: auto;
+            max-width: 20rem;
+
+            @include media-breakpoint-up(md){
+                max-width: 30rem;
+            }
+
+            img{
+                max-height: 35rem;
+                object-fit: cover;
+            }
+        }
+
         &:nth-of-type(2){
             flex-flow: column-reverse;
+
+            .wp-block-image{
+                margin-left: auto;
+                margin-right: 0;
+            }
 
             @include media-breakpoint-up(md){
                 flex-flow: row;
@@ -287,8 +371,13 @@
 
         &:last-child{
             margin-bottom: 0;
+
+            .with-border{
+                background-color: $ochre;
+            }
         }
     }
+
     
     @include media-breakpoint-up(md){
 
@@ -306,56 +395,6 @@
     }
 }
 
-#latestReport{
-    padding: $grid-gutter 0;
-
-    .wp-block-columns{
-        margin: 0;
-    }
-
-    a{
-        @extend .readmore;
-
-        &::after{
-            @include dot;
-        }
-    }
-
-    @include media-breakpoint-up(md){
-        .wp-block-columns{
-            .wp-block-column:last-child{
-                display: flex;
-                flex-flow: column;
-                justify-content: center;
-                padding-left: $grid-gutter;
-            }
-        }
-    }
-}
-
-////////////////////////////
-// Community
-////////////////////////////
-
-#pillars{
-    padding-top: 0;
-
-    h1, p{
-        max-width: 50rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .wp-block-columns{
-        margin-top: $section-gutter;
-
-        .wp-block-image{
-            margin-bottom: 1rem;
-        }
-    }
-
-}
-
 
 ////////////////////////////
 // Home
@@ -371,7 +410,6 @@
             display: flex;
             flex-flow: column;
             justify-content: center;
-            padding-left: $grid-gutter;
         }
     }
 
@@ -386,9 +424,6 @@
     @include media-breakpoint-up(md){
         .wp-block-columns{
             .wp-block-column:last-child{
-                display: flex;
-                flex-flow: column;
-                justify-content: center;
                 padding-left: $grid-gutter;
             }
         }
