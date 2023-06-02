@@ -29,7 +29,12 @@ article.team{
     .container{
         position: relative;
 
-        &> *{
+        .row{
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        h1, h3, .excerpt{
             max-width: 60rem;
             margin-left: auto;
             margin-right: auto;
@@ -44,6 +49,7 @@ article.team{
 
     .category{
         @extend h1;
+        margin-bottom: 0;
     }
 
     .p-name{
@@ -57,10 +63,23 @@ article.team{
     }
 }
 
+.single-post{
+    .hero{
+        height: auto;
+        margin-bottom: $section-gutter;
+    }
+}
+
 #relatedPosts{
     background-color: $baby;
     margin-top: $section-gutter;
     padding: $grid-gutter 0;
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
 
 

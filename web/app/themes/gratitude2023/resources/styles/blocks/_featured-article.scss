@@ -1,22 +1,29 @@
 .wp-block-featured-article{
     background-color: $baby;
     margin-bottom: $grid-gutter;
+    padding: $section-gutter 0;
+
+    .wp-block-image{
+        margin: 0;
+        margin-bottom: $grid-gutter;
+    }
 
     .text{
         margin-bottom: $grid-gutter;
 
+        h2{
+            margin-bottom: 2rem;
+        }
+
         p{
-            margin-bottom: 0;
+            margin-bottom: 1rem;
         }
     }
 
-    @include media-breakpoint-up(md){
-        .thumbnail{
-            height: 30rem;
-    
-            .wp-block-image{
-                width: 85%;
-            }
+    @include media-breakpoint-up(lg){
+        .wp-block-image{
+            width: 85%;
+            margin-bottom: 0;
         }
 
         .text, 
@@ -29,7 +36,6 @@
         .text{
             align-items: flex-start;
             flex-flow: column;
-            padding: $grid-gutter 0;
             margin-bottom: 0;
         }
     }
