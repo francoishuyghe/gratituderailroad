@@ -10,7 +10,9 @@
         <div class="col-md-8">
           <div class="category">
             @php( $cats = get_the_category())
+              @if(isset($cats[0]))
                 {{ $cats[0]->name }}
+              @endif
           </div>
         </div>
       </div>

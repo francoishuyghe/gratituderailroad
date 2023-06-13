@@ -14,7 +14,11 @@
     <div class="row">
       <div class="col-md-2">
         <ul id="filter">
-        @php $categories = get_terms('team-category'); @endphp
+        @php $categories = get_terms(array(
+          'taxonomy'   => 'team-category',
+          'hide_empty' => true,
+          'order' => 'desc'
+      )) @endphp
         @foreach ($categories as $category)
         <li>
           <a href="#{{ $category->slug }}">{{ $category->name }}</a>
@@ -25,7 +29,7 @@
       <div class="col-md-10">
           @foreach ($categories as $category)
             <section id="{{ $category->slug }}">
-              <h2>{{ $category->name }}</h2>
+              <h3>{{ $category->name }}</h3>
               <div class="row">
             @php $teamMembers = App\View\Composers\PageTeam::teamByTerm($category->slug) @endphp
             @foreach ($teamMembers as $post)
