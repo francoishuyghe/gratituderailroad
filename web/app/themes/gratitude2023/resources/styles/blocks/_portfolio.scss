@@ -36,7 +36,7 @@
         //padding: 0 .5rem;
         
         @include media-breakpoint-up(md){
-            margin-bottom: calc( 2 * $grid-gutter);
+            margin-bottom: $grid-gutter;
             width: calc(33% - 20px);
             padding: 0 1rem;
         }

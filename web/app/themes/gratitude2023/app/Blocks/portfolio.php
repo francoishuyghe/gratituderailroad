@@ -143,6 +143,8 @@ class portfolio extends Block
             'post_type' => 'portfolio',
             'showposts' => -1,
             'post_status' => ['publish'],
+            'orderby' => 'title',
+            'order' => 'asc'
 	    );
 	    $the_query = new WP_Query( $args );
 	    return $the_query->posts;

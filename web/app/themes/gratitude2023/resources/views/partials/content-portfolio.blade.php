@@ -1,11 +1,15 @@
 @php 
   $type = get_field('type_select', $post->ID);
   $founders = get_field('founder_select', $post->ID);
+  $exited = get_field('exited', $post->ID);
   $classes = ['post-card'];
   $founderTags = [];
   foreach ($founders as $founder) {
     array_push($classes, $founder["value"]);
     array_push($founderTags, $founder["label"]);
+  }
+  if( $exited ){
+    array_push($classes, 'exited');
   }
   array_push($classes, $type );
 @endphp
@@ -14,14 +18,18 @@
 <article @php(post_class($classes))>
   <a href="{{ the_permalink() }}">
     <div class="thumbnail">
-      <span class="tag">
-        @if($type == 'company') 
-          {!! __('Early-stage Company', 'sage') !!} 
-        @else 
-          {!! __('Fund', 'sage') !!} 
-        @endif
-      </span>
+      <div class="tags">
+        <span class="tag">
+          @if($type == 'company') 
+            {!! __('Company', 'sage') !!} 
+          @else 
+            {!! __('Fund', 'sage') !!} 
+          @endif
+        </span>
+      @if($exited) <span class="tag"> {!! __('Exited', 'sage') !!} </span> @endif
+    </div>
         {!! the_post_thumbnail( 'large' );  !!}
+
     </div>
   </a>
   <a href="{{ the_permalink() }}">

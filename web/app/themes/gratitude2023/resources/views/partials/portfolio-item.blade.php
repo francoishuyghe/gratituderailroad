@@ -7,5 +7,4 @@
     <a href="{{ the_permalink($item->ID) }}">
         <h3>{{ $item->post_title}}</h3>
     </a>
-        <h6>Tags</h6>
 </div>

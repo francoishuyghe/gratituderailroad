@@ -65,7 +65,8 @@ article.team{
 
 .single-post{
     .hero{
-        height: auto;
+        max-width: 1200px;
+        aspect-ratio: auto;
         margin-bottom: $section-gutter;
     }
 }

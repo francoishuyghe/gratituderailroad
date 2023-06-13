@@ -20,12 +20,12 @@
           
           <optgroup label="Types">
             <option value=".fund">{!! __('Fund', 'sage') !!}</option>
-            <option value=".company">{!! __('Early-stage Company', 'sage') !!}</option>
+            <option value=".company">{!! __('Company', 'sage') !!}</option>
           </optgroup>
         </select>
         <div class="desktop">
-          <h4>{!! __('Impact Areas', 'sage') !!}</h4>
-          <h5>{!! __('Categories', 'sage') !!}</h5>
+          <h4>{!! __('Filters', 'sage') !!}</h4>
+          <h5>{!! __('Impact Areas', 'sage') !!}</h5>
             @foreach ($categories as $cat)
               <button data-filter=".portfolio-category-{{ $cat->slug }}">{{ $cat->name }}</button>
             @endforeach
@@ -34,7 +34,7 @@
           <button data-filter=".female">{!! __('Female Founder', 'sage') !!}</button>
           <h5>{!! __('Types', 'sage') !!}</h5>
             <button class="tag fund" data-filter=".fund">{!! __('Fund', 'sage') !!}</button>
-            <button class="tag company" data-filter=".company">{!! __('Early-stage Company', 'sage') !!}</button>
+            <button class="tag company" data-filter=".company">{!! __('Company', 'sage') !!}</button>
       </div>
     </div>
     </div>

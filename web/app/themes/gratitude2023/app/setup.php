@@ -345,7 +345,7 @@ function create_portfolio_taxonomies()
     'required' => 1,
     'choices' => array(
         'fund'   => 'Fund',
-        'company'   => 'Early-stage Company'
+        'company'   => 'Company'
     ),
     'ui' => 1,
     'ajax' => 1,
@@ -379,6 +379,14 @@ function create_portfolio_taxonomies()
     'name' => 'Logo',
     'type' => 'image',
   );
+  
+  $exited_field = array(
+    'key' => 'exited',
+    'label' => 'Exited',
+    'name' => 'Exited',
+    'type' => 'true_false',
+    'ui' => true
+  );
 
   if( function_exists('acf_add_local_field_group') ):
 
@@ -390,7 +398,8 @@ function create_portfolio_taxonomies()
             $type_field,
             $founder_field,
             $website_field,
-            $logo_field
+            $logo_field,
+            $exited_field
         ),
         'location' => array (
             array (
