@@ -325,7 +325,7 @@ function create_portfolio_taxonomies()
     'update_item' => __( 'Update Category' ),
     'add_new_item' => __( 'Add New Category' ),
     'new_item_name' => __( 'New Category Name' ),
-    'menu_name' => __( 'Categories' ),
+    'menu_name' => __( 'Portfolio Categories' ),
   );    
 
   register_taxonomy('portfolio-category','portfolio', array(
@@ -334,6 +334,7 @@ function create_portfolio_taxonomies()
     'labels' => $labels,
     'show_ui' => true,
     'show_admin_column' => true,
+    'show_in_rest' => true,
     ));
 
   // Add extra ACF Fields
