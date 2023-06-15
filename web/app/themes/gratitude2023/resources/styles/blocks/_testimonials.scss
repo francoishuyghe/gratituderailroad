@@ -1,9 +1,19 @@
+:root{
+    --swiper-navigation-color: $orange;
+}
+
 .wp-block-testimonials{
+    position: relative;
     margin: $section-gutter 0;
 
     .quote-wrap{
         max-width: 60rem;
         margin: auto;
+    }
+
+    .swiper-slide{
+        display: flex;
+        padding: 0 2rem;
     }
 
     .quote{

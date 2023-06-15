@@ -1,26 +1,19 @@
-<div class="{{ $block->classes }} swiper-container" data-slides="1">
-  <div class="container">
-  @if ($quotes)
-    <div class="quotes swiper-wrapper">
-      @foreach ($quotes as $quote)
-        <div class="swiper-slide">
-        <div class="quote-wrap">
-        <div class="quote">
-          {{ $quote['quote'] }}
-        </div>
-        <div class="details">
-          <h6>
-            <span class="name">{{ $quote['name'] }}, </span>
-            <span class="company">{{ $quote['company'] }}</span>
-          </h6>
-          <div class="title">
-            {{ $quote['title'] }}
+<div class="{{ $block->classes }}">
+  <div class="container swiper-container" data-slides="1" data-name="testimonials">
+    @if ($quotes)
+      <div class="swiper-wrapper">
+        @foreach ($quotes as $quote)
+          <div class="swiper-slide">
+            @include('partials.slide-testimonial')
           </div>
-          </div>
-        </div>
-        </div>
-      @endforeach
-    </div>
-  @endif
+        @endforeach
+      </div>
+          <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    @endif
   </div>
 </div>

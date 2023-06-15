@@ -1,7 +1,7 @@
 /** Import everything from autoload */
 @import "bootstrap";
 // import Swiper styles
-@import "swiper/css";
+@import "swiper/swiper-bundle.min.css";
 @import 'hamburgers/_sass/hamburgers/hamburgers';
 
 @import "common/variables";
