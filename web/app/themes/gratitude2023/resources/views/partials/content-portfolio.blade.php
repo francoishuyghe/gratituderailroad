@@ -29,7 +29,6 @@
       @if($exited) <span class="tag"> {!! __('Exited', 'sage') !!} </span> @endif
     </div>
         {!! the_post_thumbnail( 'large' );  !!}
-
     </div>
   </a>
   <a href="{{ the_permalink() }}">

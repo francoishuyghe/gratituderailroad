@@ -24,6 +24,11 @@ html, body{
     padding: 2rem;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 .hamburger{
     .hamburger-inner:before,
     .hamburger-inner:after,
@@ -292,7 +297,6 @@ a{
     img{
         border-radius: 20px;
         width: 100%;
-        max-width: 100%;
     }
 
     &.stacked{

@@ -191,3 +191,26 @@ article.team{
 .fund .tag{
     background-color: $olive;
 }
+
+
+.single-team{
+    #articleHeader{
+        margin: $grid-gutter auto 0;
+
+        .container .row{
+            margin-bottom: 0;
+        }
+        
+        .back-wrap{
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .category{
+            font-size: 1.75rem;
+        }
+
+        img{
+            margin-bottom: 2rem;
+        }
+    }
+}
