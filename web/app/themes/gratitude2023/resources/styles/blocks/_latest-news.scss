@@ -1,7 +1,6 @@
 .wp-block-latest-news{
     background: $baby;
-    padding: $section-gutter 0;
-    padding: 100px 0;
+    padding: 3rem 0;
 
     header{
         display: flex;
@@ -10,6 +9,10 @@
         h3{
             text-transform: uppercase;
             font-size: 2rem;
+
+            @include media-breakpoint-up(lg){
+                margin-bottom: 0;
+            }
         }
 
         .round-button{

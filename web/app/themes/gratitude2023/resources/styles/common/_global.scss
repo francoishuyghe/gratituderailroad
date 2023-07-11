@@ -88,6 +88,7 @@ h2{
     font-size: 2.25rem;
     line-height: 2.375rem;
     margin-bottom: 1rem;
+    letter-spacing: -.03rem;
     
     b{
         font-weight: 400;
@@ -113,7 +114,7 @@ p, .p {
     h2{
         font-size: 4.25rem;
         line-height: 4.375rem;
-        margin-bottom: 2.8125rem;
+        margin-bottom: 1.8rem;
     }
     
     h3{
@@ -155,6 +156,9 @@ a.more{
         }
     }
 
+    &:hover{
+        color: $orange;
+    }
 }
 
 .round-button{
@@ -166,6 +170,12 @@ a.more{
     font-weight: 600;
     text-transform: uppercase;
     white-space: nowrap;
+    transition: .3s;
+
+    &:hover{
+        background-color: $orange;
+        color: $white;
+    }
 
     a{
         color: $orange;
@@ -295,7 +305,7 @@ a{
     }
 
     img{
-        border-radius: 20px;
+        border-radius: $radius;
         width: 100%;
     }
 
@@ -314,7 +324,7 @@ a{
             height: 100%;
             top: 1rem;
             left: -1rem;
-            border-radius: 20px;
+            border-radius: $radius;
             z-index: -1;
         }
         
@@ -327,7 +337,7 @@ a{
             height: 100%;
             top: 2rem;
             left: -2rem;
-            border-radius: 20px;
+            border-radius: $radius;
             z-index: -2;
         }
 

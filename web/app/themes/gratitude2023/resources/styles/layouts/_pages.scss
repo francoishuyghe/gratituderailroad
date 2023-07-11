@@ -42,6 +42,20 @@
         background-color: $baby;
         transition: background-color ease-in-out .5s;
         
+        &::after{
+            content: '';
+            position: absolute;
+            z-index: 99;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $orange;
+            mix-blend-mode: lighten;
+            opacity: 0;
+            transition: .3s;
+        }
+
         img{
             position: absolute;
             top: 0;
@@ -50,6 +64,7 @@
             object-fit: cover;
             filter: grayscale(20%) sepia(5%);
             transition: ease-in-out .5s;
+
             
         }
     }
@@ -58,11 +73,14 @@
         &:hover{
             .thumbnail{
                 background-color: $white;
+
+                &::after{
+                    opacity: .2;
+                }
             }
             
             img{
-                filter: grayscale(0%) sepia(0%);
-                transform: scale(1.15);
+                // transform: scale(1.05);
             }
         }
     }
@@ -247,6 +265,10 @@
 
     #areas{
         max-width: 60rem;
+
+        img{
+            aspect-ratio: .8;
+        }
     }
 }
 
@@ -403,6 +425,10 @@
             flex-flow: column;
             justify-content: center;
         }
+    }
+
+    h2{
+        max-width: 30rem;
     }
 
     a{
