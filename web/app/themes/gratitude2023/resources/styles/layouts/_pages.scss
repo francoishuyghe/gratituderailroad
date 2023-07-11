@@ -147,6 +147,11 @@
         .wp-block-image{
             margin-left: auto;
             max-width: 25rem;
+
+            img{
+                aspect-ratio: .9;
+                object-fit: cover;
+            }
             
             @include media-breakpoint-up(md){
                 max-width: 25rem;
@@ -732,14 +737,47 @@
     }
 
     #theory{
+        h1{
+            font-weight: 600;
+        }
+
         h2.has-text-align-center{
             color: $black;
             font-family: $Teodor;
             font-weight: 400;
-            margin-bottom: $section-gutter;
+            margin: 2rem auto 10rem;
             
             @include media-breakpoint-up(md){
-                margin-bottom: $section-gutter;
+                max-width: 60rem;
+            }
+        }
+
+        .wp-block-columns{
+            flex-flow: column-reverse;
+
+            &:nth-of-type(2){
+                flex-flow: column;
+                
+                @include media-breakpoint-up(md){
+                    flex-flow: row;
+                }
+            }
+
+            @include media-breakpoint-up(md){
+                flex-flow: row;
+            }
+
+            .wp-block-image{
+                max-width: none;
+    
+                @include media-breakpoint-up(md){
+                    max-width: none;
+                }
+    
+                img{
+                    max-height: none;
+                    aspect-ratio: 1;
+                }
             }
         }
     }
@@ -767,6 +805,13 @@
 ////////////////////////////
 // Investments
 ////////////////////////////
+#focus{
+    img{
+        aspect-ratio: 1.5;
+        object-fit: cover;
+    }
+}
+
 #focusTop{
     h3{
         @extend h1;
