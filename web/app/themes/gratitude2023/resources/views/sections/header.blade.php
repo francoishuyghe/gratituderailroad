@@ -21,7 +21,7 @@
       </div>
       <a class="login-link" href="http://loginlink.com" target="_blank">
         Login
-        <img src="@asset('images/arrow.svg')" class="arrow"/>
+        <img src="@asset('../../images/arrow.svg')" class="arrow"/>
       </a>
     </nav>
   @endif
