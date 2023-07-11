@@ -270,8 +270,9 @@
     
     h1{
         font-size: 1.6rem;
+        letter-spacing: -.03rem;
         font-family: $Teodor;
-        max-width: 62rem;
+        max-width: 63rem;
         margin: auto;
 
         @include media-breakpoint-up(md){
