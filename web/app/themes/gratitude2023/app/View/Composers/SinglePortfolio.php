@@ -22,7 +22,7 @@ class SinglePortfolio extends Composer
             'founders' => get_field('founder_select'), 
             'website' => get_field('website'),
             'logo' => get_field('logo'),
-            'cats' =>  get_terms('portfolio-category'),
+            'cats' =>  get_the_terms(get_the_ID(), 'portfolio-category'),
             'learnmore_title' => get_field('learnmore_title', 'options'),
             'learnmore_text' => get_field('learnmore_text', 'options'),
             'learnmore_button' => get_field('learnmore_button', 'options'),

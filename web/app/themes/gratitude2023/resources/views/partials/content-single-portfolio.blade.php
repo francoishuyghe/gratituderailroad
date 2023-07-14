@@ -18,7 +18,7 @@
 
           @foreach($cats as $cat)
             <span class="cat">{!! $cat->name !!}</span>
-          @endforeach
+          @endforeach 
         </div>
           @if($logo)
             <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
