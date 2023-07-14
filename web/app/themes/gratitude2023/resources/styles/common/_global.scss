@@ -230,6 +230,7 @@ a{
                 border-radius: 1em;
                 margin-left: .5em;
                 background-color: $aqua;
+                vertical-align: middle;
             }
         }
 
@@ -373,7 +374,6 @@ a{
     
     @include media-breakpoint-up(md){
         margin: 0 auto $grid-gutter;
-        padding: 0 3rem;
     }
 
     

@@ -237,12 +237,16 @@
             margin-bottom: 0;
         }
 
+        img{
+            aspect-ratio: 1.2;
+        }
+
         .with-border{
             padding: 3rem;
             margin-left: auto;
             
             @include media-breakpoint-up(lg){
-                max-width: 25rem;
+                max-width: 35rem;
             }
         }
     }

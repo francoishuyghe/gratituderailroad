@@ -29,7 +29,7 @@
         <div class="excerpt">{{ get_the_excerpt() }}</div>
         <div class="links">
           @if($website)
-          <a href="{{ $website }}" class="button">Website</a>
+          <a href="{{ $website }}" target="_blank" class="button">Website</a>
           @endif
         </div>
       </div>
