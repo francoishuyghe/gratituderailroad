@@ -527,6 +527,14 @@ function create_options_customfields() {
     'required' => 0,
   );
 
+  $footer_newsletter_title = array(
+    'key' => 'footer_newsletter_title',
+    'label' => 'Newsletter Title',
+    'name' => 'Newsletter Title',
+    'type' => 'text',
+    'required' => 0,
+  );
+
   if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -536,6 +544,24 @@ function create_options_customfields() {
         'fields' => array (
             $linkedin_link,
             $twitter_link,
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'theme-general-settings',
+                ),
+            ),
+        ),
+    ));
+    
+    acf_add_local_field_group(array(
+        'key' => 'footer',
+        'title' => 'Footer',
+        'position' => 'normal',
+        'fields' => array (
+            $footer_newsletter_title,
         ),
         'location' => array (
             array (

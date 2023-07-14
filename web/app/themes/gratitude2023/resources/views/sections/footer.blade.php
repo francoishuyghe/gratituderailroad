@@ -11,8 +11,9 @@
         </nav>
       </div>
       <div class="col col-right">
+        <h6>{{ the_field('footer_newsletter_title', 'options')}}</h6>
         <div class="newsletter">
-        Newsletter 
+        Your email 
         </div>
         @include('partials.social-links')
       </div>
