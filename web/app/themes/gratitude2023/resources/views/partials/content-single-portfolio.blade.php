@@ -9,7 +9,7 @@
       </div>
       <div class="col-md-6 info">
         <div class="tags">
-          <span class="tag">{{ $type }}</span>
+          <span class="tag">{!! $type !!}</span>
         </div>
         <div class="cats">
           @foreach($founders as $founder)
@@ -17,7 +17,7 @@
           @endforeach
 
           @foreach($cats as $cat)
-            <span class="cat">{{ $cat->name }}</span>
+            <span class="cat">{!! $cat->name !!}</span>
           @endforeach
         </div>
           @if($logo)
@@ -26,7 +26,7 @@
           <h1 class="p-name">
             {!! $title !!}
           </h1>
-        <div class="excerpt">{{ get_the_excerpt() }}</div>
+        <div class="excerpt">{!! get_the_excerpt() !!}</div>
         <div class="links">
           @if($website)
           <a href="{{ $website }}" target="_blank" class="button">Website</a>

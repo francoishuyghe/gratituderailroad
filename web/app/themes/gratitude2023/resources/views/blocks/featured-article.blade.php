@@ -13,7 +13,7 @@
           {{ $feature->post_title}}
         </a>
       </h2>
-        <p>{{ get_the_excerpt($feature->ID) }} <br />
+        <p>{!! get_the_excerpt($feature->ID) !!} <br />
           <a class="readmore dot" href="{{ the_permalink($feature->ID) }}">Read More</a>
         </p>
       </div>
