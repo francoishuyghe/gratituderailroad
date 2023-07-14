@@ -110,6 +110,16 @@ p, .p {
     margin-bottom: 1.5em;
 }
 
+p{
+    a{
+        color: $orange;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
 @include media-breakpoint-up(md){
     h2{
         font-size: 4.25rem;
