@@ -4,7 +4,7 @@
 
 .wp-block-testimonials{
     position: relative;
-    margin: $section-gutter 0;
+    margin: $grid-gutter 0;
 
     .quote-wrap{
         max-width: 60rem;
@@ -17,11 +17,15 @@
     }
 
     .quote{
-        font-size: 2.8125rem;
+        font-size: 2.3rem;
         line-height: 3rem;
         font-weight: 400;
         font-style: italic;
         letter-spacing: -.03rem;
+        
+        @include media-breakpoint-up(lg){
+            font-size: 2.8125rem;
+        }
 
         &:before{
             content: '"';
@@ -45,4 +49,43 @@
             color: $grey;
         }
     }
+
+    @include media-breakpoint-up(lg){
+        margin: $section-gutter 0;
+    }
+}
+
+.button-next,
+.button-prev{
+    position: absolute;
+    padding: 0 .5rem;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+    cursor: pointer;
+    z-index: 2;
+
+    img{
+        transition: transform .3s;
+    }
+
+    &:hover{
+        img{
+            transform: translateX(.5rem);
+        }
+    }
+    
+    @include media-breakpoint-up(md){
+        padding: 0 1rem;
+    }
+
+    @include media-breakpoint-up(lg){
+        padding: 0 3rem;
+    }
+}
+
+.button-next{
+    transform: translateY(-50%);
+    right: 0;
+    left: auto;
 }

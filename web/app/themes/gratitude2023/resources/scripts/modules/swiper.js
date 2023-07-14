@@ -24,8 +24,8 @@ if(swiperContainer.dataset.name == 'testimonials'){
   console.log('success')
   sliderSettings.breakpoints = {}
   sliderSettings.navigation = {                       
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".button-next",
+    prevEl: ".button-prev",
     enabled: true, 
   }
   sliderSettings.pagination = {
@@ -35,10 +35,9 @@ if(swiperContainer.dataset.name == 'testimonials'){
   sliderSettings.autoplay = { delay: 5000, }                
 }
 
-console.log(sliderSettings)
 const swiper = new Swiper(swiperContainer, sliderSettings);
 
 if(swiperContainer.dataset.name == 'testimonials'){
-  document.querySelector('.swiper-button-next').addEventListener("click", () => swiper.slideNext())
-  document.querySelector('.swiper-button-prev').addEventListener("click", () => swiper.slidePrev())
+  document.querySelector('.button-next').addEventListener("click", () => swiper.slideNext())
+  document.querySelector('.button-prev').addEventListener("click", () => swiper.slidePrev())
 }

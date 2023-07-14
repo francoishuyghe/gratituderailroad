@@ -29,7 +29,7 @@
         <div class="excerpt">{!! get_the_excerpt() !!}</div>
         <div class="links">
           @if($website)
-          <a href="{{ $website }}" target="_blank" class="button">Website</a>
+          <a href="{{ $website }}" target="_blank" class="button">{!! __('Website', 'sage') !!}</a> 
           @endif
         </div>
       </div>
@@ -41,7 +41,7 @@
     <div class="container">
       <div class="row">
       <div class="col-md-2 hidden-sm">
-          <a class="back round-button orange" href="/portfolio">Back</a>
+          <a class="back round-button orange" href="/portfolio">{!! __('Back', 'sage') !!}</a>
         </span>
       </div>
       <div class="col-md-8">

@@ -12,8 +12,12 @@
       <div class="swiper-pagination"></div>
 
       <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="button-prev">
+        <img src="@asset('../../images/arrow-minimal.svg')" class="arrow"/>
+      </div>
+      <div class="button-next">
+        <img src="@asset('../../images/arrow-minimal.svg')" class="arrow"/>
+      </div>
     @endif
   </div>
 </div>
