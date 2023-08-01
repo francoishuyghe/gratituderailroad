@@ -27,7 +27,7 @@
         <h1 class="p-name">
           {!! $title !!}
         </h1>
-        <h4>{{ the_field('title') }}</h4>
+        <p class="title">{{ the_field('title') }}</p>
       </div>
     </div>
     

@@ -10,5 +10,6 @@
         {!! $title !!}
       </a>
     </h4>
+    <p class="title">{{ the_field('title') }}</p>
   </header>
 </article>
