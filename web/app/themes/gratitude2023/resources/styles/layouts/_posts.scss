@@ -1,6 +1,10 @@
 //TEAM
 article.team{
     margin-bottom: $grid-gutter;
+
+    h1{
+        margin-bottom: .5rem;
+    }
     
     .thumbnail{
         position: relative;
