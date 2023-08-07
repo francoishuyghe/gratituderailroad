@@ -3,7 +3,7 @@
 <div class="{{ $block->classes }}">
   <div class="container">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-4 col-xl-2">
       <div id="portfolioFilters">
         <select>
           <option default value="">{!! __('IMPACT AREAS', 'sage') !!}</option>
@@ -38,7 +38,7 @@
       </div>
     </div>
     </div>
-    <div class="col-md-10" id="allPortfolio">
+    <div class="col-md-8 col-xl-10" id="allPortfolio">
       <div class="grid-sizer"></div>
       @if(!empty($portfolio))
         @foreach ($portfolio as $post)

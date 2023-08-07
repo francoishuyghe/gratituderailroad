@@ -37,6 +37,12 @@
         
         @include media-breakpoint-up(md){
             margin-bottom: $grid-gutter;
+            width: calc(50% - 2rem);
+            padding: 0 .5rem;
+        }
+        
+        @include media-breakpoint-up(xl){
+            margin-bottom: $grid-gutter;
             width: calc(33% - 20px);
             padding: 0 1rem;
         }
