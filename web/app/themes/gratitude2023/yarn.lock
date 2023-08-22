@@ -5236,6 +5236,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@studio-freight/lenis@npm:^1.0.19":
+  version: 1.0.19
+  resolution: "@studio-freight/lenis@npm:1.0.19"
+  checksum: 552844b23ebf8af0dedf655a102bfaf453d80a7d2b702e7632c28f65cec0d673d138776a937119470442ffda50132827d806dead19d92b896d1fbedb35b0f1b9
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -8068,6 +8075,13 @@ __metadata:
   version: 1.3.0
   resolution: "growly@npm:1.3.0"
   checksum: 53cdecd4c16d7d9154a9061a9ccb87d602e957502ca69b529d7d1b2436c2c0b700ec544fc6b3e4cd115d59b81e62e44ce86bd0521403b579d3a2a97d7ce72a44
+  languageName: node
+  linkType: hard
+
+"gsap@npm:^3.12.2":
+  version: 3.12.2
+  resolution: "gsap@npm:3.12.2"
+  checksum: e3e9709f9ca60cee0ef7fd91f45a232a48b550f95b6df090dfffe2511fccc651408476de575b69c1c2ce80b6089b6ad0d4854beb58ea427f14e51a30b0640a70
   languageName: node
   linkType: hard
 
@@ -11919,8 +11933,10 @@ __metadata:
     "@roots/bud-postcss": ^6.12.0
     "@roots/bud-sass": ^6.12.0
     "@roots/sage": 6.12.0
+    "@studio-freight/lenis": ^1.0.19
     bootstrap: ^5.2.3
     caniuse-lite: ^1.0.30001492
+    gsap: ^3.12.2
     hamburgers: ^1.2.1
     isotope-layout: ^3.0.6
     jquery: ^3.6.4

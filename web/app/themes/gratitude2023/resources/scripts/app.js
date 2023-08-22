@@ -1,12 +1,16 @@
 import domReady from '@roots/sage/client/dom-ready';
 import 'bootstrap';
 
+
 /**
  * Application entrypoint
  */
 domReady(async () => {
 
   let test = $; // this somehow breaks jQuery if removed
+
+  // Initiate Lenis
+  import('./modules/lenis.js');
 
   //Handle changing banner color when scrolled
   changeTopBannerColor();
