@@ -6,13 +6,11 @@
       @endif
     </div>
     <div class="col-md-6 text">
-      <div class="inner">
         <h1>{{ $title }}</h1>
         <p>{{ $paragraph }}</p>
         @if($buttonText)
           <a class="button" href="{{ $link }}">{{ $buttonText }}</a>
         @endif
-      </div>
     </div>
   </div>
 </div>
