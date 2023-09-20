@@ -671,3 +671,41 @@ function posts_load_more() {
 }
 add_action('wp_ajax_posts_load_more', __NAMESPACE__ . '\\posts_load_more');
 add_action('wp_ajax_nopriv_posts_load_more', __NAMESPACE__ . '\\posts_load_more');
+
+
+// Affinity Newsletter Signup
+function add_email_to_newsletter(){
+  $email = $_POST['email'];
+
+  $url = 'https://api.affinity.co/lists';
+
+  $payload = json_encode( array( 
+      'name'          => 'Jane Doe',
+      'type'          => 1,
+      'is_public'     => true,
+      'emails'        => array($email)
+  ));
+
+  $headers = array(
+    'Content-Type:application/json',
+    'Authorization: Basic '. base64_encode(":" . getenv('AFFINITY_API_KEY'))
+  );
+  
+  $ch = curl_init();
+  curl_setopt($ch,CURLOPT_URL, $url);
+  curl_setopt($ch,CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_HEADER, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+  
+  //So that curl_exec returns the contents of the cURL; rather than echoing it
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1); 
+  
+  $result = curl_exec($ch);
+  if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
+  curl_close($ch);
+
+  wp_send_json_success($result);
+}
+add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
+add_action('wp_ajax_nopriv_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');

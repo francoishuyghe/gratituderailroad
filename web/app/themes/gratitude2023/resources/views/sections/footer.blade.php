@@ -12,9 +12,7 @@
       </div>
       <div class="col col-right">
         <h6>{{ the_field('footer_newsletter_title', 'options')}}</h6>
-        <div class="newsletter">
-        Your email 
-        </div>
+        @include('partials.newsletter-signup')
         @include('partials.social-links')
       </div>
     </div>

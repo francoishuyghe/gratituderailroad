@@ -1,4 +1,5 @@
 import domReady from '@roots/sage/client/dom-ready';
+import '@scripts/modules/affinityUtils.js'
 import 'bootstrap';
 
 

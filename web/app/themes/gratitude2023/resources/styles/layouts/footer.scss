@@ -39,9 +39,41 @@ footer.content-info{
         padding-left: 0;
     }
 
-    .newsletter{
+    .newsletter__form{
+        display: flex;
         border: 2px solid $aqua;
+    }
+    
+    .newsletter input{
+        border: 0;
+        background-color: transparent!important;
+    }
+    
+    .newsletter input[type="email"]{
         padding: .5rem;
+        width: 100%;
+        flex: 1;
+        color: $white;
+        
+        &.disabled{
+            opacity: .5;
+        }
+        
+        &::placeholder{
+            color: $aqua;
+        }
+        
+        &:focus-visible{
+            outline: 0;
+        }
+    }
+    
+    .newsletter input[type="submit"]{
+        color: $aqua;
+
+        &:hover{
+            color: $orange;
+        }
     }
     
     
