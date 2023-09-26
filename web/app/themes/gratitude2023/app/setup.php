@@ -677,12 +677,11 @@ add_action('wp_ajax_nopriv_posts_load_more', __NAMESPACE__ . '\\posts_load_more'
 function add_email_to_newsletter(){
   $email = $_POST['email'];
 
-  $url = 'https://api.affinity.co/lists';
+  $url = 'https://api.affinity.co/persons';
 
   $payload = json_encode( array( 
-      'name'          => 'Jane Doe',
-      'type'          => 1,
-      'is_public'     => true,
+      'first_name'    => 'Subscriber',
+      'last_name'     => 'Subscriber',
       'emails'        => array($email)
   ));
 
