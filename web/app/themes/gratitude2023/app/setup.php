@@ -676,7 +676,7 @@ add_action('wp_ajax_nopriv_posts_load_more', __NAMESPACE__ . '\\posts_load_more'
 // Affinity Newsletter Signup
 function addSubscriberToList($subscriber){
 
-  $listID = 209596;
+  $listID = 184566;
   $url = 'https://api.affinity.co/lists/' . $listID . '/list-entries';
 
   $payload = json_encode( array( 
@@ -732,7 +732,7 @@ function add_email_to_newsletter(){
 
   if( $http_code == 200 ){
     //Add result to the list
-    //addSubscriberToList($result);
+    addSubscriberToList($result);
   }
 
   wp_send_json_success([
