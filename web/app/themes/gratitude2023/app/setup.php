@@ -737,7 +737,7 @@ function add_email_to_newsletter(){
 
   wp_send_json_success([
     'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE), 
-    'data' => $result
+    'data' => json_decode($result)
   ]);
 }
 add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
