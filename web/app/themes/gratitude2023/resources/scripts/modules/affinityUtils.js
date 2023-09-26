@@ -40,7 +40,7 @@ class AffinityUtils {
             nonce: ajax_object.ajax_nonce,
           },
           success: function (res) {
-            console.log('Success ', res)
+            console.log('Success ', res.data)
             this.textInput.value = ""
             this.textInput.placeholder = "Saved!"
             setTimeout(() => {

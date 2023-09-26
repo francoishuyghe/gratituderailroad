@@ -692,19 +692,53 @@ function add_email_to_newsletter(){
   
   $ch = curl_init();
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch,CURLOPT_POST, 1);
-  curl_setopt($ch, CURLOPT_HEADER, true);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-  curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-  
-  //So that curl_exec returns the contents of the cURL; rather than echoing it
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $payload );
+  curl_setopt($ch,CURLOPT_POST, 1);
   curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1); 
   
   $result = curl_exec($ch);
+  $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
   if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
   curl_close($ch);
 
-  wp_send_json_success($result);
+  if( $http_code == 200 ){
+    //Add result to the list
+    addSubscriberToList($result);
+  }
+
+  wp_send_json_success([
+    'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE), 
+    'data' => $result
+  ]);
 }
 add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
 add_action('wp_ajax_nopriv_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
+
+function addSubscriberToList($subscriber){
+
+  $listID = 209596;
+  $url = 'https://api.affinity.co/lists/' . $listID . '/list-entries';
+
+  $payload = json_encode( array( 
+      'entity_id'    => $subscriber['id'],
+  ));
+
+  $headers = array(
+    'Content-Type:application/json',
+    'Authorization: Basic '. base64_encode(":" . getenv('AFFINITY_API_KEY'))
+  );
+  
+  $ch = curl_init();
+  curl_setopt($ch,CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $payload );
+  curl_setopt($ch,CURLOPT_POST, 1);
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1); 
+  
+  $result = curl_exec($ch);
+  $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
+  curl_close($ch);
+
+}
