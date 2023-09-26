@@ -680,7 +680,7 @@ function addSubscriberToList($subscriber){
   $url = 'https://api.affinity.co/lists/' . $listID . '/list-entries';
 
   $payload = json_encode( array( 
-      'entity_id'    => $subscriber['id'],
+      'entity_id'    => $subscriber['id']
   ));
 
   $headers = array(
@@ -732,7 +732,7 @@ function add_email_to_newsletter(){
 
   if( $http_code == 200 ){
     //Add result to the list
-    addSubscriberToList($result);
+    //addSubscriberToList($result);
   }
 
   wp_send_json_success([
