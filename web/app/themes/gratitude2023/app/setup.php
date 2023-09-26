@@ -680,7 +680,7 @@ function addSubscriberToList($subscriber){
   $url = 'https://api.affinity.co/lists/' . $listID . '/list-entries';
 
   $payload = json_encode( array( 
-      'entity_id'    => $subscriber['id']
+      'entity_id'    => $subscriber->id
   ));
 
   $headers = array(
