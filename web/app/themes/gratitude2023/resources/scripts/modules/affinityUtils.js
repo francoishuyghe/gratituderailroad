@@ -43,13 +43,14 @@ class AffinityUtils {
             console.log('Success ', res.data)
             this.textInput.value = ""
             this.textInput.placeholder = "Saved!"
+
             setTimeout(() => {
                 this.textInput.placeholder = this.placeholder
                 this.LOADING_TOGGLE()
             }, 1000)
 
-            if(res.data){
-              
+            if(res.data.http_code == 200){
+              this.ADD_TO_LIST(res.data.payload?.id)
             }
           },
           error: (e) => {
@@ -59,6 +60,25 @@ class AffinityUtils {
             setTimeout(() => {
                 this.textInput.placeholder = this.placeholder
             }, 1000)
+          }
+        });
+    }
+    
+    async ADD_TO_LIST(id){
+        $.ajax({
+          type: 'POST',
+          context: this,
+          url: ajax_object.ajax_url,
+          data: {
+            action: 'add_subscriber_to_list',
+            id: id,
+            nonce: ajax_object.ajax_nonce,
+          },
+          success: function (res) {
+            console.log('Success ', res.data)
+          },
+          error: (e) => {
+            console.log(e.responseText);
           }
         });
     }

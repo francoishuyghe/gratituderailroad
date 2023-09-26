@@ -674,13 +674,14 @@ add_action('wp_ajax_nopriv_posts_load_more', __NAMESPACE__ . '\\posts_load_more'
 
 
 // Affinity Newsletter Signup
-function addSubscriberToList($subscriber){
+function add_subscriber_to_list(){
 
+  $subscriberId = $_POST['id'];
   $listID = 184566;
   $url = 'https://api.affinity.co/lists/' . $listID . '/list-entries';
 
   $payload = json_encode( array( 
-      'entity_id'    => $subscriber->id
+      'entity_id'    => $subscriberId
   ));
 
   $headers = array(
@@ -696,11 +697,18 @@ function addSubscriberToList($subscriber){
   curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1); 
   
   $result = curl_exec($ch);
+  $data = json_decode($result);
   $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
   if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
   curl_close($ch);
 
+  wp_send_json_success([
+    'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE), 
+    'payload' => $data
+  ]);
 }
+add_action('wp_ajax_add_subscriber_to_list', __NAMESPACE__ . '\\add_subscriber_to_list');
+add_action('wp_ajax_nopriv_add_subscriber_to_list', __NAMESPACE__ . '\\add_subscriber_to_list');
 
 function add_email_to_newsletter(){
   $email = $_POST['email'];
@@ -731,14 +739,9 @@ function add_email_to_newsletter(){
   if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
   curl_close($ch);
 
-  if( $http_code == 200 ){
-    //Add result to the list
-    addSubscriberToList($data);
-  }
-
   wp_send_json_success([
     'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE), 
-    'data' => $data->id
+    'data' => $data
   ]);
 }
 add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
