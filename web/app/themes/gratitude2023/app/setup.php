@@ -726,18 +726,19 @@ function add_email_to_newsletter(){
   curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1); 
   
   $result = curl_exec($ch);
+  $data = json_decode($result);
   $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
   if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
   curl_close($ch);
 
   if( $http_code == 200 ){
     //Add result to the list
-    // addSubscriberToList($result);
+    addSubscriberToList($data);
   }
 
   wp_send_json_success([
     'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE), 
-    'data' => json_decode($result->id)
+    'data' => $data->id
   ]);
 }
 add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
