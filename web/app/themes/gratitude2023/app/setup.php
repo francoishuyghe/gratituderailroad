@@ -674,6 +674,34 @@ add_action('wp_ajax_nopriv_posts_load_more', __NAMESPACE__ . '\\posts_load_more'
 
 
 // Affinity Newsletter Signup
+function addSubscriberToList($subscriber){
+
+  $listID = 209596;
+  $url = 'https://api.affinity.co/lists/' . $listID . '/list-entries';
+
+  $payload = json_encode( array( 
+      'entity_id'    => $subscriber['id'],
+  ));
+
+  $headers = array(
+    'Content-Type:application/json',
+    'Authorization: Basic '. base64_encode(":" . getenv('AFFINITY_API_KEY'))
+  );
+  
+  $ch = curl_init();
+  curl_setopt($ch,CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $payload );
+  curl_setopt($ch,CURLOPT_POST, 1);
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1); 
+  
+  $result = curl_exec($ch);
+  $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
+  curl_close($ch);
+
+}
+
 function add_email_to_newsletter(){
   $email = $_POST['email'];
 
@@ -715,30 +743,4 @@ function add_email_to_newsletter(){
 add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
 add_action('wp_ajax_nopriv_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
 
-function addSubscriberToList($subscriber){
 
-  $listID = 209596;
-  $url = 'https://api.affinity.co/lists/' . $listID . '/list-entries';
-
-  $payload = json_encode( array( 
-      'entity_id'    => $subscriber['id'],
-  ));
-
-  $headers = array(
-    'Content-Type:application/json',
-    'Authorization: Basic '. base64_encode(":" . getenv('AFFINITY_API_KEY'))
-  );
-  
-  $ch = curl_init();
-  curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $payload );
-  curl_setopt($ch,CURLOPT_POST, 1);
-  curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1); 
-  
-  $result = curl_exec($ch);
-  $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-  if(curl_errno($ch)) wp_send_json_error(curl_error($ch));
-  curl_close($ch);
-
-}
