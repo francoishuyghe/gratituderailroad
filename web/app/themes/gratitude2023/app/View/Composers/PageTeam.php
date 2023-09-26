@@ -42,4 +42,15 @@ class PageTeam extends Composer
 	    $the_query = new WP_Query( $args );
 	    return $the_query->posts;
     }
+    
+    public static function allTeam() {
+        $args = array(
+            'post_type' => 'team',
+            'orderby' => 'title',
+		    'order' => 'ASC',
+            'showposts' => -1,
+	    );
+	    $the_query = new WP_Query( $args );
+	    return $the_query->posts;
+    }
 }

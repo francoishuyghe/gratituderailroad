@@ -12,37 +12,14 @@
 
     <div id="allTeam">
     <div class="row">
-      <div class="col-lg-2">
-        <ul id="filter">
-        @php $categories = get_terms(array(
-          'taxonomy'   => 'team-category',
-          'hide_empty' => true,
-          'order' => 'desc'
-      )) @endphp
-        @foreach ($categories as $category)
-        <li>
-          <a href="#{{ $category->slug }}">{{ $category->name }}</a>
-        </li>
-        @endforeach
-        </ul>
-      </div>
-      <div class="col-lg-10">
-          @foreach ($categories as $category)
-            <section id="{{ $category->slug }}">
-              <h3>{{ $category->name }}</h3>
-              <div class="row">
-            @php $teamMembers = App\View\Composers\PageTeam::teamByTerm($category->slug) @endphp
-            @foreach ($teamMembers as $post)
-              <div class="col-md-6 col-lg-4">
-                @php setup_postdata( $post ) @endphp
-                @include('partials.content-team')
-                @php wp_reset_postdata() @endphp
-              </div>
-              @endforeach
-            </div>
-            </section>
+        @php $teamMembers = App\View\Composers\PageTeam::allTeam() @endphp
+        @foreach ($teamMembers as $post)
+          <div class="col-md-6 col-lg-4">
+            @php setup_postdata( $post ) @endphp
+            @include('partials.content-team')
+            @php wp_reset_postdata() @endphp
+          </div>
           @endforeach
-        </div>
       </div>
     </div>
   </div>
