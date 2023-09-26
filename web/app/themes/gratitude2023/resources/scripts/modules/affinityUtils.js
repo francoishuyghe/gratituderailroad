@@ -45,6 +45,7 @@ class AffinityUtils {
             this.textInput.placeholder = "Saved!"
             setTimeout(() => {
                 this.textInput.placeholder = this.placeholder
+                this.LOADING_TOGGLE()
             }, 1000)
 
             if(res.data){

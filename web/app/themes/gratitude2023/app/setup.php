@@ -732,12 +732,12 @@ function add_email_to_newsletter(){
 
   if( $http_code == 200 ){
     //Add result to the list
-    addSubscriberToList($result);
+    // addSubscriberToList($result);
   }
 
   wp_send_json_success([
     'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE), 
-    'data' => json_decode($result)
+    'data' => json_decode($result['id'])
   ]);
 }
 add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
