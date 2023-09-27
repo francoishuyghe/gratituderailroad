@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col col-left">
         <h5>{!! $siteName !!}</h5>
-        <img src="@asset('images/gratitude-logo-g-black.svg')" />
+        <img src="@asset('images/logo/gratitude_logomark_white.svg')" />
       </div>
       <div class="col col-center">
         <nav class="nav-footer" aria-label="{{ wp_get_nav_menu_name('footer_navigation') }}">

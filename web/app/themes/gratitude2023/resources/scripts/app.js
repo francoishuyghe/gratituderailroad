@@ -12,7 +12,7 @@ domReady(async () => {
 
   // Initiate Lenis
   const bodyEl = document.querySelector('body');
-  if( !bodyEl.classList.include('page-id-17') ){
+  if( !bodyEl.classList.contains('page-id-17') ){
     import('./modules/lenis.js');
   }
 

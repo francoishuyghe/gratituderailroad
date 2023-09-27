@@ -21,7 +21,7 @@
       <div class="col-md-6">
         <div class="category">
             @if(isset($cats[0]))
-              {{ $cats[0]->name }}
+              {!! $cats[0]->name !!}
             @endif
         </div>
         <h1 class="p-name">

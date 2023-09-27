@@ -45,6 +45,4 @@ $categories = get_categories( array(
     <button id="loadMore">Load More</button> 
   </div>
 </section>
-
-  {!! get_the_posts_navigation() !!}
 @endsection

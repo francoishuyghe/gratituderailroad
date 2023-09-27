@@ -1,6 +1,6 @@
 <header class="banner">
   <a class="brand" href="{{ home_url('/') }}">
-    <img src="@asset('../../images/gratitude_logo.svg')" alt="{!! $siteName !!}" />
+    <img src="@asset('../../images/logo/gratitude_logo.svg')" alt="{!! $siteName !!}" />
   </a>
 
   <button class="hamburger hamburger--arrow" id="navbarToggle" type="button" aria-expanded="false" aria-controls="navbar">
