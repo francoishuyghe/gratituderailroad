@@ -807,17 +807,68 @@ p.title{
 // JOIN US
 ////////////////////////////
 .page.join-us{
+    --joinus-section-color: black;
+    scroll-behavior: smooth;
+
     #top{
         .container{
             max-width: 50rem;
+            padding: 0;
         }
     }
 
-    #types{
+    #joinOptions{
+        .wp-block-column{
+            background-color: $olive;
+        }
+
         img{
             max-width: 6rem;
             margin-bottom: 1rem
         }
+    }
+
+    .wp-block-section.is-style-orange{
+        border-radius: 1.5rem;
+        max-width: 60rem;
+        margin: 0 auto $grid-gutter;
+        padding: $grid-gutter 0;
+        scroll-margin-top: calc( 3 * $grid-gutter);
+
+        h2{
+            font-size: 1.875rem;
+            color: var(--joinus-section-color);
+        }
+
+        h3{
+            color: $orange;
+            font-size: 1.375rem;
+            font-weight: 600;
+        }
+
+        .wp-element-button{
+            background-color: var(--joinus-section-color);
+        }
+
+        @include media-breakpoint-up(md){
+            padding: $grid-gutter;
+        }
+    }
+
+    #investors{
+        --joinus-section-color: #FF5C00;
+        h2{
+            color: $black;
+        }
+    }
+    #company{
+        --joinus-section-color: #7D8F9B;
+    }
+    #fund{
+        --joinus-section-color: #6D783F;
+    }
+    #impact{
+        --joinus-section-color: #B85800;
     }
 }
 

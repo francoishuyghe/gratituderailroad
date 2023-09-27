@@ -11,7 +11,10 @@ domReady(async () => {
   let test = $; // this somehow breaks jQuery if removed
 
   // Initiate Lenis
-  import('./modules/lenis.js');
+  const bodyEl = document.querySelector('body');
+  if( !bodyEl.classList.include('page-id-17') ){
+    import('./modules/lenis.js');
+  }
 
   //Handle changing banner color when scrolled
   changeTopBannerColor();
