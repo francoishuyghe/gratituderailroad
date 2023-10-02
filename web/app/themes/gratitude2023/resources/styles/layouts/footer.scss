@@ -125,7 +125,7 @@ footer.content-info{
         max-width: 25rem;
     
         &>li>a {
-            font-weight: 400;
+            font-weight: 700;
         }
         
         a{
@@ -139,7 +139,7 @@ footer.content-info{
         }
 
         .sub-menu{
-            padding-top: 1rem;
+            // padding-top: 1rem;
         }
 
         @include media-breakpoint-up(xl){

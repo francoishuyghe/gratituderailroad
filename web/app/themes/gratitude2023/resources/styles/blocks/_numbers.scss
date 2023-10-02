@@ -1,12 +1,16 @@
 .wp-block-numbers{
-    margin-bottom: $section-gutter;
-
+    margin-bottom: 1rem;
+    
     .container{
         max-width: 70rem;
         text-align: center;
     }
-
+    
     img{
         width: 9rem;
+    }
+    
+    @include media-breakpoint-up(md){
+        margin-bottom: $section-gutter;
     }
 }

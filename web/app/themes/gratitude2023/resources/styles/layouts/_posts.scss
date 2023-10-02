@@ -117,21 +117,43 @@ article.team{
 /////////////////////////
 .single-portfolio{
     section.header{
+        margin-top: calc($section-gutter / 2);
+        
+        a.back{
+            color: $orange;
+            text-transform: uppercase;
+            
+            &:before{
+                content: '◀';
+                padding-right: 1rem;
+            }
+        }
+        
+        @include media-breakpoint-up(md){
+            margin-top: section-gutter;
+        }
+    }
+
+    section.e-content{
         .thumbnail{
+            position: relative;
             background-color: $grey;
             overflow: hidden;
             margin-bottom: 1rem;
             height: 50vh;
             max-height: 20rem;
-            width: 100vw;
-            transform: translateX(-1.55rem);
+            width: 100%;
 
             img{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }            
-
+            .tags{
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+            }
         }
 
         h1{
@@ -160,14 +182,21 @@ article.team{
         .logo{
             margin-bottom: 1rem;
         }
-    }
-
-    a.back{
-        //@extend .round-button !optional;
-        display: none;
-
         @include media-breakpoint-up(md){
-            display: inline-block;
+            margin: 0 0 $section-gutter;
+
+            .excerpt{
+                font-size: 1.375rem;
+            }
+
+            .thumbnail{
+                height: 100%;
+                max-height: none;
+                width: 90%;
+                border-radius: 2rem;
+                margin-bottom: 0;
+                transform: none;
+            }
         }
     }
 
@@ -190,34 +219,14 @@ article.team{
             }
         }
     }
-
-    @include media-breakpoint-up(md){
-        section.header{
-            margin: $section-gutter 0;
-
-            .excerpt{
-                font-size: 1.375rem;
-            }
-
-            .thumbnail{
-                height: 100%;
-                max-height: none;
-                width: 90%;
-                border-radius: 2rem;
-                margin-bottom: 0;
-                transform: none;
-            }
-        }
-
-        .e-content{
-            position: relative;
-            min-height: 20rem;
-        }
-    }
 }
 
 .fund .tag{
     background-color: $olive;
+}
+
+.tag.exited{
+    background-color: $ochre;
 }
 
 

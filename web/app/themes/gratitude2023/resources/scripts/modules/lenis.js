@@ -48,7 +48,7 @@ const lenis = new Lenis({
       });
 
       // Post Cards
-      ScrollTrigger.batch('.post-card', {
+      ScrollTrigger.batch('.wp-block-latest-news .post-card', {
         onEnter: elements => {
           gsap.from(elements, {
             y: 60,

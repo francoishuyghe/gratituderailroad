@@ -33,7 +33,6 @@
     .post-card{
         width: calc(50% - 30px);
         margin-bottom: 2rem;
-        //padding: 0 .5rem;
         
         @include media-breakpoint-up(md){
             margin-bottom: $grid-gutter;

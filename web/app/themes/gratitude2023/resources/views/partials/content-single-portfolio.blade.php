@@ -1,16 +1,29 @@
 <article @php(post_class('h-entry'))>
   <section class="header">
+    <div class="container">
+    <a class="back orange" href="/portfolio">{!! __('Back', 'sage') !!}</a>
+    </div>
+  </section>
+
+    <section class="e-content">
     <div class="container-md">
     <div class="row">
       <div class="col-md-6">
         <div class="thumbnail">
+          <div class="tags">
+            <span class="tag">{!! $type !!}</span>
+          </div>
           {!! the_post_thumbnail( 'large' );  !!}
         </div>
+        @if($logo)
+          <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
+        @endif
       </div>
+
       <div class="col-md-6 info">
-        <div class="tags">
-          <span class="tag">{!! $type !!}</span>
-        </div>
+        <h1 class="p-name">
+          {!! $title !!}
+        </h1>
         <div class="cats">
           @foreach($founders as $founder)
             <span class="founder">{{ $founder["label"] }}</span>
@@ -20,12 +33,7 @@
             <span class="cat">{!! $cat->name !!}</span>
           @endforeach 
         </div>
-          @if($logo)
-            <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
-          @endif
-          <h1 class="p-name">
-            {!! $title !!}
-          </h1>
+        @php(the_content())
         <div class="excerpt">{!! get_the_excerpt() !!}</div>
         <div class="links">
           @if($website)
@@ -35,20 +43,6 @@
       </div>
     </div>
     </div>
-  </section>
-
-  <section class="e-content">
-    <div class="container">
-      <div class="row">
-      <div class="col-md-2 hidden-sm">
-          <a class="back round-button orange" href="/portfolio">{!! __('Back', 'sage') !!}</a>
-        </span>
-      </div>
-      <div class="col-md-8">
-        @php(the_content())
-      </div>
-    </div>
-  </div>
   </section>
 
   <section id="more">

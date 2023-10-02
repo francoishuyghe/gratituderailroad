@@ -26,7 +26,7 @@
             {!! __('Fund', 'sage') !!} 
           @endif
         </span>
-      @if($exited) <span class="tag"> {!! __('Exited', 'sage') !!} </span> @endif
+      @if($exited) <span class="tag exited"> {!! __('Exited', 'sage') !!} </span> @endif
     </div>
         {!! the_post_thumbnail( 'large' );  !!}
     </div>

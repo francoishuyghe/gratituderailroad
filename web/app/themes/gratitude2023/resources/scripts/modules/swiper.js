@@ -2,18 +2,20 @@ import Swiper from 'swiper';
 
 let swiperContainer = document.querySelector('.swiper-container');
 let sliderSettings = {
-  slidesPerView: 1,
+  slidesPerView: "auto",
+  centeredSlides: true,
   spaceBetween: 10,
   loop: true,
 // Responsive breakpoints
   breakpoints: {
-    // when window width is >= 320px
+    // when window width is >= 
     576: {
+      centeredSlides: false,
       slidesPerView: 2,
       spaceBetween: 20
     },
-    // when window width is >= 640px
     992: {
+      centeredSlides: false,
       slidesPerView: swiperContainer.dataset.slides,
       spaceBetween: 40
     }
@@ -21,7 +23,6 @@ let sliderSettings = {
 }
 
 if(swiperContainer.dataset.name == 'testimonials'){
-  console.log('success')
   sliderSettings.breakpoints = {}
   sliderSettings.navigation = {                       
     nextEl: ".button-next",

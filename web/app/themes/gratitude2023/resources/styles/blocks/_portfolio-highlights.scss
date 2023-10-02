@@ -2,6 +2,29 @@
     background: $baby;
     padding: $section-gutter 0;
 
+    .swiper-slide{
+        width: 80%;
+        
+        h3, .cats{
+            opacity: 0;
+            transition: .5s;
+        }
+        
+        &.swiper-slide-active{
+            h3, .cats{
+                opacity: 1;
+            }
+        }
+        
+        @include media-breakpoint-up(md){
+            width: 100%;
+
+            h3, .cats{
+                opacity: 1;
+            }
+        }
+    }
+
     h2{
         margin-bottom: 1rem;
     }

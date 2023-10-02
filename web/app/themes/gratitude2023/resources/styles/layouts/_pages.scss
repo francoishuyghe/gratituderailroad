@@ -179,6 +179,10 @@
 .page.about{
     #main{
         text-align: center;
+        
+        @include media-breakpoint-up(md){
+            text-align: left;
+        }
     }
 
     p{
@@ -470,6 +474,12 @@
 // Portfolio Page
 ////////////////////////////
 
+.page.portfolio{
+    .e-content{
+        padding: 0;
+    }
+}
+
 #portfolioIntro{
     padding-bottom: 0;
 
@@ -755,62 +765,6 @@ p.title{
 ////////////////////////////
 // About
 ////////////////////////////
-.page.investments{
-    @include media-breakpoint-up(lg){
-
-        .wp-block-top-section{
-            .image{
-                max-height: 60vh;
-            }
-        }
-    }
-
-    #theory{
-        h1{
-            font-weight: 600;
-        }
-
-        h2.has-text-align-center{
-            color: $black;
-            font-family: $Teodor;
-            font-weight: 400;
-            margin: 2rem auto 10rem;
-            
-            @include media-breakpoint-up(md){
-                max-width: 60rem;
-            }
-        }
-
-        .wp-block-columns{
-            flex-flow: column-reverse;
-
-            &:nth-of-type(2){
-                flex-flow: column;
-                
-                @include media-breakpoint-up(md){
-                    flex-flow: row;
-                }
-            }
-
-            @include media-breakpoint-up(md){
-                flex-flow: row;
-            }
-
-            .wp-block-image{
-                max-width: none;
-    
-                @include media-breakpoint-up(md){
-                    max-width: none;
-                }
-    
-                img{
-                    max-height: none;
-                    aspect-ratio: 1;
-                }
-            }
-        }
-    }
-}
 
 ////////////////////////////
 // JOIN US
@@ -885,7 +839,73 @@ p.title{
 ////////////////////////////
 // Investments
 ////////////////////////////
+.page.investments{
+    
+    .wp-block-top-section{
+        .text{
+            padding: $grid-gutter;
+        }
+
+        @include media-breakpoint-up(lg){
+            .image{
+                max-height: 60vh;
+            }
+        }
+    }
+
+    #theory{
+        h1{
+            font-weight: 600;
+        }
+
+        h2.has-text-align-center{
+            color: $black;
+            font-family: $Teodor;
+            font-weight: 400;
+            margin: 2rem auto $grid-gutter;
+            
+            @include media-breakpoint-up(md){
+                margin: 2rem auto 10rem;
+                max-width: 60rem;
+            }
+        }
+
+        .wp-block-columns{
+            flex-flow: column-reverse;
+
+            &:nth-of-type(2){
+                flex-flow: column;
+                
+                @include media-breakpoint-up(md){
+                    flex-flow: row;
+                }
+            }
+
+            @include media-breakpoint-up(md){
+                flex-flow: row;
+            }
+
+            .wp-block-image{
+                max-width: none;
+
+                @include media-breakpoint-up(md){
+                    max-width: none;
+                }
+
+                img{
+                    max-height: none;
+                    aspect-ratio: 1;
+                }
+            }
+        }
+    }
+}
+
 #focus{
+    .wp-block-columns{
+        gap: 4rem
+    }
+
     img{
         aspect-ratio: 1.5;
         object-fit: cover;

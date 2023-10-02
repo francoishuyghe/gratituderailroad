@@ -2,7 +2,6 @@
   <div class="primary">
     <div class="row">
       <div class="col col-left">
-        <h5>{!! $siteName !!}</h5>
         <img src="@asset('images/logo/gratitude_logomark_white.svg')" />
       </div>
       <div class="col col-center">
