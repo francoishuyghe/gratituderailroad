@@ -78,7 +78,7 @@ img{
 
 h1{
     color: $black;
-    font-size: 2.8125rem;
+    font-size: 1.625rem;
     margin-bottom: 1rem;
 }
 
@@ -113,7 +113,7 @@ p, .p {
 p{
     a{
         color: $orange;
-
+        
         &:hover{
             text-decoration: underline;
         }
@@ -121,6 +121,9 @@ p{
 }
 
 @include media-breakpoint-up(md){
+    h1{
+        font-size: 2.8125rem;
+    }
     h2{
         font-size: 3rem;
         margin-bottom: 1.8rem;

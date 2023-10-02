@@ -145,7 +145,6 @@
         }
 
         .wp-block-image{
-            margin-left: auto;
             max-width: 25rem;
 
             img{
@@ -154,7 +153,7 @@
             }
             
             @include media-breakpoint-up(md){
-                max-width: 25rem;
+                margin-left: auto;
             }
         }
     }
@@ -178,6 +177,9 @@
 // About
 ////////////////////////////
 .page.about{
+    #main{
+        text-align: center;
+    }
 
     p{
         max-width: 50rem;
@@ -235,6 +237,11 @@
     #mission{
         .wp-block-columns{
             margin-bottom: 0;
+            flex-flow: column-reverse;
+            
+            @include media-breakpoint-up(md){
+                flex-flow: row;
+            }
         }
 
         img{
@@ -248,6 +255,12 @@
             @include media-breakpoint-up(lg){
                 max-width: 35rem;
             }
+        }
+    }
+
+    #team{
+        .wp-block-gallery{
+            gap: 0.4rem;
         }
     }
     
@@ -367,11 +380,6 @@
 
         .wp-block-image{
             margin-right: auto;
-            max-width: 20rem;
-
-            @include media-breakpoint-up(md){
-                max-width: 30rem;
-            }
 
             img{
                 max-height: 35rem;

@@ -3,7 +3,7 @@
     <img src="@asset('../../images/logo/gratitude_logo.svg')" alt="{!! $siteName !!}" />
   </a>
 
-  <button class="hamburger hamburger--arrow" id="navbarToggle" type="button" aria-expanded="false" aria-controls="navbar">
+  <button class="hamburger hamburger--squeeze" id="navbarToggle" type="button" aria-expanded="false" aria-controls="navbar">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>

@@ -51,6 +51,10 @@ article.team{
         }
     }
 
+    a.back{
+        margin-bottom: $grid-gutter;
+    }
+
     .category{
         @extend h1;
         margin-bottom: 0;
@@ -58,12 +62,23 @@ article.team{
 
     .p-name{
         @extend h2;
+
+        font-size: 2rem;
+
+        @include media-breakpoint-up(md){
+            font-size: inherit;
+        }
     }
 
     .excerpt{
         font-family: $Teodor;
-        font-size: 1.625rem;
         margin-bottom: $grid-gutter;
+        
+        font-size: 1.2rem;
+        
+        @include media-breakpoint-up(md){
+            font-size: 1.625rem;
+        }
     }
 }
 
@@ -84,6 +99,15 @@ article.team{
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .type-post{
+        margin-top: 0;
+
+        .thumbnail{
+            padding-top: 60%;
+        }
     }
 }
 

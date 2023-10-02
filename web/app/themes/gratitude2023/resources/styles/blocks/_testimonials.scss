@@ -17,13 +17,17 @@
     }
 
     .quote{
-        font-size: 2.3rem;
-        line-height: 3rem;
+        font-size: 1.5rem;
+        line-height: 1.3em;
         font-weight: 400;
         font-style: italic;
         letter-spacing: -.03rem;
         
-        @include media-breakpoint-up(lg){
+        @include media-breakpoint-up(md){
+            font-size: 2rem;
+        }
+        
+        @include media-breakpoint-up(xl){
             font-size: 2.8125rem;
         }
 
@@ -79,7 +83,7 @@
         padding: 0 1rem;
     }
 
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(xl){
         padding: 0 3rem;
     }
 }
