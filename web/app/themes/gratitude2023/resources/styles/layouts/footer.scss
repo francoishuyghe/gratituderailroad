@@ -39,21 +39,29 @@ footer.content-info{
         padding-left: 0;
     }
 
-    .newsletter__form{
+    .newsletter #mc_embed_signup_scroll{
         display: flex;
-        border: 2px solid $aqua;
+        // flex-wrap: wrap;
+    }
+    
+    .newsletter label{
+        display: none;
+    }
+
+    .mc-field-group{
+        flex: 1;
     }
     
     .newsletter input{
-        border: 0;
+        border: 2px solid $aqua;
         background-color: transparent!important;
     }
     
     .newsletter input[type="email"]{
         padding: .5rem;
         width: 100%;
-        flex: 1;
         color: $white;
+        border-right: 0;
         
         &.disabled{
             opacity: .5;
@@ -70,6 +78,10 @@ footer.content-info{
     
     .newsletter input[type="submit"]{
         color: $aqua;
+        width: 1rem;
+        padding: 0.5rem 1.5rem;
+        border-left: 0;
+        border-radius: 0;
 
         &:hover{
             color: $orange;
@@ -99,7 +111,7 @@ footer.content-info{
 
     @include media-breakpoint-up(md){
         .col-left{
-            flex: 0 1 15rem;
+            flex: 0 1 6rem;
         }
 
         .col-right{
