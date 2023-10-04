@@ -13,8 +13,6 @@
   @endphp
 
 <section id="filters">
-  <h3>Categories</h3>
-
 @php
 $categories = get_categories( array(
 	'orderby' => 'name',

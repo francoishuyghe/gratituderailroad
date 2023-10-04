@@ -1,5 +1,5 @@
 <article @php(post_class('h-entry'))>
-  <section class="header">
+  <section class="top">
     <div class="container">
     <a class="back orange" href="/portfolio">{!! __('Back', 'sage') !!}</a>
     </div>
@@ -15,24 +15,30 @@
           </div>
           {!! the_post_thumbnail( 'large' );  !!}
         </div>
-        @if($logo)
-          <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
-        @endif
       </div>
 
       <div class="col-md-6 info">
-        <h1 class="p-name">
-          {!! $title !!}
-        </h1>
-        <div class="cats">
-          @foreach($founders as $founder)
-            <span class="founder">{{ $founder["label"] }}</span>
-          @endforeach
-
-          @foreach($cats as $cat)
-            <span class="cat">{!! $cat->name !!}</span>
-          @endforeach 
-        </div>
+        <header>
+          <div class="title">
+            <h1 class="p-name">
+              {!! $title !!}
+            </h1>
+            <div class="cats">
+              @foreach($founders as $founder)
+              <span class="founder">{{ $founder["label"] }}</span>
+              @endforeach
+              
+              @foreach($cats as $cat)
+              <span class="cat">{!! $cat->name !!}</span>
+              @endforeach 
+            </div>
+          </div>
+          @if($logo)
+          <div class="logo-wrap">
+          <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
+          </div>
+          @endif
+        </header>
         @php(the_content())
         <div class="excerpt">{!! get_the_excerpt() !!}</div>
         <div class="links">

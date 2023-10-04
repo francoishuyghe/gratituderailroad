@@ -513,16 +513,16 @@ function create_options_customfields() {
 
   $twitter_link = array(
     'key' => 'twitter_link',
-    'label' => 'Twitter Link',
-    'name' => 'Twitter Link',
+    'label' => 'Twitter',
+    'name' => 'Twitter',
     'type' => 'url',
     'required' => 0,
   );
   
   $linkedin_link = array(
     'key' => 'linkedin_link',
-    'label' => 'Linkedin Link',
-    'name' => 'Linkedin Link',
+    'label' => 'Linkedin',
+    'name' => 'Linkedin',
     'type' => 'url',
     'required' => 0,
   );
@@ -531,6 +531,38 @@ function create_options_customfields() {
     'key' => 'footer_newsletter_title',
     'label' => 'Newsletter Title',
     'name' => 'Newsletter Title',
+    'type' => 'text',
+    'required' => 0,
+  );
+  
+  $newsletter_cta_title = array(
+    'key' => 'newsletter_cta_title',
+    'label' => 'Title',
+    'name' => 'Title',
+    'type' => 'text',
+    'required' => 0,
+  );
+  
+  $newsletter_cta_paragraph = array(
+    'key' => 'newsletter_cta_paragraph',
+    'label' => 'Paragraph',
+    'name' => 'Paragraph',
+    'type' => 'text',
+    'required' => 0,
+  );
+  
+  $newsletter_cta_placeholder = array(
+    'key' => 'newsletter_cta_placeholder',
+    'label' => 'Email Placeholder',
+    'name' => 'Email Placeholder',
+    'type' => 'text',
+    'required' => 0,
+  );
+  
+  $newsletter_cta_submit = array(
+    'key' => 'newsletter_cta_submit',
+    'label' => 'Submit Text',
+    'name' => 'Submit Text',
     'type' => 'text',
     'required' => 0,
   );
@@ -562,6 +594,27 @@ function create_options_customfields() {
         'position' => 'normal',
         'fields' => array (
             $footer_newsletter_title,
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'theme-general-settings',
+                ),
+            ),
+        ),
+    ));
+    
+    acf_add_local_field_group(array(
+        'key' => 'newsletter-cta',
+        'title' => 'Newsletter CTA',
+        'position' => 'normal',
+        'fields' => array (
+            $newsletter_cta_title,
+            $newsletter_cta_paragraph,
+            $newsletter_cta_placeholder,
+            $newsletter_cta_submit,
         ),
         'location' => array (
             array (
@@ -660,8 +713,11 @@ function posts_load_more() {
   $response = [];
 
   if($ajaxposts->have_posts()) {
+    $index = 0;
     while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-      array_push($response,  view('partials.content')->render());
+    array_push($response,  view('partials.content')->render());
+    if($index == 2){array_push($response,  view('partials.newsletter-cta')->render());}
+      $index++;
     endwhile;
   } else {
     wp_send_json_success( false );

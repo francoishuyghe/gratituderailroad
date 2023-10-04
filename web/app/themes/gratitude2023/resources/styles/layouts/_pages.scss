@@ -549,7 +549,7 @@
     .thumbnail{
         position: relative;
         background-color: $grey;
-        padding-top: 140%;
+        padding-top: 70%;
         border-radius: $radius;
         margin-bottom: 10px;
         transition: .5s;
@@ -621,6 +621,12 @@
                     opacity: .2;
                 } 
             } 
+        }
+    }
+
+    &.type-portfolio{
+        .thumbnail{
+            padding-top: 140%;
         }
     }
 }
@@ -728,6 +734,7 @@ p.title{
     @extend .button;
     display: block;
     margin: $grid-gutter auto;
+    border: 0;
  }
 
     #allPosts{
@@ -941,5 +948,79 @@ p.title{
         strong{
             color: $ochre;
         }   
+    }
+}
+
+// Newsletter CTA
+#newsletterCTA{
+    background-color: $baby;
+    margin: $grid-gutter 0;
+
+    .container{
+        max-width: 60rem;
+    }
+
+    .text{
+        padding: $grid-gutter 0;
+
+        @include media-breakpoint-up(md){
+            padding: calc($grid-gutter * 2) 0;
+        }
+
+        h2{
+            font-size: 2rem;
+            margin-bottom: 0;
+            color: $black;
+            font-weight: 100;
+        }
+    
+        p{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .image{
+        position: relative;
+
+        img{
+            position: absolute;
+            height: 80%;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .newsletter{
+        max-width: none;
+
+        @include media-breakpoint-up(md){
+            max-width: 20rem;
+        }
+        
+        #mc_embed_signup_scroll{
+            display: block;
+        }
+        
+        input{
+            border-radius: .5rem;
+            width: 100%;
+        }
+        
+        input[type="email"]{
+            border: 1px solid $black;
+            background-color: $white;
+            margin-bottom: .5rem;
+            color: $black;
+
+            &::placeholder{
+                color: $grey;
+            }
+        }
+        
+        input[type="submit"]{
+            border: 1px solid $orange;
+            background-color: $orange;
+            color: $white;
+        }
     }
 }

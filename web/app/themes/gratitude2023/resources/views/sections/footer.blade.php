@@ -11,8 +11,12 @@
       </div>
       <div class="col col-right">
         <h6>{{ the_field('footer_newsletter_title', 'options')}}</h6>
-        @include('partials.newsletter-signup')
+        @include('partials.newsletter-signup', array(
+          'placeholder' => get_field('newsletter_cta_placeholder', 'options'),
+          'submit' => "►"
+      ))
         @include('partials.social-links')
+        <img src="@asset('../../images/B-Corp-Logo.svg')" class="bcorp"/>
       </div>
     </div>
   </div>
