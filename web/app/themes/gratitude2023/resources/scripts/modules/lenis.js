@@ -3,16 +3,20 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 
 gsap.registerPlugin(ScrollTrigger);
-const lenis = new Lenis({
+
+// Only smooth scroll on desktop
+if( window.innerHeight > 800 ){
+  const lenis = new Lenis({
     smooth: true,
   })
-
+  
   function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
-
+  
   requestAnimationFrame(raf)
+}
 
   //Manifesto
   gsap.timeline({
