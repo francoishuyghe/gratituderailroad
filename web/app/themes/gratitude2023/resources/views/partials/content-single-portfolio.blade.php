@@ -35,7 +35,7 @@
           </div>
           @if($logo)
           <div class="logo-wrap">
-          <img class="logo" src="{{ esc_url($logo['sizes']['logo']) }}" alt="{{ esc_attr($logo['alt']) }}" />
+          <img class="logo" src="{{ esc_url($logo['sizes']['medium']) }}" alt="{{ esc_attr($logo['alt']) }}" />
           </div>
           @endif
         </header>

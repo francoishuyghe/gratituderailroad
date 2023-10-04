@@ -171,7 +171,7 @@ add_action('widgets_init', function () {
 
 //Image Sizes
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'logo', 200, 200 );
+add_image_size( 'logo', 300, 300 );
 
 
 
