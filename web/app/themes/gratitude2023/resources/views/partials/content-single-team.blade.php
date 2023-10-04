@@ -1,9 +1,5 @@
 @php global $post @endphp
-@php( $cats = get_terms(array(
-            'taxonomy'   => 'team-category',
-            'hide_empty' => true,
-            'order' => 'desc'
-        )))
+@php( $cats = get_the_terms($post, 'team-category'))
 
 <article @php(post_class('h-entry'))>
   <header id="articleHeader">

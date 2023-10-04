@@ -2,8 +2,17 @@
 article.team{
     margin-bottom: $grid-gutter;
 
-    #articleHeader h1{
+    #articleHeader .p-name{
         margin-bottom: 1rem;
+        font-size: 2rem;
+        
+        @include media-breakpoint-up(sm){
+            font-size: 3rem;
+        }
+        
+        @include media-breakpoint-up(lg){
+            font-size: 4.25rem;
+        }
     }
     
     .thumbnail{
