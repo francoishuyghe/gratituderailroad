@@ -18,8 +18,8 @@ const lenis = new Lenis({
   gsap.timeline({
     scrollTrigger: {
       trigger: '#manifesto',
-      start: 'bottom bottom',
-      end: 'bottom center',
+      start: 'top top',
+      end: 'bottom top',
       scrub: true,
   },
   })

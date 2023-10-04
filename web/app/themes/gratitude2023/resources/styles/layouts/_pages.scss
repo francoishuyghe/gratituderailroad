@@ -452,8 +452,13 @@
         max-width: 30rem;
     }
 
+    h3{
+        margin-bottom: 0;
+    }
+
     a{
         @extend .readmore;
+        white-space: nowrap;
 
         &::after{
             @include dot;
