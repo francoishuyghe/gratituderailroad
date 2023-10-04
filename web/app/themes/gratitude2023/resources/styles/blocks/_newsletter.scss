@@ -1,0 +1,9 @@
+.wp-block-newsletter{
+    .newsletter{
+        background-color: $white;
+
+        input[type=email]{
+            color: $black;
+        }
+    }
+}

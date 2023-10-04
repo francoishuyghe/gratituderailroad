@@ -25,6 +25,11 @@
             flex-flow: column;
             justify-content: flex-end;
             align-items: center;
+            min-height: 8rem;
+            
+            @include media-breakpoint-up(md){
+                width: 10rem;
+            }
         }
 
         img{
