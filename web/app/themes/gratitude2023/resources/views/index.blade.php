@@ -37,7 +37,7 @@ $categories = get_categories( array(
 
 <section id="allPosts" class="loading">
   <div class="container">
-    <div class="row">
+    <div class="row" id="postsContainer">
       {{-- Posts go here --}}
     </div>
     <button id="loadMore">Load More</button> 

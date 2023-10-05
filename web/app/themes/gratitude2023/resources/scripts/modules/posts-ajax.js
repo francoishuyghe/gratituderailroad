@@ -49,10 +49,10 @@ class PostLoader {
           }
 
           //Append the new posts
-          $('#allPosts .row').append(res.data);
+          $('#postsContainer').append(res.data); 
         } else {
           this.container.addClass('no-more')
-          $('#allPosts .row').append('<div class="no-posts">No post satisfies these conditions.</div>');
+          $('#postsContainer').append('<div class="no-posts">No post satisfies these conditions.</div>');
         }
       },
       error: (e) => {
