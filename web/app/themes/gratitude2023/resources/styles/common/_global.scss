@@ -397,9 +397,10 @@ a{
 .hero.aligncenter{
     display: block;
     margin: 2rem 0;
-    max-width: none;
-    aspect-ratio: 2;
+    max-width: 1320px;
     width: 100%;
+    max-height: 50vh;
+    aspect-ratio: 2;
     overflow: hidden;
     background: transparent;
     border-radius: 2em;
@@ -412,7 +413,6 @@ a{
     img{
         width: 100%;
         height: 100%;
-        max-height: 50vh;
         object-fit: cover;
     }
 }
