@@ -9,13 +9,12 @@
           {!! wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
         </nav>
       </div>
-      <img src="@asset('../../images/B-Corp-Logo.svg')" class="bcorp"/>
       <div class="col col-right">
         <h6>{{ the_field('footer_newsletter_title', 'options')}}</h6>
         @include('partials.newsletter-signup', array(
           'placeholder' => get_field('newsletter_cta_placeholder', 'options'),
           'submit' => "►"
-      ))
+          ))
         @include('partials.social-links')
       </div>
     </div>
@@ -29,6 +28,7 @@
         {!! wp_nav_menu(['theme_location' => 'subfooter_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
       </nav>
     </div>
+    <img src="@asset('../../images/B-Corp-Logo.svg')" class="bcorp"/>
   </div>
 
 </footer>

@@ -33,11 +33,11 @@
               @endforeach 
             </div>
           </div>
-          @if($logo)
+          {{-- @if($logo)
           <div class="logo-wrap">
           <img class="logo" src="{{ esc_url($logo['sizes']['medium']) }}" alt="{{ esc_attr($logo['alt']) }}" />
           </div>
-          @endif
+          @endif --}}
         </header>
         @php(the_content())
         <div class="excerpt">{!! get_the_excerpt() !!}</div>
@@ -52,23 +52,12 @@
   </section>
 
   <section id="more">
-    <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="wp-block-image stacked">
-          @if($learnmore_image)
-          <img src="{{ $learnmore_image['sizes']['large'] }}" alt="{{ $learnmore_image['alt'] }}" />
-          @endif
-        </div>
-      </div>
-      <div class="col-md-6">
+      <div class="more__wrap">
         <h3>{{ $learnmore_title }}</h3>
         <p>{{ $learnmore_text }}</p>
         @if($learnmore_link)
-        <a class="button" href="{{ $learnmore_link }}">{{ $learnmore_button }}</a>
+        <a class="button orange" href="{{ $learnmore_link }}">{{ $learnmore_button }}</a>
         @endif
-      </div>
     </div>
-  </div>
   </section>
 </article>

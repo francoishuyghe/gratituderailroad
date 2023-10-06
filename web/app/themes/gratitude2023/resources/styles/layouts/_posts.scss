@@ -234,27 +234,16 @@ article.team{
         margin: calc($section-gutter / 2) 0 0;
         padding: calc($section-gutter / 2) 1rem;
         background-color: $baby;
+        text-align: center;
         
         @include media-breakpoint-up(md){
             margin: $section-gutter 0 0;
             padding: $grid-gutter;
         }
         
-        .row{
-            align-items: center;
-        }
-
-        .wp-block-image{
-            margin-left: 0rem;
-            // margin-bottom: 4rem;
-            
-            @include media-breakpoint-up(md){
-                margin-right: 2rem;
-            }
-            
-            @include media-breakpoint-up(lg){
-                margin-right: 4rem;
-            }
+        .more__wrap{
+            margin: auto;
+            max-width: 40rem;
         }
     }
 }
