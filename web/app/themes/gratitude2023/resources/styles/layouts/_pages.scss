@@ -825,6 +825,15 @@ p.title{
             background-color: var(--joinus-section-color);
         }
 
+        .newsletter input{
+            border-color: var(--joinus-section-color) ;
+            
+            &[type="email"]::placeholder,
+            &[type="submit"]{
+                color: var(--joinus-section-color) ;
+            }
+       }
+
         @include media-breakpoint-up(md){
             padding: $grid-gutter;
         }

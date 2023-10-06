@@ -9,6 +9,7 @@
           {!! wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
         </nav>
       </div>
+      <img src="@asset('../../images/B-Corp-Logo.svg')" class="bcorp"/>
       <div class="col col-right">
         <h6>{{ the_field('footer_newsletter_title', 'options')}}</h6>
         @include('partials.newsletter-signup', array(
@@ -16,7 +17,6 @@
           'submit' => "►"
       ))
         @include('partials.social-links')
-        <img src="@asset('../../images/B-Corp-Logo.svg')" class="bcorp"/>
       </div>
     </div>
   </div>
