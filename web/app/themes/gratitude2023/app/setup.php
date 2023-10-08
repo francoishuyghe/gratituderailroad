@@ -716,7 +716,7 @@ function posts_load_more() {
     $index = 0;
     while($ajaxposts->have_posts()) : $ajaxposts->the_post();
     array_push($response,  view('partials.content')->render());
-    if($index == 2){array_push($response,  view('partials.newsletter-cta')->render());}
+    if($paged == 1 && $index == 2){array_push($response,  view('partials.newsletter-cta')->render());}
       $index++;
     endwhile;
   } else {
