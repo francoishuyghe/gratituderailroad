@@ -29,6 +29,11 @@
             
             @include media-breakpoint-up(md){
                 width: 10rem;
+                font-size: 1rem;
+            }
+            @include media-breakpoint-up(xl){
+                width: 12rem;
+                font-size: 1.2rem;
             }
         }
 
@@ -36,6 +41,7 @@
             width: 8rem;
             max-width: 80%;
             mix-blend-mode: screen;
+            margin-bottom: .5rem;
             filter: brightness(1.5);
             
             @include media-breakpoint-up(md){

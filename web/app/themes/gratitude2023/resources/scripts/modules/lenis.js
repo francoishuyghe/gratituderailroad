@@ -39,14 +39,17 @@ if( window.innerHeight > 800 ){
           scrollTrigger: {
             trigger: stack,
             start: 'top bottom',
-            end: 'top top',
+            end: 'top center',
             scrub: true,
         },
+        })
+        .from(stack, {
+          y: 50,
         })
         .to(stack, {
           ease: 'none',
           '--movement': 25,
-          y: -50,
+          y: 0,
         })
     
       });

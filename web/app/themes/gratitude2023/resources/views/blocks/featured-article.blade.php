@@ -8,11 +8,11 @@
         </div>
       </div>
       <div class="col-lg-6 text">
-        <h2>
         <a href="{{ the_permalink($feature->ID) }}">
+        <h3>
           {{ $feature->post_title}}
-        </a>
-      </h2>
+        </h3>
+      </a>
         <p>{!! get_the_excerpt($feature->ID) !!} <br />
           <a class="readmore dot" href="{{ the_permalink($feature->ID) }}">Read More</a>
         </p>
