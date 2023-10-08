@@ -10,6 +10,16 @@ html, body{
     }
 }
 
+#app{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+
+    main{
+        flex: 1;
+    }
+}
+
 .container{
     --bs-gutter-x: 3.125rem;
 }
