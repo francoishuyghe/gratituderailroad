@@ -3,7 +3,7 @@ class PostLoader {
     this.container = container
     this.postNum = postNum
     this.currentPage = 0;
-    this.categories = [];
+    this.category = '';
     this.loading = true;
 
     this.LOAD_POSTS = this.LOAD_POSTS.bind(this);
@@ -34,7 +34,7 @@ class PostLoader {
       data: {
         action: 'posts_load_more',
         paged: this.currentPage,
-        cats: this.categories.join('+'),
+        cats: this.category,
         postNum: this.postNum,
         nonce: ajax_object.ajax_nonce,
       },
@@ -64,12 +64,11 @@ class PostLoader {
 
   UPDATE_CATEGORY(newCategory) {
     this.LOADING_TOGGLE()
-    let index = this.categories.indexOf(newCategory);
 
-    if(index === -1){
-      this.categories.push(newCategory);
+    if(this.category == newCategory){
+      this.category = ''
     } else {
-      this.categories.splice(index, 1);
+      this.category = newCategory;
     }
 
     this.REFRESH_POSTS(400);
@@ -89,7 +88,12 @@ $('#loadMore').on('click', blogPage.LOAD_POSTS);
 
 // Update Categories
 $('.filter-toggle').on('click', (e) => {
-  $(e.target).toggleClass('active');
+  if($(e.target).hasClass('active')){
+    $(e.target).removeClass('active');
+  } else {
+    $('.filter-toggle.active').removeClass('active')
+    $(e.target).addClass('active');
+  }
   let cat = $(e.target).data('cat');
   blogPage.UPDATE_CATEGORY(cat);
 });
