@@ -684,8 +684,12 @@
 .page.team{
     #top{
         text-align: center;
-        margin: calc($grid-gutter * 3) auto;
+        margin: 3rem auto;
         max-width: 800px;
+        
+        @include media-breakpoint-up(md){
+            margin: calc($grid-gutter * 3) auto;
+        }
     }
 
     #allTeam{
@@ -702,11 +706,15 @@
 }
 
 p.title{
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $grey;
     margin-top: 0;
     line-height: 1.2rem;
     margin-bottom: 0;
+
+    @include media-breakpoint-up(md){
+        font-size: 1.2rem;
+    }
 }
 
 #filter{

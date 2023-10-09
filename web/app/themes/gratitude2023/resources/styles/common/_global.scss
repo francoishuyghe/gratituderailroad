@@ -21,17 +21,13 @@ html, body{
 }
 
 .container{
-    --bs-gutter-x: 3.125rem;
+    --bs-gutter-x: 2rem;
 }
 
 .wp-block{
     max-width: 50rem;
     margin-left: auto;
     margin-right: auto;
-}
-
-.e-content{
-    padding: 1rem;
 }
 
 img{

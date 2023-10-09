@@ -1,5 +1,5 @@
 .wp-block-numbers{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem 0;
     
     .container{
         max-width: 70rem;
@@ -15,6 +15,6 @@
     }
     
     @include media-breakpoint-up(md){
-        margin-bottom: $section-gutter;
+        margin: $section-gutter 0;
     }
 }

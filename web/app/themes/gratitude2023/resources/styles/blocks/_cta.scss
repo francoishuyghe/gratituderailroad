@@ -8,15 +8,9 @@
     .image{
         margin-bottom: $grid-gutter;
 
-        .image-wrap{
-            padding: 2rem;
+        .with-border{
             background-color: $orange;
-    
-            img{
-                width: 100%;
-                height: auto;
-                border-radius: 2rem;
-            }
+            margin: 0;
         }
     }
 

@@ -14,7 +14,7 @@
     <div class="row">
         @php $teamMembers = App\View\Composers\PageTeam::allTeam() @endphp
         @foreach ($teamMembers as $post)
-          <div class="col-md-6 col-lg-4">
+          <div class="col-6 col-md-6 col-lg-4">
             @php setup_postdata( $post ) @endphp
             @include('partials.content-team')
             @php wp_reset_postdata() @endphp

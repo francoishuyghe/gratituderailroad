@@ -3,8 +3,8 @@
   <div class="row">
     <div class="col-lg-6 image">
       @if($image)
-      <div class="image-wrap">
-        {!! wp_get_attachment_image( $image['ID'], 'medium', "", array( "class" => "framed" )); !!}
+      <div class="wp-block-image with-border">
+        {!! wp_get_attachment_image( $image['ID'], 'medium', ""); !!}
       </div>
       @endif
     </div>
