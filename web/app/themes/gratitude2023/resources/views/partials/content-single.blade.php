@@ -43,11 +43,8 @@
   
   <section id="relatedPosts">
     <div class="container">
-      <header>
-        <h3>Related Posts</h3>
-        <a class="round-button orange" href="/insights">See All</a>
-      </header>
-      <div class="row">
+      <h3>Related Posts</h3>
+      <div class="row posts-wrap">
         @foreach ($relatedPosts as $post)
         <div class="col-md-4">
           @php( setup_postdata( $post ) )
@@ -56,6 +53,9 @@
         </div>
         @endforeach
       </div>
+      <div class="link">
+        <a class="round-button orange" href="/insights">See All</a>
+    </div>
     </div>
   </section>
 

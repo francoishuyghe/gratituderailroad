@@ -37,7 +37,11 @@ article.team{
 
 #articleHeader{
     text-align: center;
-    margin: $section-gutter auto;
+    margin: 2rem auto;
+
+    @include media-breakpoint-up(md){
+        margin: $section-gutter auto;
+    }
 
     .container{
         position: relative;
@@ -54,13 +58,22 @@ article.team{
         }
 
         .excerpt{
-            font-size: 1.625rem;
+            font-size: 1rem;
             margin-bottom: $grid-gutter;
+            
+            @include media-breakpoint-up(md){
+                font-size: 1.625rem;
+            }
         }
     }
 
     a.back{
+        display: none;
         margin-bottom: $grid-gutter;
+
+        @include media-breakpoint-up(md){
+            display: inline-block;
+        }
     }
 
     .category{
@@ -101,12 +114,26 @@ article.team{
     background-color: $baby;
     margin-top: $section-gutter;
     padding: $grid-gutter 0;
+    
+    .link{
+        margin-top: 1rem;
+    }
+    
+    @include media-breakpoint-up(md){
+        .container{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            
+            .link{
+                margin-top: 0;
+                text-align: right;
+            }
 
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 1rem;
+            .posts-wrap{
+                grid-column: span 2;
+                order: 3;
+            }
+        }
     }
 
     .type-post{

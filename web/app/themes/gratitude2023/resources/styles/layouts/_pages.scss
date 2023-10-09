@@ -218,15 +218,21 @@
     }
 
     #top{
+        display: flex;
+        flex-flow: column;
         padding-bottom: 0;
+
+        @include media-breakpoint-up(md){
+            display: block;
+        }
 
         .wp-block-column{
             max-width: 50rem;
         }
-    }
 
-    #heroImage{
-        padding-top: 0;
+        .hero{
+            order: -1;
+        }
     }
 
     
@@ -279,7 +285,6 @@
         }
 
         .with-border{
-            padding: 3rem;
             margin-left: auto;
             
             @include media-breakpoint-up(lg){
@@ -290,7 +295,7 @@
 
     #team{
         .wp-block-gallery{
-            margin-top: $grid-gutter;
+            margin: $grid-gutter 0;
             gap: 0.4rem;
         }
     }
@@ -567,7 +572,6 @@
 }
 
 .post-card{
-    margin-bottom: $grid-gutter;
 
     a{
         text-decoration: none;
@@ -745,11 +749,17 @@ p.title{
     }
 
  #filters{
-    margin: $section-gutter 0 0;
+    margin: 2rem 0 0;
+    font-size: 1.2rem;
     text-align: center;
     padding: 0;
     
+    @include media-breakpoint-up(md){
+        margin: $section-gutter 0 0;
+    }
+    
     ul{
+        padding: 0;
         list-style: none;
         margin: auto;
         display: flex;
@@ -1073,6 +1083,7 @@ p.title{
         }
         
         input[type="submit"]{
+            padding: .5rem;
             border: 1px solid $orange;
             background-color: $orange;
             color: $white;

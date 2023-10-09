@@ -1,7 +1,7 @@
 .wp-block-featured-article{
     background-color: $baby;
     margin-bottom: $grid-gutter;
-    padding: $section-gutter 0;
+    padding: 2rem 0;
 
     .wp-block-image{
         margin: 0;
@@ -9,7 +9,6 @@
     }
 
     .text{
-        margin-bottom: $grid-gutter;
 
         h3{
             margin-bottom: 1rem;
@@ -22,6 +21,7 @@
     }
 
     @include media-breakpoint-up(lg){
+        padding: $section-gutter 0;
 
         h3{
             margin-bottom: 1rem;

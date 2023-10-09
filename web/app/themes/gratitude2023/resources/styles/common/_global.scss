@@ -390,8 +390,12 @@ a{
     }
 
     &.with-border{
-        padding: 30px;
+        padding: 1rem;
         background-color: $grey;
+        
+        @include media-breakpoint-up(md){
+            padding: 2rem;
+        }
 
         &.olive{
             background-color: $olive;
