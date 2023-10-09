@@ -13,7 +13,7 @@
       @foreach ($columns as $column)
       <div class="col-md-3 col-6">
         <img src="{{ $images[$loop->index] }}"/>
-        <p>{!! $column['text'] !!}</p>
+        {!! $column['text'] !!}
       </div>
       @endforeach
     </div>

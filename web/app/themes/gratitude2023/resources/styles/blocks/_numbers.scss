@@ -9,6 +9,10 @@
     img{
         width: 9rem;
     }
+
+    p{
+        margin-top: 0.5rem;
+    }
     
     @include media-breakpoint-up(md){
         margin-bottom: $section-gutter;
