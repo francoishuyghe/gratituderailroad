@@ -103,10 +103,6 @@ footer.content-info{
             }
         }
 
-        .sub-menu{
-            // padding-top: 1rem;
-        }
-
         @include media-breakpoint-up(xl){
             margin-bottom: 0;
         }
@@ -120,11 +116,13 @@ footer.content-info{
         background: $orange;
         color: $black;
         padding: 1rem;
-
+        font-size: .9rem;
+        
         .menu{
             margin-bottom: 0;
-
+            
             li{
+                font-size: .9rem;
                 margin-right: 1rem;
 
                 a:hover{
@@ -175,6 +173,7 @@ footer.content-info{
 }
 
 .newsletter input[type="email"]{
+    border-radius: 0;
     padding: .5rem;
     width: 100%;
     color: $white;
@@ -196,7 +195,7 @@ footer.content-info{
 .newsletter input[type="submit"]{
     color: $aqua;
     width: 1rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0 1.5rem;
     border-left: 0;
     border-radius: 0;
 

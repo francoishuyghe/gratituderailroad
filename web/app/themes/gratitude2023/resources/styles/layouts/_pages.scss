@@ -387,10 +387,16 @@
 
     .wp-block-columns{
         margin-bottom: $section-gutter;
-
+        flex-flow: column-reverse;
+        
         .wp-block-image{
             margin-right: auto;
 
+            &.stacked{
+                margin-top: 0;
+                margin-bottom: 2rem;
+            }
+            
             img{
                 max-height: 35rem;
                 object-fit: cover;
@@ -398,7 +404,7 @@
         }
 
         &:nth-of-type(2){
-            flex-flow: column-reverse;
+            flex-flow: column;
 
             .wp-block-image{
                 margin-left: auto;
@@ -421,10 +427,10 @@
 
     
     @include media-breakpoint-up(md){
-
         scroll-margin-top: $section-gutter;
-
+        
         .wp-block-columns{
+            flex-flow: row;
             margin-bottom: calc($section-gutter * 2);
         }
     }

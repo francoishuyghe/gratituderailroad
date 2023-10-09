@@ -2,21 +2,33 @@
     background: $baby;
     padding: 3rem 0;
 
-    header{
-        display: flex;
-        justify-content: space-between;
+    h3{
+        text-transform: uppercase;
+        font-size: 2rem;
 
-        h3{
-            text-transform: uppercase;
-            font-size: 2rem;
+        @include media-breakpoint-up(lg){
+            margin-bottom: 0;
+        }
+    }
 
-            @include media-breakpoint-up(lg){
-                margin-bottom: 0;
-            }
+    
+    .round-button{
+        align-self: center;
+    }
+    
+    @include media-breakpoint-up(md){
+        .container{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
         }
 
-        .round-button{
-            align-self: center;
+        .link{
+            text-align: right;
+        }
+
+        .swiper-wrapper{
+            grid-column: span 2;
+            order: 3;
         }
     }
 }
