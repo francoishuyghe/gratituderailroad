@@ -59,11 +59,11 @@ if( window.innerHeight > 800 ){
       },
       })
       .from(stack, {
-        y: isDesktop ? 50 : 24,
+        y: isDesktop ? 50 : 32,
       })
       .to(stack, {
         ease: 'none',
-        '--movement': isDesktop? 25 : 12,
+        '--movement': isDesktop? 25 : 16,
         y: 0,
       })
   

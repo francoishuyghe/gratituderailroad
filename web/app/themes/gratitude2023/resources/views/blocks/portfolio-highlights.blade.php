@@ -13,6 +13,7 @@
         <a href="/portfolio" class="round-button">Full Portfolio</a>
       </div>
     </div>
+  </div>
   @if ($items)
     <div class="swiper-container" data-slides="4">
     <div class="swiper-wrapper">
@@ -25,8 +26,5 @@
       @endforeach
     </div>
     </div>
-  @else
-    <p>{{ $block->preview ? 'Add an item...' : 'No items found!' }}</p>
   @endif
-</div>
 </div>

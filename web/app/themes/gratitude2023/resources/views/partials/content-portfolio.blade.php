@@ -22,27 +22,27 @@
         <span class="tag">
           @if($type == 'company') 
             {!! __('Company', 'sage') !!} 
-          @else 
+            @else 
             {!! __('Fund', 'sage') !!} 
-          @endif
-        </span>
-      @if($exited) <span class="tag exited"> {!! __('Exited', 'sage') !!} </span> @endif
-    </div>
+            @endif
+          </span>
+          @if($exited) <span class="tag exited"> {!! __('Exited', 'sage') !!} </span> @endif
+        </div>
         {!! the_post_thumbnail( 'large' );  !!}
-    </div>
-  </a>
-  <a href="{{ the_permalink() }}">
-    <h3>{{ the_title() }}</h3>
-  </a>
-  <div class="cats">
-    @php( $cats = get_the_terms( $post->ID, 'portfolio-category') )
-    @if ($cats)
+      </div>
+    </a>
+    <div class="cats">
+      @php( $cats = get_the_terms( $post->ID, 'portfolio-category') )
+      @if ($cats)
       @foreach ($cats as $cat)
-          <span>{{ $cat->name }}</span>
-    @endforeach
-    @foreach ($founderTags as $tag)
-        <span>{{ $tag }}</span>
-    @endforeach
-    @endif
-  </div>
+      <span>{{ $cat->name }}</span>
+      @endforeach
+      @foreach ($founderTags as $tag)
+      <span>{{ $tag }}</span>
+      @endforeach
+      @endif
+    </div>
+    <a href="{{ the_permalink() }}">
+      <h3>{{ the_title() }}</h3>
+    </a>
 </article>

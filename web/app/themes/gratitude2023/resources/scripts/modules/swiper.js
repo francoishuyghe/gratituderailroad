@@ -4,7 +4,7 @@ let swiperContainer = document.querySelector('.swiper-container');
 let sliderSettings = {
   slidesPerView: "auto",
   centeredSlides: true,
-  spaceBetween: 10,
+  spaceBetween: 16,
   loop: true,
 // Responsive breakpoints
   breakpoints: {

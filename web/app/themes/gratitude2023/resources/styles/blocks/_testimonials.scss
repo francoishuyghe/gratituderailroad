@@ -13,7 +13,16 @@
 
     .swiper-slide{
         display: flex;
-        padding: 0 2rem;
+        opacity: 0;
+        transition: opacity .5s;
+
+        &.swiper-slide-active{
+            opacity: 1;
+        }
+
+        @include media-breakpoint-up(md){
+            padding: 0 2rem;
+        }
     }
 
     .quote{
@@ -59,15 +68,18 @@
     }
 }
 
+.arrows{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 .button-next,
 .button-prev{
-    position: absolute;
     padding: 0 .5rem;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%) rotate(180deg);
     cursor: pointer;
     z-index: 2;
+    transform: rotate(180deg);
 
     img{
         transition: transform .3s;
@@ -80,6 +92,10 @@
     }
     
     @include media-breakpoint-up(md){
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(180deg);
         padding: 0 1rem;
     }
 
@@ -89,7 +105,11 @@
 }
 
 .button-next{
-    transform: translateY(-50%);
-    right: 0;
-    left: auto;
+    transform: none;
+
+    @include media-breakpoint-up(md){
+        transform: translateY(-50%);
+        right: 0;
+        left: auto;
+    }
 }
