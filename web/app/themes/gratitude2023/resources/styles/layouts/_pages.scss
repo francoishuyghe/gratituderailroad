@@ -936,7 +936,12 @@ p.title{
 
 #focus{
     .wp-block-columns{
-        gap: 4rem
+        gap: 4rem;
+        flex-flow: column-reverse;
+        
+        @include media-breakpoint-up(md){
+            flex-flow: row;
+        }
     }
 
     img{
