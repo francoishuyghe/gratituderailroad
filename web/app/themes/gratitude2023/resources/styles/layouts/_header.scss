@@ -147,33 +147,6 @@ nav.nav-primary{
     }
   }
 
-  .login-link{
-    display: block;
-    background: $aqua;
-    padding: 1rem 2rem;
-    font-size: 2.9rem;
-    font-weight: 600;
-    color: $orange;
-    display: flex;
-    justify-content: space-between;
-
-    .arrow{
-      height: 8rem;
-      position: absolute;
-      transform-origin: center;
-      rotate: -90deg;
-      transform: translate(50%, -40%);
-      right: 1rem;
-      transition: margin .3s;
-    }
-
-    &:hover{
-      .arrow{
-        right: .5rem;
-      }
-    }
-  }
-
   #socialLinks{
     font-size: 3rem;
     padding: 0 2rem;
@@ -201,7 +174,6 @@ nav.nav-primary{
   }
 
   @include media-breakpoint-up(md){
-    .login-link,
     .legal,
     .copyright,
     #socialLinks{

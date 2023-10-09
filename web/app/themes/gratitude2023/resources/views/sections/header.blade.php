@@ -19,10 +19,6 @@
       <div class="copyright">
         {{ the_time('Y') }} {!! $siteName !!}. All rights reserved.
       </div>
-      <a class="login-link" href="http://loginlink.com" target="_blank">
-        Login
-        <img src="@asset('../../images/arrow.svg')" class="arrow"/>
-      </a>
     </nav>
   @endif
 </header>
