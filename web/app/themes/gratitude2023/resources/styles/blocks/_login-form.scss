@@ -1,0 +1,29 @@
+.wp-block-login-form{
+    position: relative;
+    max-width: 40rem;
+
+    .container{
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: $baby;
+        padding: 3rem 5rem;
+    }
+
+    .row{
+        background-color: $baby;
+        padding: 2rem;
+        align-items: center;
+    }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 2rem;
+        left: -2rem;
+        border-radius: 20px;
+        background: $orange;
+        z-index: -1;
+    }
+}
