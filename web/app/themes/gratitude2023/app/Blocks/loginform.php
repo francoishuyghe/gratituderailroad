@@ -119,7 +119,6 @@ class loginform extends Block
     {
         return [
             'title' => get_field('title') ?: $this->example['title'],
-            'text' => get_field('text') ?: $this->example['text'],
         ];
     }
 
@@ -133,20 +132,9 @@ class loginform extends Block
         $loginform = new FieldsBuilder('loginform');
 
         $loginform
-            ->addTextarea('title')
-            ->addWysiwyg('text');
+            ->addTextarea('title');
 
         return $loginform->build();
-    }
-
-    /**  
-     * Return the items field.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
     }
 
     /**

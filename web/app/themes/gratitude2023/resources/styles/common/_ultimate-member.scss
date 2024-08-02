@@ -1,0 +1,30 @@
+.um-field-label label{
+    color: #000;
+    font-size: 1.25rem !important;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal !important;
+}
+
+.um .um-form .um-field-area input{
+    height: 4rem !important;
+    border: 1px solid #000 !important;
+    width: 100% !important;
+    max-width: 30rem;
+}
+
+.um-button{
+    background-color: #000!important;
+    border-radius: 6.25rem!important;
+    height: 4.3rem!important;
+    width: 100%!important;
+    max-width: 30rem;
+
+    font-size: 1.25rem!important;
+    font-style: normal;
+    font-weight: 600;
+
+    &:hover{
+        background-color: $orange!important;
+    }
+}

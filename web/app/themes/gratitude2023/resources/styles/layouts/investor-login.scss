@@ -1,0 +1,19 @@
+.page-template-template-login {
+  header.banner {
+    position: fixed;
+    background-color: transparent;
+
+    &.scrolled {
+      background-color: $white;
+    }
+  }
+
+  .e-content {
+    background-color: $baby;
+    padding-top: calc(var(--header-height) + var(--gutter));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
