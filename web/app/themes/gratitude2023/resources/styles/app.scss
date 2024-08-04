@@ -25,6 +25,7 @@ $hamburger-layer-spacing       : 4px;
 
 /** Import theme styles */
 @import "common/global";
+@import "common/ultimate-member";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
@@ -35,6 +36,7 @@ $hamburger-layer-spacing       : 4px;
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+@import "layouts/investor-login";
 @import "blocks/top-section";
 @import "blocks/section";
 @import "blocks/portfolio";
@@ -46,5 +48,6 @@ $hamburger-layer-spacing       : 4px;
 @import "blocks/numbers";
 @import "blocks/testimonials";
 @import "blocks/cta";
+@import "blocks/login-form";
 @import "blocks/join-us-options";
 @import "blocks/newsletter";

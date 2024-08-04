@@ -21,8 +21,8 @@
   "devDependencies": {
     "@popperjs/core": "^2.11.7",
     "@roots/bud": "6.12.0",
-    "@roots/bud-postcss": "^6.12.0",
-    "@roots/bud-sass": "^6.12.0",
+    "@roots/bud-postcss": "6.12.0",
+    "@roots/bud-sass": "6.12.0",
     "@roots/sage": "6.12.0",
     "bootstrap": "^5.2.3",
     "hamburgers": "^1.2.1",
@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.19",
-    "caniuse-lite": "^1.0.30001492",
     "gsap": "^3.12.2",
     "isotope-layout": "^3.0.6",
     "swiper": "^9.2.4"

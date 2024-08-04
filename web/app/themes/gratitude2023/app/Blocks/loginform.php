@@ -4,23 +4,22 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
-use WP_Query;
 
-class latestnews extends Block
+class loginform extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Latest News';
+    public $name = 'Login Form';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'Show the latest articles.';
+    public $description = 'Access to the Investor Portal';
 
     /**
      * The block category.
@@ -102,30 +101,13 @@ class latestnews extends Block
     ];
 
     /**
-     * The block styles.
-     *
-     * @var array
-     */
-    // public $styles = [
-    //     [
-    //         'name' => 'light',
-    //         'label' => 'Light',
-    //         'isDefault' => true,
-    //     ],
-    //     [
-    //         'name' => 'dark',
-    //         'label' => 'Dark',
-    //     ]
-    // ];
-
-    /**
      * The block preview example data.
      *
      * @var array
      */
     public $example = [
-        'news' => [],
-        'title' => 'Title' 
+        'title' => 'Log in to your Personal Investor site',
+        'text' => 'Not a personal investor? Find your login page.',
     ];
 
     /**
@@ -136,8 +118,7 @@ class latestnews extends Block
     public function with()
     {
         return [
-            'news' => $this->getNews(),
-            'title' => get_field('title'),
+            'title' => get_field('title') ?: $this->example['title'],
         ];
     }
 
@@ -148,27 +129,12 @@ class latestnews extends Block
      */
     public function fields()
     {
-        $news = new FieldsBuilder('news');
+        $loginform = new FieldsBuilder('loginform');
 
-        $news
-            ->addText('title');
+        $loginform
+            ->addTextarea('title');
 
-        return $news->build();
-    }
-
-    /**
-     * Return the items field.
-     *
-     * @return array
-     */
-    public function getNews()
-    {
-        $args = array(
-            'post_type' => 'post',
-            'showposts' => 3, 
-	    );
-	    $the_query = new WP_Query( $args );
-	    return $the_query->posts;
+        return $loginform->build();
     }
 
     /**
