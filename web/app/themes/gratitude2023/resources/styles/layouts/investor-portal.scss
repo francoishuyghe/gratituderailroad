@@ -1,0 +1,78 @@
+.page-template-template-investor-portal {
+  header.banner {
+    background-color: $baby;
+  }
+
+  #main {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+  }
+
+  #portalHeader {
+    background: #f3e3d3;
+    display: flex;
+    padding-top: 3rem;
+
+    .container {
+      display: flex;
+      flex-flow: column;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 2.625rem;
+    }
+
+    a.button {
+      border: 2px solid $olive;
+      background-color: transparent;
+      color: $olive;
+
+      &:hover {
+        background-color: $olive;
+        color: $white;
+      }
+    }
+
+    .investor-nav {
+      border-bottom: 1px solid $black;
+      margin-bottom: 0;
+      padding-left: 0;
+      display: flex;
+      list-style: none;
+      gap: 3rem;
+
+      a {
+        font-size: 1.25rem;
+      }
+
+      .current_page_item {
+        border-bottom: 0.3rem solid $orange;
+      }
+    }
+  }
+
+  #content {
+    flex: 1;
+    background-color: $baby;
+    padding-block: 2rem;
+
+    .wp-block-section {
+      background-color: #fff;
+      padding: 2rem 0;
+      border-radius: 1rem;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+
+    .wp-block-embed {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+}
