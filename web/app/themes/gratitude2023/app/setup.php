@@ -79,6 +79,7 @@ add_action('after_setup_theme', function () {
         'primary_navigation' => __('Primary Navigation', 'sage'),
         'footer_navigation' => __('Footer Navigation', 'sage'),
         'subfooter_navigation' => __('Sub-Footer Navigation', 'sage'),
+        'investor_portal_navigation' => __('Investor Portal Navigation', 'sage'),
     ]);
 
     /**
@@ -803,4 +804,11 @@ function add_email_to_newsletter(){
 add_action('wp_ajax_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
 add_action('wp_ajax_nopriv_add_email_to_newsletter', __NAMESPACE__ . '\\add_email_to_newsletter');
 
+function custom_logout_shortcode() {
+    // Generate the logout URL with nonce
+    $logout_url = wp_nonce_url(wp_logout_url(home_url() . '/investor-portal'), 'log-out');
 
+    // Return the logout link
+    return '<a class="button" href="' . esc_url($logout_url) . '">Logout</a>';
+}
+add_shortcode('custom_logout', __NAMESPACE__ . '\\custom_logout_shortcode');

@@ -1,10 +1,10 @@
 /** Import everything from autoload */
-@import "bootstrap";
+@import 'bootstrap';
 // import Swiper styles
-@import "swiper/swiper-bundle.min.css";
+@import 'swiper/swiper-bundle.min.css';
 @import 'hamburgers/_sass/hamburgers/hamburgers';
 
-@import "common/variables";
+@import 'common/variables';
 
 /**
  * Import npm dependencies
@@ -12,42 +12,43 @@
  * Prefix your imports with `~` to grab from node_modules/
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
- /* @import "~some-node-module"; */
-@import "slick-carousel/slick/slick.scss";
+/* @import "~some-node-module"; */
+@import 'slick-carousel/slick/slick.scss';
 
 $hamburger-padding-x: 0px;
 $hamburger-padding-y: 7px;
-$hamburger-types     : (arrow);
-$hamburger-layer-width         : 30px;
-$hamburger-layer-height        : 3px;
-$hamburger-layer-spacing       : 4px;
-@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+$hamburger-types: (arrow);
+$hamburger-layer-width: 30px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-spacing: 4px;
+@import '~hamburgers/_sass/hamburgers/hamburgers.scss';
 
 /** Import theme styles */
-@import "common/global";
-@import "common/ultimate-member";
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
-@import "layouts/investor-login";
-@import "blocks/top-section";
-@import "blocks/section";
-@import "blocks/portfolio";
-@import "blocks/latest-news";
-@import "blocks/featured-article";
-@import "blocks/carousel";
-@import "blocks/values";
-@import "blocks/portfolio-highlights";
-@import "blocks/numbers";
-@import "blocks/testimonials";
-@import "blocks/cta";
-@import "blocks/login-form";
-@import "blocks/join-us-options";
-@import "blocks/newsletter";
+@import 'common/global';
+@import 'common/ultimate-member';
+@import 'components/buttons';
+@import 'components/comments';
+@import 'components/forms';
+@import 'components/wp-classes';
+@import 'layouts/header';
+@import 'layouts/sidebar';
+@import 'layouts/footer';
+@import 'layouts/pages';
+@import 'layouts/posts';
+@import 'layouts/tinymce';
+@import 'layouts/investor-login';
+@import 'layouts/investor-portal';
+@import 'blocks/top-section';
+@import 'blocks/section';
+@import 'blocks/portfolio';
+@import 'blocks/latest-news';
+@import 'blocks/featured-article';
+@import 'blocks/carousel';
+@import 'blocks/values';
+@import 'blocks/portfolio-highlights';
+@import 'blocks/numbers';
+@import 'blocks/testimonials';
+@import 'blocks/cta';
+@import 'blocks/login-form';
+@import 'blocks/join-us-options';
+@import 'blocks/newsletter';
